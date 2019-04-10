@@ -4,10 +4,9 @@
 #     ALSO RUN MY ALIAS LIST
 #
 #set history=32
-#source ~hanstra/.alias
-CDPATH=$CDPATH:..:~:/usr/local/bin:/usr/local/src:/exlibris/metalib:/exlibris/sfx_ver
+CDPATH=$CDPATH:..:~:/usr/local/bin:/usr/local/src
 export CDPATH
-SQLPATH=.:/afs/nd.edu/user14/aleph/a20_sql:/afs/nd.edu/user14/aleph/src/aleph20/sql:/afs/nd.edu/user14/aleph/src/metalib/sql:/afs/nd.edu/user14/aleph/src/oracle/sql:/afs/nd.edu/user14/aleph/src/digitool/sql:/afs/nd.edu/user14/aleph/src/oracle/dba/freespace:/afs/nd.edu/user14/aleph/src/oracle/dba/gen_util:/afs/nd.edu/user14/aleph/src/oracle/dba/dbms_job:/afs/nd.edu/user14/aleph/perf_tune
+SQLPATH=.:/global/soft/aleph/sql:/global/sysadmin/oracle/sql
 export SQLPATH
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 export JAVA_HOME
