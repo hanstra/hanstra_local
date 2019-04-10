@@ -12,6 +12,8 @@ alias ap=ansible-playbook                                                       
 alias ape='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/libnd.pem"'  #ansible-playbook as ec2-user
 # Set of commands if using awsume from ~/bin - older version
 alias av='ansible-vault --vault-password-file=~/.ssh/.vault_pass '                 #Ansible-vault with base passwd
+alias avp='ansible-vault --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store edit' #Ansible-vault edit file
+alias avps='ansible-vault --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store edit' #Ansible-vault edit file
 alias asl='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-libnd;aws-mfa --assume-role arn:aws:iam::230391840102:role/superAdmin --duration 43200; cd .'
 alias aslf='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-libnd;aws-mfa --force --assume-role arn:aws:iam::230391840102:role/superAdmin --duration 43200; cd .'
 alias ast='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-test;aws-mfa --assume-role arn:aws:iam::333680067100:role/superAdmin --duration 43200; cd .'
