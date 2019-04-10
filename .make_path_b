@@ -21,30 +21,8 @@ if [ -d /etc/sysconfig ]; then
   MANPATH=$MANPATH:/usr/kerberos/man:/usr/local/man:/usr/local/share/man
 fi
 #
-# Make shared/perl default if it is there.
-#
-if [ -d /shared/perl ]; then
-  PATH=/shared/perl/current/bin:/shared/libxslt/bin:$PATH
-  LD_LIBRARY_PATH=/shared/perl/current/lib:/shared/libxslt/lib:$LD_LIBRARY_PATH
-  MANPATH=/shared/perl/current/man:/shared/libxslt/man:$MANPATH
-fi
-#
-#  Add AFS paths
-#
-if [ -d /afs/nd.edu/user14/aleph ]; then
-  PATH=$PATH:/afs/nd.edu/user15/hanstra/bin
-  PATH=$PATH:/afs/nd.edu/user14/aleph/a20_bin:/afs/nd.edu/user14/aleph/src/aleph20/bin
-  PATH=$PATH:/afs/nd.edu/user14/aleph/a18_bin:/afs/nd.edu/user14/aleph/src/aleph18/bin
-  PATH=$PATH:/afs/nd.edu/user14/aleph/src/metalib/bin
-  PATH=$PATH:/afs/nd.edu/user14/aleph/src/oracle/bin:/afs/nd.edu/user14/aleph/src/sfx/bin
-  PATH=$PATH:/afs/nd.edu/user14/aleph/src/sysadmin/bin
-fi 
-#
 #  Add Admin paths
 #
-if [ -d /shared/admin ]; then
-   PATH=$PATH:/shared/svn/bin:/shared/admin/aleph:/shared/admin/bkup:/shared/admin/dell:/shared/admin/security:/shared/admin/ssh
-fi
 if [ -d /opt/admin ]; then
    PATH=$PATH:/opt/admin/bin:/opt/admin/aleph:/opt/admin/bkup:/opt/admin/dell:/opt/admin/security
 fi
@@ -54,38 +32,9 @@ fi
 if [ -d /opt/dell/srvadmin/bin ]; then
    PATH=$PATH:/opt/dell/srvadmin/bin:/opt/dell/srvadmin/sbin
 fi
-# 
-# Setup for silas/data mart server
-#
-if [ -d /ora00/app ]; then
-   ORACLE_HOME=/ora00/app/oracle/product/11.1.0/db_1
-   ORACLE_BASE=/ora00/app/oracle
-   ORACLE_TERM=vt220
-   ORACLE_PATH=$ORACLE_HOME/bin
-   ORACLE_OWNER=oracle
-   export ORACLE_HOME ORACLE_BASE ORACLE_TERM ORACLE_PATH ORACLE_OWNER
-
-   PATH=$PATH:/ora00/app/oracle/product/11.1.0/db_1/bin
-   LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib:$ORACLE_HOME/ctx/lib:/usr/lib
-fi
 #
 #  Set special path for metalib user
 #
-if [ $USER = "metalib" ]; then
-  if [ -d /etc/sysconfig ]; then
-    PATH=$PATH:/exlibris/metalib/m4_1/product/bin:/exlibris/metalib/m4_1/product/local/java/bin
-    PATH=$PATH:/exlibris/metalib/m4_1/aleph/exe:/exlibris/metalib/m4_1/dat01/vir_ext
-    PATH=$PATH:/exlibris/metalib/m4_1/alephm/proc:/exlibris/app/oracle/product/102/bin
-    PATH=$PATH:/exlibris/metalib/m4_1/product/local/cobol/bin:/exlibris/metalib/m4_1/product/local/apache-ant/bin
-
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/exlibris/metalib/m4_1/product/local/cobol/lib
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/exlibris/metalib/m4_1/product/local/perl/lib
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/exlibris/metalib/m4_1/product/local/java/jre/lib/i386
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/exlibris/metalib/m4_1/product/local/java/jre/lib/i386/client
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/exlibris/app/oracle/product/102/lib:/exlibris/metalib/m4_1/aleph/lib
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/exlibris/metalib/m4_1/product/local/libxml/lib
-  fi
-fi
 export PATH
 export LD_LIBRARY_PATH
 export MANPATH
