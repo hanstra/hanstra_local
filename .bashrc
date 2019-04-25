@@ -13,11 +13,11 @@ cdl () { cd ${1} ; ls -aFC --color ; }
 pol () { popd ${1} ; ls -aFC --color ; }
 pul () { pushd ${1} ; ls -aFC --color ; }
 
-source ~hanstra/.make_path_b
-source ~hanstra/.bash_functions
-source ~hanstra/.aliasb
-source ~hanstra/.make_common_b
-source ~hanstra/.set_prompt_b
+source ~/.make_path_b
+source ~/.bash_functions
+source ~/.aliasb
+source ~/.make_common_b
+source ~/.set_prompt_b
 #
 #
 #  SET PROMPT BY cd TO CURRENT DIRECTORY
