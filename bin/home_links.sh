@@ -1,5 +1,5 @@
 ln -s ~/hanstra_local/.aliasb  ~/.aliasb
-ln -s ~/hanstra_local/..bash_functions  ~/..bash_functions
+ln -s ~/hanstra_local/.bash_functions  ~/.bash_functions
 ln -s ~/hanstra_local/.bash_profile  ~/.bash_profile
 ln -s ~/hanstra_local/.bashrc  ~/.bashrc
 ln -s ~/hanstra_local/.make_common_b  ~/.make_common_b
