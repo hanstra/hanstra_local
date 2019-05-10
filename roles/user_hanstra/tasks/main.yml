@@ -17,8 +17,8 @@
     mode: "{{ item.mode }}"
     state: directory
   with_items:
-    - { path: /home/hanstra/.ssh, mode: '0700' }
-    - { path: /home/hanstra/bin, mode: '0755' }
+    - { path: ~hanstra/.ssh, mode: '0700' }
+    - { path: ~hanstra/bin, mode: '0755' }
     
 - name: Copy files 
   copy:
@@ -28,27 +28,27 @@
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
   with_items:
-    - { file: home/.aliasb, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.bash_functions, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.bash_profile, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.bashrc, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.make_common_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.make_oracle_sid_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.make_path_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.set_prompt_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/bin/taws, dest: /home/hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/bin/taws_test, dest: /home/hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/bin/psgrep, dest: /home/hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/bin/tarcp, dest: /home/hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/bin/set_prompt, dest: /home/hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
-    - { file: home/.ssh/authorized_keys, dest: /home/hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0700' }
-    - { file: home/.ssh/id_rsa.pub, dest: /home/hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
-    - { file: home/.ssh/id_rsa, dest: /home/hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
+    - { file: home/.aliasb, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.bash_functions, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.bash_profile, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.bashrc, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.make_common_b, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.make_oracle_sid_b, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.make_path_b, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.set_prompt_b, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/bin/taws, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/bin/taws_test, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/bin/psgrep, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/bin/tarcp, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/bin/set_prompt, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.ssh/authorized_keys, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0700' }
+    - { file: home/.ssh/id_rsa.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
+    - { file: home/.ssh/id_rsa, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
     - { file: sudo_hanstra, dest: /etc/sudoers.d, owner: 'root', group: 'root', mode: '0400' }
 
 - name: Set ownership 
   file:
-    path: /home/hanstra
+    path: ~hanstra
     owner: hanstra
     group: users
     mode: 0755
@@ -57,11 +57,11 @@
 - name: Add alias to root .bashrc
   lineinfile: >
     dest=/root/.bashrc
-    line="alias tah='source /home/hanstra/.bash_profile'"
+    line="alias tah='source ~hanstra/.bash_profile'"
     state=present
  
 - name: Add alias to root .bashrc
   lineinfile: >
     dest=/home/ec2-user/.bashrc
-    line="alias tah='source /home/hanstra/.bash_profile'"
+    line="alias tah='source ~hanstra/.bash_profile'"
     state=present
