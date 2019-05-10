@@ -25,5 +25,5 @@ endif
 #
 #   Connect to the server
 #
-/usr/bin/ssh -Y -i ~/.ssh/testlibnd.pem ec2-user@$1
+/usr/bin/ssh -Y -i ~/.ssh/testlibnd-oregon.pem ec2-user@$1
 # end taws

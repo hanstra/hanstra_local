@@ -63,5 +63,5 @@ done
 #
 #   PERFORM THE COPY USING TAR
 # 
-/usr/bin/tar -cvf - $1 | (cd $2 ; tar -xf -)
+tar -cvf - $1 | (cd $2 ; tar -xf -)
 # end tarcp

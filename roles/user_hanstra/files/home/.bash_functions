@@ -3,10 +3,10 @@
 #
 #  Create function to perform ls on cd
 #
+#cdl () { cd ${1} ; ls -aFCG; }
 cdl () { cd "${1}" ; ls -aFCG; }
 pol () { popd ${1} ; ls -aFCG; }
 pul () { pushd ${1} ; ls -aFCG; }
-khc () { /usr/bin/sed -i -e /${1}/d ~/.ssh/known_hosts; }
 
 apb () { /usr/local/bin/ansible-playbook ./playbooks/${1} ; }
 app () { /usr/local/bin/ansible-playbook ./playbooks/${1} -k -K ; }
@@ -15,3 +15,6 @@ aps () { /usr/local/bin/ansible-playbook ./playbooks/${1} -k -K ; }
 apsv () { /usr/local/bin/ansible-playbook ./playbooks/${1} -k -K -vvvv ; }
 apt () { /usr/local/bin/ansible-playbook ./playbooks/${1} --check ; }
 
+sslc () { /usr/bin/ssh ${1}.lc.nd.edu ; }
+#taws () { /usr/bin/ssh -Y -i ~/.ssh/libnd.pem ec2-user@${1} }
+#echo 'run bash_functions'

@@ -1,16 +1,7 @@
 #  10/20/05 Break out Oracle SID settings                      T. Hanstra
 
-if [ "$USER" = "metalib" ]; then
-  ORACLE_SID=meta4
-  alias cdlart='cd /exlibris/app/oracle/admin/$ORACLE_SID/bdump'
-elif [ "$USER" = "aleph20" ]; then
-  ORACLE_SID=malc20
-  alias cdalrt='cd /exlibris/app/oracle/diag/rdbms/$ORACLE_SID/$ORACLE_SID/trace'
-elif [ "$USER" = "primo" ]; then
-  ORACLE_SID=prm3
-  alias cdalrt='cd /exlibris/app/oracle/diag/rdbms/$ORACLE_SID/$ORACLE_SID/trace'
-elif [ -d /ora00/oradata/hldm1 ]; then
-  ORACLE_SID=hldm1
+if [ "$USER" = "aleph22" ]; then
+  ORACLE_SID=aleph22
   alias cdalrt='cd /exlibris/app/oracle/diag/rdbms/$ORACLE_SID/$ORACLE_SID/trace'
 else
   ORACLE_SID=no_ora
