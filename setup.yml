@@ -2,7 +2,7 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - sipity-prod
+    - aws_servers
   become: yes
   become_user: root
   roles:
