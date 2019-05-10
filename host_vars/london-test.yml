@@ -1,28 +1,42 @@
-ansible_ssh_host: 172.22.9.43
-subnet_id: subnet-ac5aa187
-ami_id: ami-97785bed
+ansible_ssh_host: 172.22.10.36
 host: london-test.library.nd.edu
+admin_host: london-admin-test.library.nd.edu
+ssh_host: london-test.lc.nd.edu
+# Build and tag parameters
+ami_id: ami-089ff1b061da37276
+subnet_id: subnet-84c977f3
+instance_type: t3.medium
+elastic_IP_alloc: eipalloc-0fa028cfca75814fe
 tagName: libnd-london-test
 tagContact: lib-esu-group@nd.edu
-tagDescription: "London\ Koha\ server\ -\ test"
-tagEnvironment: prep
+tagDescription: "London Koha 18-11 - test"
+tagEnvironment: test
 tagOwner: hanstra
-tagService: "London\ Koha\ V22.4"
+tagService: "London\ Koha\ V18.11"
 tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
 tagBackup: True
 kohadb: london_test
 kohadbuser: london_test_dba
 kohadb_pass_ps: /all/koha-london/test/database_password
-kohadbserver: libnd-mysql-pprd.lc.nd.edu
+kohadbserver: peered-mysql-prep.lc.nd.edu
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin
 gwTimeZone: "Europe/London"
 zone_changed: True
 koha_notices: False
+yaz_version: "5.27.1"
+zebra_version: "2.1.4"
+koha_version: "18.11.03"
 http_notify_groups: admins
 en_lang: True
-security_groups: sg-bcf985d8,sg-641a8c1c
-addusers:
- - fboze
- - jrittenh
- - abales
- - kohaadmin
+# sg-0465873f4611619ea  - CF Security Group for Koha
+# sg-0e581dd523bb8ab04  - CF Security Group for MySQL access
+security_groups: sg-0465873f4611619ea,sg-0e581dd523bb8ab04
+# shibboleth entries
+EntityID: "https://london.library.nd.edu/shibboleth"
+SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
+OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+shibboleth_keys:
+  - { localfile: "london/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+  - { localfile: "london/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+  - { localfile: "london/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+  - { localfile: "london/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }

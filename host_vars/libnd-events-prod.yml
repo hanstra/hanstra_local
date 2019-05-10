@@ -1,0 +1,33 @@
+---
+ansible_ssh_host: 172.22.10.30
+ami_id: ami-04bfee437f38a691e
+subnet_id: subnet-84c977f3
+elastic_IP_alloc: eipalloc-09bb8ba50823449c9
+host: libnd-events-prod.library.nd.edu
+tagName: libnd-events-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS Events apache server - AWS Linux 2 kernel - production'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "events-server"
+tagBackup: True
+SecondaryVolume: vol-0a96335d007e07b3c
+security_groups: 'sg-58b1023c,sg-bcf985d8,sg-8dba44f6,sg-e7f74a9f'
+volume_device: "/dev/sdb"
+volume_group: events-website
+#Apache variables - base
+ServerRoot: "/etc/httpd"
+ServerAdmin: "hanstra@nd.edu"
+apache_user: app
+apache_group: app
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+# Disk 2 parameters
+# Set to true during initial build or repartitioning
+rebuild_disk: false
+disk:
+ - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Events }
+partition:
+ - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /vol2 }
+...

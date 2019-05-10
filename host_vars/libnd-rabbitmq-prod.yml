@@ -1,0 +1,44 @@
+ansible_ssh_host: 172.22.12.221
+host: libnd-rabbitmq-prod.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-035be7bafff33b6b6
+subnet_id: subnet-8838e1d1
+instance_type: t3.micro
+#elastic_IP_alloc: eipalloc-36a61853
+tagName: libnd-rabbitmq-prod
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "Production server - RabbitMQ - AWS2"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "rabbitmq"
+tagSchedule: "*"
+tagBackup: True
+#  sg-bcf985d8 = libnd-ssh-nd       
+#  sg-8dba44f6 = libnd-just-aws
+#  sg-e7f74a9f = libnd-nagios
+#  sg-06231dc32934ed4e7  = RabbitMQAccessSG
+security_groups: sg-bcf985d8,sg-8dba44f6,sg-e7f74a9f,sg-06231dc32934ed4e7
+repo_home_dir: ~/repos
+# Application variables
+rabbitrpm: rabbitmq-server-3.7.10-1.el7.noarch.rpm
+erlangver: v21.2.4
+erlangrpm: erlang-21.2.4-1.el7.centos.x86_64.rpm
+annex_ims_vhost: annex-ims
+qa_user: qa
+vhosts:
+  - '{{ annex_ims_vhost }}'
+  - honeycomb
+rmq_host: libnd-rabbitmq-prod
+rmq_users:
+  - { user: honeycomb, password: '{{ honeycomb_rmq_password }}', vhost: honeycomb }
+  - { user: annex-ims, password: '{{ annexims_rmq_password }}', vhost: '{{ annex_ims_vhost }}' }
+  - { user: rabbitadmin, password: '{{ rabbitadmin_rmq_password }}', vhost: '{{ annex_ims_vhost }}' }
+  - { user: rabbitadmin, password: '{{ rabbitadmin_rmq_password }}', vhost: honeycomb }
+  - { user: qa , password: '{{ qa_rmq_password }}', vhost: / }
+  - { user: qa , password: '{{ qa_rmq_password }}', vhost: honeycomb }
+  - { user: qa , password: '{{ qa_rmq_password }}', vhost: '{{ annex_ims_vhost }}' }
+honeycomb_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/honeycomb_password', decrypt=True ) }}"
+annexims_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/annexims_password', decrypt=True ) }}"
+qa_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/qa_password', decrypt=True ) }}"
+rabbitadmin_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/rabbitadmin_password', decrypt=True ) }}"

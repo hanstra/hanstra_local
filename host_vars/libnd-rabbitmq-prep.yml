@@ -1,0 +1,45 @@
+ansible_ssh_host: 172.22.12.220
+host: libnd-rabbitmq-prep.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-035be7bafff33b6b6
+subnet_id: subnet-8838e1d1
+instance_type: t3.micro
+#elastic_IP_alloc: eipalloc-36a61853
+tagName: libnd-rabbitmq-prep
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "prep server - RabbitMQ - AWS2"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "rabbitmq"
+tagSchedule: "Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18"
+tagBackup: True
+repo_home_dir: ~/repos
+#  sg-bcf985d8 = libnd-ssh-nd       
+#  sg-8dba44f6 = libnd-just-aws
+#  sg-e7f74a9f = libnd-nagios
+#  sg-06231dc32934ed4e7	 = RabbitMQAccessSG
+security_groups: sg-bcf985d8,sg-8dba44f6,sg-e7f74a9f,sg-06231dc32934ed4e7
+# Application variables
+rabbitrpm: rabbitmq-server-3.7.10-1.el7.noarch.rpm
+erlangver: v21.2.4
+erlangrpm: erlang-21.2.4-1.el7.centos.x86_64.rpm
+annex_ims_vhost: annex-ims-staging
+vhosts:
+  - '{{ annex_ims_vhost }}'
+  - honeycomb
+rmq_host: libnd-rabbitmq-prep
+rmq_users:
+  - { user: honeycomb, password: '{{ honeycomb_rmq_password }}', vhost: honeycomb }
+  - { user: annex-ims, password: '{{ annexims_rmq_password }}', vhost: '{{ annex_ims_vhost }}' }
+  - { user: rabbitadmin, password: '{{ rabbitadmin_rmq_password }}', vhost: '{{ annex_ims_vhost }}' }
+  - { user: rabbitadmin, password: '{{ rabbitadmin_rmq_password }}', vhost: honeycomb }
+  - { user: qa , password: '{{ qa_rmq_password }}', vhost: / }
+  - { user: qa , password: '{{ qa_rmq_password }}', vhost: honeycomb }
+  - { user: qa , password: '{{ qa_rmq_password }}', vhost: '{{ annex_ims_vhost }}' }
+qa_user: qa
+# Password lookups - Parameter store
+honeycomb_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/prep/honeycomb_password', decrypt=True ) }}"
+annexims_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/prep/annexims_password', decrypt=True ) }}"
+qa_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/prep/qa_password', decrypt=True ) }}"
+rabbitadmin_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/prep/rabbitadmin_password', decrypt=True ) }}"
