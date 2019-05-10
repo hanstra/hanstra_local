@@ -1,9 +1,0 @@
-#  10/20/05 Break out Oracle SID settings                      T. Hanstra
-
-if [ "$USER" = "aleph22" ]; then
-  ORACLE_SID=aleph22
-  alias cdalrt='cd /exlibris/app/oracle/diag/rdbms/$ORACLE_SID/$ORACLE_SID/trace'
-else
-  ORACLE_SID=no_ora
-fi
-export ORACLE_SID
