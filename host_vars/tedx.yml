@@ -1,0 +1,13 @@
+ansible_ssh_host: 172.22.8.169
+host: tedx.library.nd.edu
+tagName: libnd-tedx
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "AWS\ TedX\ server"
+tagEnvironment: production
+tagOwner: wsill
+tagService: "tedx"
+tagBackup: True
+passenger_root: /usr/local/share/ruby/gems/2.0/gems/passenger-5.0.28
+passenger_ruby: /usr/bin/ruby2.0
+nginx_root: /home/app/tedx/current/public
+http_notify_groups: admins,WSE

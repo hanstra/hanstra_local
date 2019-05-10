@@ -1,0 +1,17 @@
+ansible_ssh_host: 172.22.10.18
+ami_id: ami-04681a1dbd79675a5
+subnet_id: subnet-84c977f3
+# sg-bcf985d8 = SSH-ND      sg-8dba44f6 = Just AWS
+# sg-58b1023c = Web-all     sg-e7f74a9f = nagios
+security_groups: sg-bcf985d8,sg-8dba44f6,sg-58b1023c,sg-e7f74a9f
+instance_type: t3.micro
+host: concordance-prep.library.nd.edu
+tagName: libnd-concordance-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Concordance"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "concordance"
+tagBackup: True
+httpd_template: concordance
+httpd_root: /home/app/concordance

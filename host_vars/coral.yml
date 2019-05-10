@@ -1,0 +1,12 @@
+ansible_ssh_host: 172.22.8.128
+host: coral.library.nd.edu
+tagName: libnd-coral
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Coral\ server"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "coral"
+tagBackup: True
+coraldbserver: libnd-mysql-prod.lc.nd.edu
+serveralias: coral.library.nd.edu
+http_notify_groups: admins

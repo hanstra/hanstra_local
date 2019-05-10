@@ -1,0 +1,9 @@
+ansible_ssh_host: 172.22.13.122
+host: libnd-rmq-prod.lc.nd.edu
+tagName: libnd-rmq-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "RabbitMQ\ Server\ -\ prod"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "RabbitMQ"
+tagBackup: True

@@ -1,0 +1,12 @@
+ansible_ssh_host: 172.22.9.194
+host: factotum-prod.library.nd.edu
+tagName: libnd-factotum-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "AWS\ Factotum\ server\ -\ prep"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "factotum"
+tagBackup: True
+ami_id: ami-09ce1463e48becb40
+http_notify_groups: admins,WSE
+security_groups: 'sg-58b1023c,sg-bcf985d8,sg-e7f74a9f,sg-8dba44f6'

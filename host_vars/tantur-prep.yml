@@ -1,0 +1,27 @@
+ansible_ssh_host: 172.22.9.46
+subnet_id: subnet-ac5aa187
+ami_id: ami-098f3c577e43b3ff3
+host: tantur-prep.library.nd.edu
+tagName: libnd-tantur-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Tantur\ Koha\ server\ -\ prep"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "Tantur\ Koha\ V17.11"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+kohadb: tantur_prep
+kohadbserver: libnd-mysql-pprd.lc.nd.edu
+kohadbuser: tantur_prep_dba
+kohadb_pass_ps: /all/koha-tantur/prep/database_password
+zone_changed: True
+gwTimeZone: "Asia/Jerusalem"
+koha_notices: False
+http_notify_groups: admins
+security_groups: sg-bcf985d8,sg-641a8c1c
+en_lang: False
+addusers:
+ - fboze
+ - jrittenh
+ - abales
+ - kohaadmin

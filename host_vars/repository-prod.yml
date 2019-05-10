@@ -1,0 +1,33 @@
+---
+# Server build variables
+ansible_ssh_host: 172.22.10.17
+host: repository-prod.library.nd.edu
+ssh_host: repository-prod.lc.nd.edu
+ansible_ssh_user: ec2-user
+ami_id: ami-04681a1dbd79675a5
+subnet_id: subnet-84c977f3
+instance_type: t2.micro
+tagName: libnd-repository-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Repopurl service"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "Repopurl"
+tagSchedule: '*'
+tagBackup: True
+# Security Groups
+# sg-bcf985d8 = SSH-ND      sg-8dba44f6 = Just AWS
+# sg-58b1023c = Web-all     sg-e7f74a9f = nagios
+security_groups: 'sg-bcf985d8,sg-8dba44f6,sg-58b1023c,sg-e7f74a9f'
+# Application variables
+ansible_host: repository-prod.lc.nd.edu
+public_host: repository-prod.library.nd.edu
+public_alias: repository.library.nd.edu
+nginx_hosts: "{{ public_alias }} {{ public_host }} {{ ansible_host }}"
+repopurl_env: production
+repopurl_db_user: repo_purl_pr_dba
+repopurl_db_name: repo_purl_prod
+repopurl_db_server: libnd-mysql-prod.lc.nd.edu 
+repopurl_extra_pkgs: golang1.9
+repopurl_rpms: golang
+...

@@ -1,0 +1,41 @@
+ansible_ssh_host: 172.22.9.62
+host: libnd-vufind.library.nd.edu
+tagName: libnd-vufind
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Catholic\ Portal\ -\ VUFind"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "vufind"
+tagBackup: True
+apache_user: catholic
+apache_group: catholic
+crra_server: vufind.catholicresearch.org
+crra_db_user: crra_vf_prod_dba
+crra_db_name: crra_vufind2_prod
+crra_vf_prod_dba_pw_ps: /all/vufind/production/database_password
+crra_drop_passwd_file_ps: /all/vufind/production/dropbox_passwords
+db_server: libnd-mysql-prod.lc.nd.edu
+httpd_server: localhost
+httpd_root: /usr/local/crra
+httpd_template: crra_dropbox
+httpd_port: 8080
+httpd_error_log: /var/log/httpd/crra_error_log
+httpd_access_log: /var/log/httpd/crra_access_log
+mc_client_id_ps: /all/vufind/production/memberclicks_clientId
+mc_client_secret_ps: /all/vufind/production/memberclicks_clientSecret
+nginx_template: crra-dropbox
+nginx_access_log: /var/log/nginx/crra_access.log
+nginx_error_log: /var/log/nginx/error.log
+security_groups: 'sg-bcf985d8,sg-8dba44f6,sg-56f1872d,sg-e2911f9e,sg-e7f74a9f'
+vufind_branch: CRRA
+local_vufind_branch: master
+addusers:
+ - emorgan
+ - plawton
+ - awetheri
+ - rfox2
+ - dkatz2
+ - app
+ - challber
+ - jdinsman
+ - catholic

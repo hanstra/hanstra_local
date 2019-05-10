@@ -1,0 +1,28 @@
+ansible_ssh_host: 172.22.9.43
+subnet_id: subnet-ac5aa187
+ami_id: ami-97785bed
+host: london-test.library.nd.edu
+tagName: libnd-london-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: "London\ Koha\ server\ -\ test"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "London\ Koha\ V22.4"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+kohadb: london_test
+kohadbuser: london_test_dba
+kohadb_pass_ps: /all/koha-london/test/database_password
+kohadbserver: libnd-mysql-pprd.lc.nd.edu
+kohaadminlogin_ps: /all/koha/all/kohaadminlogin
+gwTimeZone: "Europe/London"
+zone_changed: True
+koha_notices: False
+http_notify_groups: admins
+en_lang: True
+security_groups: sg-bcf985d8,sg-641a8c1c
+addusers:
+ - fboze
+ - jrittenh
+ - abales
+ - kohaadmin

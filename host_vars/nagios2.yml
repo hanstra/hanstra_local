@@ -1,0 +1,11 @@
+ansible_ssh_host: 172.22.13.5
+host: nagios2.library.nd.edu
+tagName: libnd-nagios2
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Backup\ Nagios\ Server"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "Nagios\ service\ tester"
+tagBackup: True
+http_notify_groups: admins
+security_groups: sg-8dba44f6,sg-e7f74a9f,sg-bcf985d8,sg-58b1023c

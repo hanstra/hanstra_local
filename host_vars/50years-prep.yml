@@ -1,0 +1,16 @@
+---
+ansible_ssh_host: 172.22.10.23
+host: libnd-apache-prep.library.nd.edu
+tagName: libnd-apache-prep
+# Apache variables - Server
+ServerRoot: "/etc/httpd"
+ServerAdmin: "hanstra@nd.edu"
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+# Apache variables: websites
+apache_user: app
+apache_group: app
+websites:
+  - { site_name: '50years-prep', site_alias: '50years-prep', site_root: '50years-prep', repository: 'website-50years', ssl_file: ssl_wildcard.conf}
+...

@@ -1,0 +1,38 @@
+ansible_ssh_host: 172.22.10.27
+host: api-prep.library.nd.edu
+ssh_host: api-prep.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-009d6802948d06e52
+subnet_id: subnet-84c977f3
+instance_type: t3.medium
+elastic_IP_alloc: eipalloc-36a61853
+tagName: libnd-api-prep
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "prep server - API server - AWS"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "api"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+#  sg-bcf985d8 = libnd-ssh-nd       
+#  sg-8dba44f6 = libnd-just-aws
+security_groups: 'sg-bcf985d8,sg-bf10f9db,sg-8dba44f6'
+# Application parameters
+passenger_version: 5.3.4
+passenger_root: /usr/local/share/gems/gems/passenger-5.3.4
+passenger_ruby: /usr/bin/ruby
+annex_pg_server: libnd-aurora-pg.lc.nd.edu
+annex_pg_db: annex_prep
+annex_pg_user: annex_prep_dba
+nginx_root: /home/app/api/current/public
+nginx_access_log: /opt/nginx/logs/access.log
+nginx_error_log: /opt/nginx/logs/error.log
+Rails_ENV: prep
+second_volume: False
+solr_install_version: 7.4.0
+solr_port: 8080
+solr_core: api
+repo_solr_config: /home/app/api/current/solr_conf
+rails_log_file: /home/app/api/shared/log/prep.log
+sneakers_log_file: /home/app/api/shared/log/sneakers.log

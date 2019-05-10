@@ -1,0 +1,20 @@
+---
+ansible_ssh_host: 172.22.10.23
+host: libnd-apache-prep.library.nd.edu
+tagName: libnd-apache-prep
+# Apache variables - Server
+ServerRoot: "/etc/httpd"
+ServerAdmin: "hanstra@nd.edu"
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+# Apache variables: websites
+apache_user: app
+apache_group: app
+websites:
+  - { site_name: 'events-prep', site_alias: 'events-prep', site_root: 'events-prep', repository: 'website-events', ssl_file: ssl_wildcard.conf}
+  - { site_name: 'glsbc2016-prep', site_alias: 'glsbc2016-prep', site_root: 'events-prep/GLSBC2016',  repository: 'none', ssl_file: ssl_wildcard.conf}
+  - { site_name: 'hackathon-prep', site_alias: 'hackathon-prep', site_root: 'events-prep/hackathon',  repository: 'none', ssl_file: ssl_wildcard.conf}
+  - { site_name: 'ovgtsl2018-prep', site_alias: 'ovgtsl2018-prep', site_root: 'events-prep/ovgtsl2018',  repository: 'none', ssl_file: ssl_wildcard.conf}
+  - { site_name: 'rigorandrelevance-prep', site_alias: 'rigorandrelevance-prep', site_root: 'events-prep/rigorandrelevance',  repository: 'none', ssl_file: ssl_wildcard.conf}
+...

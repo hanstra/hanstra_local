@@ -1,0 +1,17 @@
+ansible_ssh_host: 172.22.9.60
+subnet_id: subnet-ac5aa187
+host: libnd-gitolite.library.nd.edu
+tagName: libnd-gitolite
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Gitolite\ V3"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "gitolite"
+tagBackup: True
+http_notify_groups: admins
+volume_device: /dev/xvdb
+volume_group: git
+logical_volume: gitolite
+security_groups: sg-bcf985d8,sg-15f10c71,sg-f1a4e084
+addusers:
+ - git

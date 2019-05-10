@@ -1,0 +1,18 @@
+---
+ansible_ssh_host: 172.22.8.49
+ami_id: ami-04681a1dbd79675a5
+subnet_id: subnet-d538e18c
+instance_type: t2.micro
+host: jira-test.library.nd.edu
+tagName: libnd-jira-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'Jira'
+tagEnvironment: test
+tagOwner: wsill
+tagService: "Jira"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+# sg-0ae7466e = web-only-nd     sg-a234eadf = libnd-ssh-vpc
+# sg-bcf985d8 = libnd-ssh-nd
+security_groups: 'sg-0ae7466e,sg-a234eadf,sg-bcf985d8'
+...

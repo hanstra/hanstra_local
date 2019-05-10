@@ -1,0 +1,16 @@
+---
+ansible_ssh_host: 172.22.10.24
+host: libnd-apache-prod.library.nd.edu
+tagName: libnd-apache-prod
+# Apache variables - Server
+ServerRoot: "/etc/httpd"
+ServerAdmin: "hanstra@nd.edu"
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+# Apache variables: websites
+apache_user: app
+apache_group: app
+websites:
+  - { site_name: 'potofgold-prod', site_alias: 'potofgold', site_root: 'potofgold-prod', repository: 'website-potofgold', ssl_file: ssl_wildcard.conf}
+...

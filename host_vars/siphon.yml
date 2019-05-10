@@ -1,0 +1,13 @@
+ansible_ssh_host: 172.22.8.146
+host: siphon.library.nd.edu
+tagName: libnd-siphon
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "AWS\ Siphon\ server"
+tagEnvironment: production
+tagOwner: wsill
+tagService: "siphon"
+tagBackup: True
+passenger_root: /usr/local/share/ruby/gems/2.1/gems/passenger-5.0.28
+passenger_ruby: /usr/bin/ruby2.1
+nginx_root: /home/app/siphon/current/public
+http_notify_groups: admins,WSE

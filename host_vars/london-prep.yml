@@ -1,0 +1,27 @@
+ansible_ssh_host: 172.22.9.44
+subnet_id: subnet-ac5aa187
+ami_id: ami-098f3c577e43b3ff3
+host: london-prep.library.nd.edu
+tagName: libnd-london-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: "London\ Koha\ server\ -\ prep"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "London\ Koha\ V17.11"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+kohadb: london_prep
+kohadbserver: libnd-mysql-pprd.lc.nd.edu
+kohadbuser: london_prep_dba
+kohadb_pass_ps: /all/koha-london/prep/database_password
+gwTimeZone: "Europe/London"
+zone_changed: True
+koha_notices: False
+http_notify_groups: admins
+en_lang: True
+security_groups: sg-bcf985d8,sg-641a8c1c
+addusers:
+ - fboze
+ - jrittenh
+ - abales
+ - kohaadmin

@@ -1,0 +1,20 @@
+---
+ansible_ssh_host: 172.22.10.14
+ami_id: ami-afd15ed0
+subnet_id: subnet-84c977f3
+instance_type: t2.medium
+host: sipity-prod.library.nd.edu
+ssh_host: sipity-prod.lc.nd.edu
+tagName: libnd-sipity-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS Sipity server - AWS Linux 2 kernel'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "sipity-prod"
+tagBackup: True
+security_groups: 'sg-58b1023c,sg-bcf985d8,sg-8dba44f6,sg-e7f74a9f'
+addusers:
+  - msuhovec
+sudousers:
+  - msuhovec
+...

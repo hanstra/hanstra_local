@@ -1,0 +1,21 @@
+---
+ansible_ssh_host: 172.22.10.13
+ami_id: ami-f973ab84
+subnet_id: subnet-84c977f3
+instance_type: t2.medium
+host: sipity-prep.library.nd.edu
+ssh_host: sipity-prep.lc.nd.edu
+tagName: libnd-sipity-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS Sipity server - AWS Linux 2 kernel'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "sipity-prep"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18,Sun 17-23
+tagBackup: True
+security_groups: 'sg-58b1023c,sg-bcf985d8,sg-8dba44f6'
+addusers:
+  - msuhovec
+sudousers:
+  - msuhovec
+...

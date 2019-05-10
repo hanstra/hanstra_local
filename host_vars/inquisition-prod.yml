@@ -1,0 +1,32 @@
+ansible_ssh_host: 172.22.9.134
+host: inquisition.library.nd.edu
+ami_id: ami-026e220b6b48ba4ec
+tagName: libnd-inquisition-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: AWS Inquisition prod
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "inquisition"
+tagBackup: True
+solr_tarball: inquisition_solr.tgz
+solr_corename: inquisition
+solr_instance_dir: /opt/solr/4.1.0/inquisition
+solr_data_dir: /opt/solr/4.1.0/inquisition/data
+security_groups: sg-bcf985d8,sg-15f10c71,sg-58b1023c,sg-8dba44f6,sg-e7f74a9f
+passenger_root: /usr/local/share/ruby/gems/2.2/gems/passenger-5.0.28
+passenger_ruby: /usr/bin/ruby2.2
+rails_env: production
+nginx_root: /home/app/inquisition/current/public
+fedora_pass: 3Wic4uXy
+fedora_prep_url: https://fedorapprd.library.nd.edu:8443/fedora
+fedora_prod_url: https://fedoraprod.library.nd.edu:8443/fedora
+http_notify_groups: admins,DLT
+nagios_checks:
+ - { nagios_check_command: "solr_core",
+     nagios_check_name: "check_solr_core",
+     nagios_plugin_command: "check_http -w 5 -c 10 -H localhost -p 8080 -u '/solr/inquisition/select?q=&rows=0&wt=json'" }
+addusers:
+ - msuhovec
+ - jfriesen
+ - jgondron
+ - hparekh

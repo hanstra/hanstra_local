@@ -1,0 +1,43 @@
+---
+ansible_ssh_host: 172.22.10.22
+ami_id: ami-0922553b7b0369273
+subnet_id: subnet-84c977f3
+elastic_IP_alloc: eipalloc-0fbd777a2da55a9df
+host: rbsc-prep.library.nd.edu
+tagName: rbsc-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS RBSC server - AWS Linux 2 kernel'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "rarebooks"
+tagBackup: True
+# Set AvailabilityZone based upon subnet
+AvailabilityZone: us-east-1d
+# Set the SecondaryDisk after vol-rbsc-prep volume build.
+SecondaryVolume: vol-0872888046fdb0207
+# sg-bcf985d8 = SSH-ND      sg-8dba44f6 = Just AWS
+# sg-58b1023c = Web-all     sg-e7f74a9f = nagios
+security_groups: 'sg-bcf985d8,sg-8dba44f6,sg-58b1023c'
+#Apache variables - base
+ServerRoot: "/home/app/rarebooks"
+ServerAlias: "rarebooks.library.nd.edu"
+ServerAdmin: "hanstra@nd.edu"
+apache_user: app
+apache_group: app
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+# Disk 2 parameters
+volume_device: "/dev/sdb"
+volume_group: rbsc
+# Settings for Storage Gateway
+sg_netid: "!lib-libguest"
+sg_password_lookup: "/all/rbsc/production/sg_password"
+sg_mountpoint: "/home/app/rarebooks"
+# Set to true during initial build or repartitioning
+rebuild_disk: false
+disk:
+ - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: RBSC }
+partition:
+ - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /home/app }
+...

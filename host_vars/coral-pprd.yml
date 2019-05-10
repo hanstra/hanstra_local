@@ -1,0 +1,12 @@
+ansible_ssh_host: 172.22.9.64
+host: coralpprd.library.nd.edu
+tagName: libnd-coral-pprd
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Coral\ server\ pprd"
+tagEnvironment: pre-production
+tagOwner: hanstra
+tagService: "Coral\ Server\ pprd"
+tagBackup: True
+coraldbserver: libnd-mysql-pprd.lc.nd.edu
+serveralias: coralpprd.library.nd.edu
+logdir: "coralpprd.library.nd.edu:"

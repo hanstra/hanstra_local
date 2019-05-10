@@ -1,0 +1,27 @@
+ansible_ssh_host: 172.22.9.49
+subnet_id: subnet-ac5aa187
+ami_id: ami-098f3c577e43b3ff3
+host: london-prod-17-11.library.nd.edu
+tagName: libnd-london-prod-17-11
+tagContact: lib-esu-group@nd.edu
+tagDescription: "London Koha server - production V17.11"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "London Koha V17.11"
+tagSchedule: '*'
+tagBackup: True
+kohadb: london_prod_17_11
+kohadbuser: london_prod_dba
+kohadbserver: libnd-mysql-prod.lc.nd.edu
+kohadb_pass_ps: /all/koha-london/prod/database_password
+zone_changed: True
+gwTimeZone: "Europe/London"
+koha_notices: True
+http_notify_groups: admins
+security_groups: sg-bcf985d8,sg-641a8c1c
+en_lang: False
+addusers:
+ - fboze
+ - jrittenh
+ - abales
+ - kohaadmin

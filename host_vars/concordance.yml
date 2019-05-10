@@ -1,0 +1,11 @@
+ansible_ssh_host: 172.22.9.56
+host: concordance.library.nd.edu
+tagName: libnd-concordance
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Concordance\ Application"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "concordance"
+tagBackup: True
+httpd_template: concordance
+httpd_root: /home/app/concordance

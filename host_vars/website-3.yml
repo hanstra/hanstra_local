@@ -1,0 +1,10 @@
+ansible_ssh_host: 172.22.10.187
+host: website-3.library.nd.edu
+tagName: libnd-website-3
+tagContact: lib-esu-group@nd.edu
+tagDescription: "library.nd.edu Website Frontend Subnet 10"
+tagEnvironment: production
+tagOwner: esu
+tagService: "Website"
+tagBackup: True
+http_notify_groups: admins

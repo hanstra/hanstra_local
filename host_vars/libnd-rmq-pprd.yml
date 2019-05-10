@@ -1,0 +1,9 @@
+ansible_ssh_host: 172.22.13.217
+host: libnd-rmq-pprd.lc.nd.edu
+tagName: libnd-rmq-pprd
+tagContact: lib-esu-group@nd.edu
+tagDescription: "RabbitMQ\ Server\ -\ pprd"
+tagEnvironment: pre-production
+tagOwner: hanstra
+tagService: "RabbitMQ"
+tagBackup: True

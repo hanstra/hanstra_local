@@ -1,0 +1,12 @@
+ansible_ssh_host: 172.22.9.205
+host: awsconnect.library.nd.edu
+tagName: libnd-awsconnect
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Nginx\ Front-End\ to\ Private"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "Nginx\ Front-End\ Server"
+tagBackup: True
+http_notify_groups: admins
+nginx_template: 
+ - libnd-rmq-admin
