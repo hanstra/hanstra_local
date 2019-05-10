@@ -1,0 +1,11 @@
+if [ "$TERM" = "linux" ]
+then
+  export PS1="Console login: "
+elif [ "$USER" = "root" ]
+then
+  export PS1="[\[${BOLD}${RED}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$GREEN\]\w\[$WHITE\]]# \[$RESET\]"
+  export CLICOLOR=1
+else
+  export PS1="[\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$GREEN\]\w\[$YELLOW\]] \[$CYAN\]!\[$WHITE\] \[$RESET\]"
+  export CLICOLOR=1
+fi

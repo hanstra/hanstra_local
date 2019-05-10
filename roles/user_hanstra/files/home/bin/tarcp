@@ -1,0 +1,67 @@
+#!/bin/sh 
+# @(#) tarcp - Copy files using tar.  Usage: tarcp [filename] [todir]
+#
+#	06/13/16 Changed to use Bourne shell                         T. Hanstra
+#	05/20/03 Updated to use block size of 100                    T. Hanstra
+#	03/30/93 certified for use with Solaris 2.x                  T. Hanstra
+#	12/17/90	changed for move to /var/bndx                       T. Hanstra
+#	07/27/90	created								                      T. Hanstra
+
+#
+#	OUTPUT PROCEDURE NAME, VERSION NUMBER, AND REVISION DATE 
+#
+#echo 'Procedure: tarcp                '
+#echo 'Version: 1.2               '
+#echo 'Revised: 03/30/93'
+#echo ''
+
+#
+#	CHECK FOR CORRECT ARGUMENT COUNT
+#
+if [ $# -lt 2 ] ; then
+  echo ''
+  echo 'Error: Wrong argument count.'
+  echo 'Usage: tarcp [filename] [todir]'
+  echo ''
+  exit 2
+fi
+#
+#	CHECK IF FILE EXISTS AND DESTINATION EXISTS
+#
+if [ ! -e $1 ] ; then
+	echo ''
+	echo 'Error: Requested file or directory does not exist'
+	echo 'Usage: tarcp [filename] [todir]'
+	echo ''
+	exit 2
+elif [ ! -e $2 ] ; then
+	echo ''
+	echo 'Error: Requested destination directory does not exist'
+	echo 'Usage: tarcp [filename] [todir]'
+	echo ''
+	exit 2
+fi
+#
+#   DOUBLE CHECK USER'S INPUT
+#
+echo ''
+echo ''
+echo 'tarcp will be called with the following parameters:'
+echo ''
+echo '      From directory or file : ' $1
+echo ''
+echo '      Destination directory  : ' $2
+echo ''
+while true; do
+  read -p "Is this correct (y/n)? " yn
+  case $yn in
+    [Nn]* ) echo "No action taken"; exit;;
+    [Yy]* ) break;;
+    *) break;;
+  esac
+done
+#
+#   PERFORM THE COPY USING TAR
+# 
+/usr/bin/tar -cvf - $1 | (cd $2 ; tar -xf -)
+# end tarcp

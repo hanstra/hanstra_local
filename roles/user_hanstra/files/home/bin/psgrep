@@ -1,0 +1,40 @@
+#!/bin/sh
+# @(#) psgrep - Search for active process.  Usage: psgrep [searchstring]
+#
+#	08/01/06 Removed old Solaris syntax.  All use -ef now.       T. Hanstra
+#	03/30/93 changed ps options for Solaris 2.x                  T. Hanstra
+#	12/17/90	changed for move /var/bndx                          T. Hanstra
+#	07/31/90	created								                      T. Hanstra
+
+#
+#	OUTPUT PROCEDURE NAME, VERSION NUMBER, AND REVISION DATE 
+#
+echo -n 'Procedure: psgrep               '
+echo -n 'Version: 1.2               '
+echo 'Revised: 03/30/93'
+echo ''
+
+#
+#	CHECK FOR CORRECT ARGUMENT COUNT
+#
+if [ $# != 1 ] ; then
+	echo ''
+	echo 'Error: Wrong argument count.'
+	echo 'Usage: psgrep [searchstring]'
+	echo ''
+	exit 2
+fi
+#
+#   CHECK ACTIVE PROCESSES FOR EXISTENCE OF SEARCH STRING
+#
+echo ''
+echo 'Searching for string: '$1
+echo ''
+ps -ef | grep $1 | sed -e "/grep/d"
+#
+#	LOG USER USAGE OF THIS SCRIPT
+#
+#set log = '/var/adm/scriptlog'
+#echo -n `date '+%D %H:%M'` >> $log
+#echo ' Script: Psgrep      User: '$user'  Args: '$1 >> $log
+# end psgrep
