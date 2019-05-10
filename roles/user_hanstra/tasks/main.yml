@@ -31,6 +31,7 @@
     - { file: home/.aliasb, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/.bash_functions, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/.bash_profile, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.bashrc, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/.make_common_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/.make_oracle_sid_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/.make_path_b, dest: /home/hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
