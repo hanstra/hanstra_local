@@ -2,6 +2,11 @@
 #
 #  08/03/07 Updated during initial switch to bash shell.       T. Hanstra
 #
+#
+# Exit if not interactive
+#
+[[ $- == *i* ]] || return  
+#
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
