@@ -1,0 +1,9 @@
+---
+- name: Ansible to all servers to update files
+  strategy: free
+  hosts:
+    - sipity-prod
+  become: yes
+  become_user: root
+  roles:
+    - user_hanstra
