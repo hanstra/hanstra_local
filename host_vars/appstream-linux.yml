@@ -1,0 +1,10 @@
+ansible_ssh_host: 172.22.8.67
+host: libnd-appstream-linux.library.nd.edu
+tagName: libnd-appstream-linux
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Appstream server"
+tagEnvironment: production
+tagOwner: wsill
+tagService: "appstream"
+tagBackup: True
+http_notify_groups: admins
