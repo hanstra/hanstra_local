@@ -50,6 +50,8 @@ tedx
 website-1
 website-2
 website-3
+[local_servers]
+peter
 [bills_servers]
 jenkins-test
 jenkins
