@@ -1,5 +1,6 @@
 ---
-ansible_ssh_host: 129.74.223.205
+ansible_ssh_host: 10.71.0.15
+#ansible_ssh_host: 129.74.223.205
 ansible_host: peter.library.nd.edu
 lchost: peter-2010.library.nd.edu
 host: peter.library.nd.edu
