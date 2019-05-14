@@ -2,7 +2,8 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - sipity-prep
+    - aws_servers
+    - snaptest
   become: yes
   become_user: root
   roles:
