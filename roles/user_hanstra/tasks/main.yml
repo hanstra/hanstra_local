@@ -19,6 +19,14 @@
   with_items:
     - { path: ~hanstra/.ssh, mode: '0700' }
     - { path: ~hanstra/bin, mode: '0755' }
+
+- name: Set ownership 
+  file:
+    path: ~hanstra
+    owner: hanstra
+    group: users
+    mode: 0755
+    recurse: yes
     
 - name: Copy files 
   copy:
@@ -45,14 +53,6 @@
     - { file: home/.ssh/id_rsa.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
     - { file: home/.ssh/id_rsa, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
     - { file: sudo_hanstra, dest: /etc/sudoers.d, owner: 'root', group: 'root', mode: '0400' }
-
-- name: Set ownership 
-  file:
-    path: ~hanstra
-    owner: hanstra
-    group: users
-    mode: 0755
-    recurse: yes
  
 - name: Add alias to root .bashrc
   lineinfile: >
