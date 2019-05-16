@@ -3,7 +3,7 @@ then
   export PS1="Console login: "
 elif [ "$USER" = "root" ]
 then
-#  export PS1="[\[${BOLD}${RED}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$GREEN\]\w\[$WHITE\]]# \[$RESET\]"
+  export PS1="[\[${BOLD}${RED}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$GREEN\]\w\[$WHITE\]]# \[$RESET\]"
   export CLICOLOR=1
 elif [ "$AWS_PROFILE" = "superadmin-libnd" ]
 then
