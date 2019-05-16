@@ -57,7 +57,7 @@
 - name: Add alias to root .bashrc
   lineinfile: >
     dest=/root/.bashrc
-    line="alias tah='source ~hanstra/.bash_profile'"
+    line="alias tah='source ~hanstra/.bashrc'"
     state=present
  
 - name: Add alias to root .bashrc
