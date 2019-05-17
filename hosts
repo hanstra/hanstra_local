@@ -20,6 +20,7 @@ fedora38-prep
 gitolite
 inquisition-prep
 inquisition-prod
+john
 libnd-admin
 libnd-apache-prod
 libnd-apache-prep
@@ -35,7 +36,7 @@ london-test
 medieval-micro-prod
 nagios2
 noids-prod
-rbsc-prep
+#rbsc-prep
 rbsc-prod
 repository-prep
 repository-prod
@@ -52,6 +53,7 @@ website-2
 website-3
 [local_servers]
 snaptest
+r7-test
 [bills_servers]
 jenkins-test
 jenkins
