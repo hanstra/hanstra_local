@@ -2,8 +2,9 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - aws_servers
-    - snaptest
+#    - aws_servers
+#    - snaptest
+    - john
   become: yes
   become_user: root
   roles:
