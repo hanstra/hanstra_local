@@ -17,6 +17,8 @@ errbit
 factotum-prod
 fedora38-prod
 fedora38-prep
+fw-prep
+fw-prod
 gitolite
 inquisition-prep
 inquisition-prod
@@ -30,7 +32,7 @@ libnd-freshwriting-prod
 libnd-perlprod
 libnd-rabbitmq-prep
 libnd-rabbitmq-prod
-london
+london-prod
 london-prep
 london-test
 medieval-micro-prod
@@ -40,12 +42,12 @@ noids-prod
 rbsc-prod
 repository-prep
 repository-prod
-rome
+rome-prod
 rome-prep-18-11
 siphon
 sipity-prep
 sipity-prod
-tantur
+tantur-prod
 tantur-prep-18-11
 tedx
 website-1
