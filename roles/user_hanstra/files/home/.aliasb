@@ -10,6 +10,7 @@ alias aa2='ssh -Y aleph2.library.nd.edu -l aleph22'                             
 alias aa3='ssh -Y aleph3.library.nd.edu -l aleph22'                                #ssh to aleph2 as aleph22
 alias ap=ansible-playbook                                                          #ansible-playbook
 alias ape='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/libnd.pem"'  #ansible-playbook as ec2-user
+alias ape2='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/ec2-user.pem"'  #ansible-playbook as ec2-user
 # Set of commands if using awsume from ~/bin - older version
 alias av='ansible-vault --vault-password-file=~/.ssh/.vault_pass '                 #Ansible-vault with base passwd
 alias avp='ansible-vault --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store edit' #Ansible-vault edit file
