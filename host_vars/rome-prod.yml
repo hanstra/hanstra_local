@@ -1,0 +1,42 @@
+ansible_ssh_host: 172.22.10.41
+host: rome-prod.library.nd.edu
+admin_host: rome-admin-prod.library.nd.edu
+lchost: rome-prod.lc.nd.edu
+host_alias: rome.library.nd.edu
+admin_host_alias: rome-admin.library.nd.edu
+subnet_id: subnet-84c977f3
+ami_id: ami-089ff1b061da37276
+instance_type: t3a.medium
+elastic_IP_alloc: ''
+tagName: libnd-rome-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Rome\ Koha\ server\ -\ production"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "Rome\ Koha\ V18.11"
+tagSchedule: '*'
+tagBackup: True
+kohadb: rome_prod
+kohadbuser: rome_prod_dba
+kohadbserver: peered-gg-mysql-prod.lc.nd.edu
+kohadb_pass_ps: /all/koha-rome/prod/database_password
+kohaadminlogin_ps: /all/koha/all/kohaadminlogin
+zone_changed: True
+gwTimeZone: "Europe/Rome"
+koha_notices: False
+yaz_version: "5.27.1"
+zebra_version: "2.1.4"
+koha_version: "18.11.03"
+http_notify_groups: admins
+en_lang: False
+# sg-0465873f4611619ea  - CF Security Group for Koha
+# sg-08d7b6c2c1d102aad  - CF Security Group for GG MySQL access
+security_groups: sg-0465873f4611619ea,sg-08d7b6c2c1d102aad
+EntityID: "https://rome.library.nd.edu/shibboleth"
+SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
+OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+shibboleth_keys:
+  - { localfile: "rome/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+  - { localfile: "rome/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+  - { localfile: "rome/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+  - { localfile: "rome/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
