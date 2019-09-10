@@ -1,0 +1,14 @@
+---
+ansible_ssh_host: 129.74.223.224
+lchost: aleph23-prep.lc.nd.edu
+host: aleph23-prep.library.nd.edu
+tagName: aleph23-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 aleph23-prep server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "aleph23-prep"
+http_notify_groups: admins
+#lc_interface: "ens161"
+#lc_ip: "10.71.0.155"
+...

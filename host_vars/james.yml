@@ -1,0 +1,69 @@
+---
+ansible_ssh_host: 129.74.250.241
+ansible_host: james.library.nd.edu
+lchost: james.lc.nd.edu
+host: james.library.nd.edu
+tagName: james
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'Storage server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: 'Storage'
+volume_device: '/dev/sdb1'
+volume_group: 'james_big_vg'
+#lvol: 
+#  - { volumename : aleph_ora_arch, volumesize: '1000g', mountpoint: /aleph_ora_arch}
+#  - { volumename : aleph2_tmp, volumesize: '500g', mountpoint: /aleph2_tmp}
+#  - { volumename : aleph3_ora00, volumesize: '1000g', mountpoint: /ora00}
+#  - { volumename : aleph3_tmp, volumesize: '500g', mountpoint: /aleph3_tmp}
+#  - { volumename : gdrive, volumesize: '1000g', mountpoint: /gdrive }
+#  - { volumename : global_bkup, volumesize: '1000g', mountpoint: /global_bkup }
+#  - { volumename : history, volumesize: '3000g', mountpoint: /history }
+#  - { volumename : logs, volumesize: '1000g', mountpoint: /logs }
+#  - { volumename : r6_oit, volumesize: '500g', mountpoint: /R6_soft_bkup }
+#nagios_checks:
+# - { nagios_check_command: "backup_error",
+#     nagios_check_name: "check_backup_error",
+#     nagios_plugin_command: "check_file.pl -n /opt/borg-backup-scripts/config/backup_data_error" }
+rh_packages:
+     - authconfig
+     - bind-utils
+     - bzip2
+     - curl
+     - diffutils
+     - finger
+     - gcc
+     - git
+     - lsof
+     - ltrace
+     - man
+     - mailx
+     - mysql
+     - mysql-devel
+     - net-tools
+     - ntp
+     - openssh-clients
+     - parted
+     - perl
+     - perl-devel
+     - postgresql-devel
+     - strace
+     - tcpdump
+     - tmux
+     - unzip
+     - wget
+     - yum-utils
+     - zip
+sudousers:
+ - thanstra
+#
+#     - perl-CPAN
+#     - perl-DateTime
+#     - perl-DBI
+#     - perl-Env
+#     - perl-Getopt-Long
+#     - perl-JSON
+#     - perl-MIME-Lite
+#     - perl-Text-CSV
+#     - perl-YAML-LibYAML
+...

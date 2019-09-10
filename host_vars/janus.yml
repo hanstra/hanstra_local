@@ -1,0 +1,14 @@
+---
+ansible_ssh_host: 129.74.250.225
+lchost: janus.lc.nd.edu
+host: janus.library.nd.edu
+tagName: janus
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 janus server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "janus"
+http_notify_groups: admins
+#lc_interface: "ens224"
+#lc_ip: "10.71.1.203"
+...

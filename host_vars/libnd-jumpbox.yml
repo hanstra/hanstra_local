@@ -1,0 +1,22 @@
+---
+ansible_ssh_host: 172.22.10.24
+ami_id: ami-0b898040803850657
+subnet_id: subnet-84c977f3
+#elastic_IP_id: eni-008ed084f28dd5a3e
+host: libnd-jumpbox.library.nd.edu
+lchost: jumpbox.lc.nd.edu
+tagName: libnd-jumpbox
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS jumpbox server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "Jumpbox"
+tagBackup: True
+instance_type: t3a.micro
+# Peered jumpbox access - sg-03339c22066d6d60a
+# Peered-mysql-prep - sg-08d7b6c2c1d102aad
+# Peered-gg-mysql-prod - sg-08d7b6c2c1d102aad
+# Peered-mysql-prod - sg-03a3bdb188f5174a4
+# PostGres database - sg-045f7b881797bd9ca
+security_groups: 'sg-03339c22066d6d60a,sg-08d7b6c2c1d102aad,sg-08d7b6c2c1d102aad,sg-03a3bdb188f5174a4,sg-045f7b881797bd9ca'
+...
