@@ -2,6 +2,7 @@
 # List of servers by their configuration files in host_vars
 #
 [aws_servers]
+aleph23-prep
 annex
 annex-prep
 annex-prod
@@ -17,11 +18,13 @@ errbit
 factotum-prod
 fedora38-prod
 fedora38-prep
-fw-prep
-fw-prod
+freshwriting-prep
+freshwriting-prod
 gitolite
 inquisition-prep
 inquisition-prod
+james
+janus
 john
 libnd-admin
 libnd-apache-prod
@@ -29,9 +32,11 @@ libnd-apache-prep
 libnd-events-prep
 libnd-events-prod
 libnd-freshwriting-prod
+libnd-jumpbox
 libnd-perlprod
 libnd-rabbitmq-prep
 libnd-rabbitmq-prod
+libnd-vufind-prod
 london-prod
 london-prep
 london-test
@@ -42,6 +47,8 @@ noids-prod
 rbsc-prod
 repository-prep
 repository-prod
+reserves-prep
+reserves-prod
 rome-prod
 rome-prep-18-11
 siphon
@@ -50,6 +57,7 @@ sipity-prod
 tantur-prod
 tantur-prep-18-11
 tedx
+vufind-prod
 website-1
 website-2
 website-3
