@@ -10,7 +10,8 @@ alias aa2='ssh -Y aleph2.library.nd.edu -l aleph22'                             
 alias aa3='ssh -Y aleph3.library.nd.edu -l aleph22'                                #ssh to aleph2 as aleph22
 alias ap=ansible-playbook                                                          #ansible-playbook
 alias ape='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/libnd.pem"'  #ansible-playbook as ec2-user
-alias ape2='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/ec2-user.pem"'  #ansible-playbook as ec2-user
+alias ape2='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/ec2-user.pem" -u ec2-user'  #ansible-playbook as ec2-user
+alias apsg='ls ./vars; ansible-playbook --vault-password-file=~/.ssh/.vault_pass ap-security-group.yml'  #ansible-playbook for security groups
 # Set of commands if using awsume from ~/bin - older version
 alias av='ansible-vault --vault-password-file=~/.ssh/.vault_pass '                 #Ansible-vault with base passwd
 alias avp='ansible-vault --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store edit' #Ansible-vault edit file
@@ -42,6 +43,7 @@ alias cdga='cd /global/sysadmin/admin'                                          
 alias cdgb='cd /global/sysadmin/bin'                                               #move to global bin directory
 alias cdge='cd /global/sysadmin/etc'                                               #move to global etc directory
 alias cdgps='cd /global/puppet_standalone/modules'                                 #move to global puppet directory
+alias cdh='cd ~/hanstra_local'                                                     #move to my env setup repo
 alias cdman='cd /etc/puppet/environments/production'                               #move to puppet manifests directory
 alias cdmod='cd /etc/puppet/environments/production/modules'                       #move to puppet modules directory
 alias cdnge='cd /etc/nagios'                                                       #move to nagios etc dir
@@ -51,6 +53,7 @@ alias cdob='cd $ORACLE_BASE'                                                    
 alias cdpg='cd /global/soft/primo'                                                 #move to Primo global directory
 alias cdr='cd ~hanstra/repos'                                                      #move to Public subdirectory
 alias cdsrc='cd /usr/local/src'                                                    #move to local source directory
+alias cdue='cd /exlibris2/ue23'                                                    #move to the ue23 location
 alias cdsweb='cd /shared/websites/prod/httpd'                                      #move to shared web directory
 alias cdweb='cd /shared/websites/prod/httpd'                                       #move to shared web directory
 alias cdwn='cd ~/Downloads'                                                        #move to downloads directory 
@@ -58,7 +61,8 @@ alias ch='chdir \!*; sp'                                                        
 alias cmc='/Users/hanstra/bin/cycle_middleclick.sh'                                #cycle middleclick app
 alias copy=/bin/cp                                                                 #allow MS-DOS copy command
 alias cvu='ssh -Y catholic@vufind.catholicresearch.net'                            #ssh to vufind server as catholic
-alias curami='aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2 --region us-east-1'
+#alias curami='aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2 --region us-east-1'
+alias curami='aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 --region us-east-1'
 alias curami2='aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 --region us-east-1'
 alias d=dirs                                                                       #display directories on stack
 alias dir=/bin/ls                                                                  #allow DOS type directory list
@@ -113,6 +117,12 @@ alias signall='puppet cert sign --all'                                          
 alias signkeys='puppet cert sign --all'                                            #sign puppet cert keys
 alias pupsign='puppet cert sign --all'                                             #sign puppet cert keys
 # ssh to all servers - As thanstra
+alias s23p='ssh -Y aleph23-prep.lc.nd.edu'                                         #ssh to aleph23-prep
+alias s23prep='ssh -Y aleph23-prep.lc.nd.edu'                                      #ssh to aleph23-prep
+alias s23r='ssh -Y aleph23-prod.lc.nd.edu'                                         #ssh to aleph23-prod
+alias s23prod='ssh -Y aleph23-prod.lc.nd.edu'                                      #ssh to aleph23-prod
+alias s23t='ssh -Y aleph23-test.lc.nd.edu'                                         #ssh to aleph23-test
+alias s23test='ssh -Y aleph23-test.lc.nd.edu'                                      #ssh to aleph23-test
 alias sa1='ssh -Y aleph1.library.nd.edu'                                           #ssh to aleph1.library 
 alias sa2='ssh -Y aleph2.library.nd.edu'                                           #ssh to aleph2.library 
 alias sa3='ssh -Y aleph3.library.nd.edu'                                           #ssh to aleph3.library 
@@ -184,4 +194,5 @@ alias tpgp='ssh -Y pgpprd.library.nd.edu -l thanstra'                           
 alias tpg='ssh -Y pgprod.library.nd.edu -l thanstra'                               #ssh to pgprod.library 
 alias tpup='ssh -Y puptest1.library.nd.edu -l thanstra'                            #ssh to puptest1.library 
 alias tvmb='ssh -Y vmbuild.library.nd.edu -l thanstra'                             #ssh to vmbuild.library 
+alias vijl='vi ~/daily/Jiralist'                                                   #edit current Jira issues
 # end .alias
