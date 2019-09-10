@@ -1,15 +1,13 @@
+---
 ansible_ssh_host: 172.22.9.85
 host: libnd-perlprod.library.nd.edu
-tagName: libnd-perl
+ssh_host: perlprod.lc.nd.edu
+tagName: libnd-perlprod
 tagContact: lib-esu-group@nd.edu
-tagDescription: "AWS\ Clavius\ server"
+tagDescription: 'AWS Clavius server' 
 tagEnvironment: production
 tagOwner: hanstra
-tagService: "clavius"
+tagService: "libnd-perlprod"
 tagBackup: True
-perlproddbserver: libnd-mysql-prod.lc.nd.edu
-claviusserver: clavius.library.nd.edu
-http_notify_groups: admins
-addusers:
- - rfox2
- - rtillman
+security_groups: 'sg-58b1023c,sg-bcf985d8,sg-8dba44f6,sg-e7f74a9f'
+...
