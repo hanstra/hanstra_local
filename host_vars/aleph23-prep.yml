@@ -11,4 +11,5 @@ tagService: "aleph23-prep"
 http_notify_groups: admins
 #lc_interface: "ens161"
 #lc_ip: "10.71.0.155"
+shell: 'csh'
 ...
