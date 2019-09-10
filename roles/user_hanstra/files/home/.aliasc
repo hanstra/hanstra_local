@@ -68,7 +68,12 @@ alias sp      'source ~hanstra/bin/sp_inc_oraid'
 alias sid     "setenv ORACLE_SID "                                                   #setenv ORACLE_SID $1
 alias sql     sqlplus                                                                #run sqlplus
 alias sul     /bin/su -                                                              #su and run login scripts
-alias sua     /bin/su - aleph22                                                      #su as aleph22 and run login scripts
+alias sua     /bin/su - aleph23                                                      #su as aleph22
+alias sua2    /bin/su - aleph22                                                      #su as aleph22
+alias sua22   /bin/su - aleph22                                                      #su as aleph22
+alias sua3    /bin/su - aleph23                                                      #su as aleph23
+alias sua23   /bin/su - aleph23                                                      #su as aleph23
+alias sur     '/usr/bin/sudo /bin/su -'                                              #su as root
 # ssh to all servers - as thanstra
 #
 alias type    /bin/more                                                              #allow DOS type command
