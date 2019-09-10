@@ -1,0 +1,103 @@
+#  10/20/05 Broke out path creation to separate script         T. Hanstra
+#
+#  SET UP DEFAULT UNIX PATH
+#
+set path = (/bin                             \
+            /usr/bin                         \
+            /usr/sbin                        \
+           )
+setenv LD_LIBRARY_PATH /usr/lib:/lib
+
+setenv MANPATH /usr/man:/usr/share/man
+
+if ( -e /usr/local/tripwire/tfs/bin) then
+        set path = (/usr/local/tripwire/tfs/bin $path)
+
+setenv MANPATH /usr/local/tripwire/tfs/man:"$MANPATH"
+
+endif
+
+#
+# Add stuff for RedHat Linux systems
+#
+if ( -e /etc/sysconfig ) then
+        set path = (/sbin                            \
+                    /usr/local/sbin                  \
+                    /usr/local/bin                   \
+                    /global/esuadmin/bin             \
+                    /global/sysadmin/bin             \
+                    /home/thanstra/bin               \
+                    /usr/share/doc                   \
+                    /usr/share/xml                   \
+                    /opt/admin/bin                   \
+                    $path)
+
+setenv LD_LIBRARY_PATH /usr/lib:/usr/lib64:/usr/local/lib:"$LD_LIBRARY_PATH"
+setenv MANPATH /usr/local/share/man:"$MANPATH"
+endif
+
+if ( -e /exlibris/app/oracle/product/12r1 ) then
+        set path = ( /exlibris/app/oracle/product/12r1/bin   \
+                    $path)
+
+setenv LD_LIBRARY_PATH /exlibris/app/oracle/product/12r1:/usr/lib:/usr/local/lib:"$LD_LIBRARY_PATH"
+endif
+
+if ( -e /exlibris/app/oracle/product/11r2 ) then
+        set path = ( /exlibris/app/oracle/product/11r2/bin   \
+                    $path)
+
+setenv LD_LIBRARY_PATH /exlibris/app/oracle/product/11r2:/usr/lib:/usr/local/lib:"$LD_LIBRARY_PATH"
+endif
+
+if ( -e /opt/local/bin ) then
+        set path = (/opt/local/bin $path)
+
+setenv LD_LIBRARY_PATH /opt/local/lib:"$LD_LIBRARY_PATH"
+
+setenv MANPATH /opt/local/man:"$MANPATH"
+
+endif
+
+if (($user == "aleph23") && ( -e /exlibris/aleph)) then
+   set path = (/exlibris/aleph/a23_1/product/bin             \
+               /exlibris/aleph/a23_1/product/local/java/bin  \
+               /exlibris/app/oracle/product/12r1/bin         \
+               /exlibris/aleph/a23_1/product/local/cobol/bin \
+               /exlibris/aleph/a23_1/aleph/exe               \
+               /exlibris/aleph/a23_1/alephm/proc             \
+               /global/soft/aleph/bin                        \
+               $path)
+   setenv LD_LIBRARY_PATH /exlibris/aleph/a23_1/product/local/cobol/lib:/exlibris/aleph/a23_1/product/lib:/exlibris/aleph/a23_1/product/local/perl/lib:/exlibris/aleph/a23_1/product/local/libxml/lib:/exlibris/aleph/a23_1/product/local/libxslt/lib:/exlibris/aleph/a23_1/product/local/openssl/lib:/exlibris/product/instantclient_11_2:/exlibris/app/oracle/product/11r2/lib32:/exlibris/app/oracle/product/11r2/lib:/exlibris/app/oracle/product/11r2/ctx/lib:/exlibris/aleph/a23_1/product/local/java/jre/lib/i386:/exlibris/aleph/a23_1/product/local/java/jre/lib/i386/server
+
+endif
+
+if (($user == "aleph22") && ( -e /exlibris/aleph)) then
+   set path = (/exlibris/aleph/a22_1/product/bin             \
+               /exlibris/aleph/a22_1/product/local/java/bin  \
+               /exlibris/app/oracle/product/11r2/bin         \
+               /exlibris/aleph/a22_1/product/local/cobol/bin \
+               /exlibris/aleph/a22_1/aleph/exe               \
+               /exlibris/aleph/a22_1/alephm/proc             \
+               /global/soft/aleph/bin                        \
+               $path)
+   setenv LD_LIBRARY_PATH /exlibris/aleph/a22_1/product/local/cobol/lib:/exlibris/aleph/a22_1/product/lib:/exlibris/aleph/a22_1/product/local/perl/lib:/exlibris/aleph/a22_1/product/local/libxml/lib:/exlibris/aleph/a22_1/product/local/libxslt/lib:/exlibris/aleph/a22_1/product/local/openssl/lib:/exlibris/product/instantclient_11_2:/exlibris/app/oracle/product/11r2/lib32:/exlibris/app/oracle/product/11r2/lib:/exlibris/app/oracle/product/11r2/ctx/lib:/exlibris/aleph/a22_1/product/local/java/jre/lib/i386:/exlibris/aleph/a22_1/product/local/java/jre/lib/i386/server
+
+endif
+
+#
+#  Add in proper Oracle directory
+#
+if ($?ORACLE_HOME) then
+  if ( $ORACLE_HOME == /exlibris/app/oracle/product/11r2 ) then
+        set path = (/exlibris/app/oracle/product/11r2/bin $path)
+
+  setenv LD_LIBRARY_PATH /exlibris/app/oracle/product/11r2/lib:/exlibris/app/oracle/product/11r2/ctx/lib:"$LD_LIBRARY_PATH"
+  endif
+
+
+endif
+
+setenv MANPATH /usr/man:"$MANPATH"
+
+exit

@@ -1,0 +1,86 @@
+#@(#) .alias - set up aliases at login or elsewhere
+#
+#  02/20/14 Added for primo servers which still use csh     T. Hanstra
+#  10/20/05 Cleanup for the umpteenth time                  T. Hanstra
+#  09/21/90 changed for system wide use                     T. Hanstra
+#  11/09/89 created                                         T. Hanstra
+
+if ( ! $?prompt ) exit
+
+set mach = `hostname`                                                                #set the "mach" variable
+
+alias .       'cd .'                                                                 #stay here, but display list
+alias ..      'set prev = $cwd;cd ..'                                                #go up one directory level
+alias aa1     ssh -Y aleph1.library.nd.edu -l aleph22                                #ssh to aleph1 as aleph22
+alias aa2     ssh -Y aleph2.library.nd.edu -l aleph22                                #ssh to aleph2 as aleph22
+alias aa3     ssh -Y aleph3.library.nd.edu -l aleph22                                #ssh to aleph3 as aleph22
+alias allow   'chmod 755'                                                            #chmod to read and execute
+alias c       clear                                                                  #clear the screen
+alias cd      'chdir \!*; sp; /bin/ls -aF --color'                                   #list files and set prompt at chdir
+alias cd00    'cd /ora00/oradata/$ORACLE_SID'                                        #move to Oracle data disk 00
+alias cd11r   'cd /global/sysadmin/oracle/conf'                                      #Oracle 11.2 files
+alias cd112   'cd /global/sysadmin/oracle/conf/aleph'                                #Oracle 11.2 files - aleph22
+alias cdag    'cd /global/soft/aleph'                                                #move to ALEPH global directory
+alias cdap22  'cd /exlibris/aleph/u22_1/alephe/apache'                               #move to ALEPH 22 Apache directory
+alias cde     'cd $alephe_root'                                                      #move to alephe_root directory
+alias cdes    'cd $alephe_root/scratch'                                              #move to alephe scratch directory
+alias cdmc    'cd $metalib_conf'                                                     #move to metalib_conf directory
+alias cdnge   'cd /etc/nagios'                                                       #move to nagios dir
+alias cdngl   'cd /usr/lib64/nagios/plugins'                                         #move to nagios dir
+alias cdo     'cd $ORACLE_HOME'                                                      #move to Oracle home directory
+alias cdob    'cd $ORACLE_BASE'                                                      #move to Oracle base directory
+alias cdpg    'cd /global/soft/primo'                                                #move to Primo global directory
+alias cdue    'cd /exlibris/aleph/upgrade_express_2101_2201'                         #move to aleph UE logs location
+alias cduel   'cd /exlibris/aleph/upgrade_express_2101_2201/logs/log'                #move to aleph UE logs location
+alias ch      'chdir \!*; sp'                                                        #set prompt at chdir; no listing
+alias copy    /bin/cp                                                                #allow MS-DOS copy command
+alias cpr     /bin/compress                                                          #compress a file
+alias d       dirs                                                                   #display directories on stack
+alias dir     /bin/ls                                                                #allow DOS type directory list
+alias df      /bin/df -k                                                             #Berkley like df
+alias du      /usr/bin/du -k                                                         #Berkley like du
+alias ga      'git add'                                                              #Perform a git add
+alias gc      'git commit'                                                           #Perform a git commit
+alias gs      'git status'                                                           #Perform a git status
+alias h       history                                                                #display command history
+alias j       jobs -l                                                                #show jobs running
+alias lo      exit                                                                   #logout of session
+alias lpl     /usr/bin/lp -d lj4100n-lsd -o nobanner                                 #print to LSD printer sans banner
+alias ls      '/bin/ls -a'                                                           #list files, long format
+alias lsl     '/bin/ls -la'                                                          #list files, long format
+alias lsr     '/bin/ls -lart'                                                        #list files, long format, reverse
+alias ll      '/bin/ls -la | /bin/more'                                              #list files, long format, pipe more
+alias m       /bin/more                                                              #display by page
+alias mroe    /bin/more                                                              #handle misspelling of more
+alias moer    /bin/more                                                              #handle misspelling of more
+alias moe     /bin/more                                                              #handle misspelling of more
+alias mor     /bin/more                                                              #handle misspelling of more
+alias mr      /bin/more R\*                                                          #handle misspelling of more
+alias po      'popd \!*; sp; ls -aF --color'                                         #pop directory from stack, list
+alias psa     '/bin/ps -ef|more'                                                     #show all processes, pipe more
+alias pse     '/bin/ps -ef|more'                                                     #show all processes, pipe more
+alias pu      'pushd \!*; sp; ls -aF --color'                                        #push directory onto stack, list 
+alias ren     /bin/mv                                                                #alias ren to mv
+alias rh      'rehash'                                                               #redo command hash table
+alias r40     '/bin/stty rows 40'                                                    #equivalent of resize for Solaris
+alias sau     ./server_admin_util                                                    #run server_admin_util for instance
+alias sp      'source ~hanstra/bin/sp_inc_oraid'
+alias sid     "setenv ORACLE_SID "                                                   #setenv ORACLE_SID $1
+alias sql     sqlplus                                                                #run sqlplus
+alias sul     /bin/su -                                                              #su and run login scripts
+alias sua     /bin/su - aleph22                                                      #su as aleph22 and run login scripts
+# ssh to all servers - as thanstra
+#
+alias type    /bin/more                                                              #allow DOS type command
+alias u       /bin/finger                                                            #show users
+alias ucd     'chdir `egrep ^\!{*}: /afs/nd.edu/common/etc/passwd | sed "s/^.*:.*:.*:.*:.*:\(.*\):.*/\1/"`'
+alias ucpr    /bin/uncompress                                                        #uncompress a file
+alias up      'set prev = $cwd;cd ..'                                                #go up one directory level
+alias vt100   'setenv TERM vt100'                                                    #set dumb terminal as VT100
+alias w50     'setenv TERM wyse50'                                                   #set dumb terminal as wyse50
+alias xc      source $home/.cshrc                                                    #run my .cshrc file
+alias x       source                                                                 #execute a file or script
+
+#unalias vi
+unalias ls
+# end .alias

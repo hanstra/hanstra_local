@@ -1,0 +1,30 @@
+#!/bin/csh
+#
+# Add a number of tcsh environment variables common across all servers
+# 
+# 07/19/10  Created an updated version based upon current settings      T. Hanstra
+#
+source ~hanstra/.aliasc
+set history=32
+set cdpath = (..                                           \
+              /usr/local/bin                               \
+              /usr/local/src                               \
+              /global/sysadmin/bin                         \
+              /exlibris/app/oracle/product/12r1            \
+              /opt/src)
+
+setenv SQLPATH .:/global/sysadmin/oracle/sql:/global/soft/aleph/sql:/global/soft/primo/sql
+setenv EDITOR vi
+setenv MORE -24
+setenv TERM xterm
+setenv XINITRC ~/.xinitrc
+setenv LPDEST lj4100n-lsd
+setenv EXINIT 'set aw sw=3 ts=3 report=3 \
+               map v xp\
+               map ; kJ\
+               set bf'
+stty echoe
+#stty erase ^?
+stty cols 120
+unset autologout
+source ~hanstra/.set_prompt_c

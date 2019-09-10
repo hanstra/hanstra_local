@@ -1,0 +1,15 @@
+#  10/20/05 Break out Oracle SID settings                      T. Hanstra
+
+if ($USER == "aleph22") then
+  setenv ORACLE_SID aleph22
+else if ($USER == "aleph23") then
+  setenv ORACLE_SID aleph23
+else
+  if ($?ORACLE_SID) then
+   alias cdalrt 'cd /exlibris/app/oracle/diag/rdbms/$ORACLE_SID/$ORACLE_SID/trace'
+    exit
+  else
+    setenv ORACLE_SID no_ora
+  endif
+endif
+alias cdalrt 'cd /exlibris/app/oracle/diag/rdbms/$ORACLE_SID/$ORACLE_SID/trace'
