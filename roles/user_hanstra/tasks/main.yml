@@ -54,6 +54,22 @@
     - { file: home/.ssh/id_rsa, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
     - { file: sudo_hanstra, dest: /etc/sudoers.d, owner: 'root', group: 'root', mode: '0400' }
  
+- name: Copy csh files if shell is set
+  copy:
+    src: "{{ item.file }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - { file: home/.aliasc, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.cshrc, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.make_common_c, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.make_oracle_sid_c, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.make_path_c, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.set_prompt_c, dest: ~hanstra, owner: 'hanstra', group: 'users', mode: '0755' }
+  when: shell
+
 - name: Add alias to root .bashrc
   lineinfile: >
     dest=/root/.bashrc
