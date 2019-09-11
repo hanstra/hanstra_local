@@ -43,6 +43,7 @@ alias cdgb='cd /global/sysadmin/bin'                                            
 alias cdge='cd /global/sysadmin/etc'                                               #move to global etc directory
 alias cdgps='cd /global/puppet_standalone/modules'                                 #move to global puppet directory
 alias cdh='cd ~/hanstra_local'                                                     #move to my env setup repo
+alias cdha='cd ~/hanstra_local/roles/user_hanstra/files/home'                      #move to my env setup repo files
 alias cdman='cd /etc/puppet/environments/production'                               #move to puppet manifests directory
 alias cdmod='cd /etc/puppet/environments/production/modules'                       #move to puppet modules directory
 alias cdnge='cd /etc/nagios'                                                       #move to nagios etc dir
