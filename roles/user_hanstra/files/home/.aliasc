@@ -20,7 +20,9 @@ alias cd      'chdir \!*; sp; /bin/ls -aF --color'                              
 alias cd00    'cd /ora00/oradata/$ORACLE_SID'                                        #move to Oracle data disk 00
 alias cd11r   'cd /global/sysadmin/oracle/conf'                                      #Oracle 11.2 files
 alias cd112   'cd /global/sysadmin/oracle/conf/aleph'                                #Oracle 11.2 files - aleph22
+alias cd12    'cd /global/esuadmin/oracle'                                           #Oracle 12 files
 alias cdag    'cd /global/soft/aleph'                                                #move to ALEPH global directory
+alias cdaik   'cd /exlibris1/ftp_from_exlibris/AIK23'                                #move to AIK directory
 alias cdap22  'cd /exlibris/aleph/u22_1/alephe/apache'                               #move to ALEPH 22 Apache directory
 alias cde     'cd $alephe_root'                                                      #move to alephe_root directory
 alias cdes    'cd $alephe_root/scratch'                                              #move to alephe scratch directory
