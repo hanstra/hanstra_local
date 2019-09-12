@@ -3,6 +3,7 @@
 #
 [aws_servers]
 aleph23-prep
+aleph23-prod
 annex
 annex-prep
 annex-prod
