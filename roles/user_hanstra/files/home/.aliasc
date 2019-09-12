@@ -24,6 +24,7 @@ alias cd12    'cd /global/esuadmin/oracle'                                      
 alias cdag    'cd /global/soft/aleph'                                                #move to ALEPH global directory
 alias cdaik   'cd /exlibris/ftp_from_exlibris/AIK23'                                 #move to AIK directory
 alias cdap22  'cd /exlibris/aleph/u22_1/alephe/apache'                               #move to ALEPH 22 Apache directory
+alias cdap23  'cd /exlibris/aleph/u23_1/alephe/apache'                               #move to ALEPH 23 Apache directory
 alias cde     'cd $alephe_root'                                                      #move to alephe_root directory
 alias cdes    'cd $alephe_root/scratch'                                              #move to alephe scratch directory
 alias cdmc    'cd $metalib_conf'                                                     #move to metalib_conf directory
@@ -32,8 +33,8 @@ alias cdngl   'cd /usr/lib64/nagios/plugins'                                    
 alias cdo     'cd $ORACLE_HOME'                                                      #move to Oracle home directory
 alias cdob    'cd $ORACLE_BASE'                                                      #move to Oracle base directory
 alias cdpg    'cd /global/soft/primo'                                                #move to Primo global directory
-alias cdue    'cd /exlibris/aleph/upgrade_express_2101_2201'                         #move to aleph UE logs location
-alias cduel   'cd /exlibris/aleph/upgrade_express_2101_2201/logs/log'                #move to aleph UE logs location
+alias cdue    'cd /exlibris2/ue23/upgrade_express_2201_2301/'                        #move to aleph UE location
+alias cduel   'cd /exlibris2/ue23/upgrade_express_2201_2301/logs/log'                #move to aleph UE logs location
 alias ch      'chdir \!*; sp'                                                        #set prompt at chdir; no listing
 alias copy    /bin/cp                                                                #allow MS-DOS copy command
 alias cpr     /bin/compress                                                          #compress a file
@@ -70,7 +71,7 @@ alias sp      'source ~hanstra/bin/sp_inc_oraid'
 alias sid     "setenv ORACLE_SID "                                                   #setenv ORACLE_SID $1
 alias sql     sqlplus                                                                #run sqlplus
 alias sul     /bin/su -                                                              #su and run login scripts
-alias sua     /bin/su - aleph23                                                      #su as aleph22
+alias sua     /bin/su - aleph23                                                      #su as aleph23
 alias sua2    /bin/su - aleph22                                                      #su as aleph22
 alias sua22   /bin/su - aleph22                                                      #su as aleph22
 alias sua3    /bin/su - aleph23                                                      #su as aleph23
