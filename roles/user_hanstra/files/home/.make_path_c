@@ -26,7 +26,7 @@ if ( -e /etc/sysconfig ) then
                     /usr/local/bin                   \
                     /global/esuadmin/bin             \
                     /global/sysadmin/bin             \
-                    /home/hanstra/bin                \
+                    ~hanstra/bin                     \
                     /usr/share/doc                   \
                     /usr/share/xml                   \
                     /opt/admin/bin                   \
