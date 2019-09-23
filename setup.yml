@@ -2,7 +2,7 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - aleph23-prep
+    - rbsc-prep
   become: yes
   become_user: root
   roles:

@@ -4,6 +4,7 @@
 [aws_servers]
 aleph23-prep
 aleph23-prod
+aleph23-test
 annex
 annex-prep
 annex-prod
@@ -44,7 +45,7 @@ london-test
 medieval-micro-prod
 nagios2
 noids-prod
-#rbsc-prep
+rbsc-prep
 rbsc-prod
 repository-prep
 repository-prod
