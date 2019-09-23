@@ -33,8 +33,11 @@ alias cdngl   'cd /usr/lib64/nagios/plugins'                                    
 alias cdo     'cd $ORACLE_HOME'                                                      #move to Oracle home directory
 alias cdob    'cd $ORACLE_BASE'                                                      #move to Oracle base directory
 alias cdpg    'cd /global/soft/primo'                                                #move to Primo global directory
-alias cdue    'cd /exlibris2/ue23/upgrade_express_2201_2301/'                        #move to aleph UE location
-alias cduel   'cd /exlibris2/ue23/upgrade_express_2201_2301/logs/log'                #move to aleph UE logs location
+alias cdsa    'cd /exlibris/aleph/u23_1/alephe/scripts/server_admin/bin'             #move to alephe/server_admin/bin
+alias cdsb    'cd /exlibris/aleph/u23_1/alephe/scripts/server_admin/bin'             #move to alephe/server_admin/bin
+alias cdss    'cd /exlibris/aleph/u23_1/alephe/scripts/server_admin/sql'             #move to alephe/server_admin/sql
+alias cdue    'cd /exlibris/aleph/upgrade_express_2201_2301/'                        #move to aleph UE location
+alias cduel   'cd /exlibris/aleph/upgrade_express_2201_2301/logs/log'                #move to aleph UE logs location
 alias ch      'chdir \!*; sp'                                                        #set prompt at chdir; no listing
 alias copy    /bin/cp                                                                #allow MS-DOS copy command
 alias cpr     /bin/compress                                                          #compress a file
