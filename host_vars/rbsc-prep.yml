@@ -1,8 +1,8 @@
 ---
-ansible_ssh_host: 172.22.10.22
-ami_id: ami-0922553b7b0369273
+ansible_ssh_host: 172.22.10.15
+ami_id: ami-0b69ea66ff7391e80
 subnet_id: subnet-84c977f3
-elastic_IP_alloc: eipalloc-0fbd777a2da55a9df
+#elastic_IP_alloc: eipalloc-0fbd777a2da55a9df
 host: rbsc-prep.library.nd.edu
 tagName: rbsc-prep
 tagContact: lib-esu-group@nd.edu
@@ -27,17 +27,4 @@ apache_group: app
 httpd_port:
   - { port: 80 }
   - { port: 443 }
-# Disk 2 parameters
-volume_device: "/dev/sdb"
-volume_group: rbsc
-# Settings for Storage Gateway
-sg_netid: "!lib-libguest"
-sg_password_lookup: "/all/rbsc/production/sg_password"
-sg_mountpoint: "/home/app/rarebooks"
-# Set to true during initial build or repartitioning
-rebuild_disk: false
-disk:
- - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: RBSC }
-partition:
- - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /home/app }
 ...

@@ -1,9 +1,0 @@
-ansible_ssh_host: 172.22.9.250
-host: libnd-admin.library.nd.edu
-tagName: libnd-admin
-tagContact: lib-esu-group@nd.edu
-tagDescription: "Admin\ and\ NFS\ server"
-tagEnvironment: production
-tagOwner: hanstra
-tagService: "AWS\ Admin\ Server"
-tagBackup: True
