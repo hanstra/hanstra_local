@@ -1,0 +1,10 @@
+#!/bin/csh
+set prompt="${magenta}%n${white}@%m ${cyan}$ORACLE_SID ${green}%c4 ${yellow}%h%%]${end}"
+set servertype=`/bin/uname -s`
+echo $servertype
+#if ( "$servertype" == "Linux" ) then
+#   echo -n "\033]0;${USER}@${HOST}\007"
+#else
+#   set server = "`echo $user`@`uname -n`"
+#   /bin/echo '\033]2;'$server'\007\c'
+#endif
