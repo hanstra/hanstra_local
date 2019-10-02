@@ -28,6 +28,7 @@ alias cdap23  'cd /exlibris/aleph/u23_1/alephe/apache'                          
 alias cde     'cd $alephe_root'                                                      #move to alephe_root directory
 alias cdea    'cd $alephe_root/scripts/server_admin'                                 #move to alephe_root directory
 alias cdes    'cd $alephe_root/scratch'                                              #move to alephe scratch directory
+alias cdesu   'cd /global/esuadmin'                                                  #move to alephe scratch directory
 alias cdmc    'cd $metalib_conf'                                                     #move to metalib_conf directory
 alias cdnge   'cd /etc/nagios'                                                       #move to nagios dir
 alias cdngl   'cd /usr/lib64/nagios/plugins'                                         #move to nagios dir
