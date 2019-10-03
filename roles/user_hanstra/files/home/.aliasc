@@ -26,7 +26,7 @@ alias cdaik   'cd /exlibris/ftp_from_exlibris/AIK23'                            
 alias cdap22  'cd /exlibris/aleph/u22_1/alephe/apache'                               #move to ALEPH 22 Apache directory
 alias cdap23  'cd /exlibris/aleph/u23_1/alephe/apache'                               #move to ALEPH 23 Apache directory
 alias cde     'cd $alephe_root'                                                      #move to alephe_root directory
-alias cdea    'cd $alephe_root/scripts/server_admin'                                 #move to alephe_root directory
+alias cdea    'cd $alephe_root/scripts/server_admin/bin'                             #move to alephe_root directory
 alias cdes    'cd $alephe_root/scratch'                                              #move to alephe scratch directory
 alias cdesu   'cd /global/esuadmin'                                                  #move to alephe scratch directory
 alias cdmc    'cd $metalib_conf'                                                     #move to metalib_conf directory
