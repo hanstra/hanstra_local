@@ -26,6 +26,9 @@ fi
 if [ -d /opt/admin ]; then
    PATH=$PATH:/opt/admin/bin:/opt/admin/aleph:/opt/admin/bkup:/opt/admin/dell:/opt/admin/security
 fi
+if [ -d /global ]; then
+   PATH=$PATH:/global/esuadmin/bin:/global/sysadmin/bin
+fi
 if [ -d /admin ]; then
    PATH=$PATH:/admin/security
 fi
