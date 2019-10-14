@@ -1,0 +1,22 @@
+---
+ansible_ssh_host: 129.74.223.227
+ansible_host: aleph23-test.library.nd.edu
+host: aleph23-test.library.nd.edu
+lchost: aleph23-test.lc.nd.edu
+tagName: aleph23-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 aleph23-test server'
+tagEnvironment: test
+tagOwner: hanstra
+tagService: "aleph23-test"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.175"
+shell: /bin/tcsh
+# Disk 2 parameters
+rebuild_disk: true
+disk:
+ - { BlockDevice: /dev/sdb, PartitionNumber: 1, name: exlibris }
+partition:
+ - { FSType: ext4, DeviceName: /dev/sdb1, MountPoint: /exlibris }
+...
