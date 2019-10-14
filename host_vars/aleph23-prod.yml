@@ -10,8 +10,8 @@ tagEnvironment: production
 tagOwner: hanstra
 tagService: "aleph23-prod"
 http_notify_groups: admins
-#lc_interface: "ens224"
-#lc_ip: "10.71.1.166"
+lc_interface: "ens224"
+lc_ip: "10.71.1.160"
 shell: /bin/tcsh
 # Disk 2 parameters
 rebuild_disk: true
