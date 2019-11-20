@@ -17,6 +17,10 @@ coral
 datamart-prod
 drawings
 errbit
+ezproxy-prep
+ezproxy-prod
+ezproxy-test
+factotum-prep
 factotum-prod
 fedora38-prod
 fedora38-prep
