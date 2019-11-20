@@ -10,7 +10,7 @@ set cdpath = (..                                           \
               /usr/local/bin                               \
               /usr/local/src                               \
               /global/sysadmin/bin                         \
-              /exlibris/app/oracle/product/12r1            \
+              /exlibris/app/oracle/product/19c             \
               /opt/src)
 
 setenv SQLPATH .:/global/sysadmin/oracle/sql:/global/soft/aleph/sql:/global/soft/primo/sql

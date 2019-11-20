@@ -35,6 +35,12 @@ fi
 if [ -d /opt/dell/srvadmin/bin ]; then
    PATH=$PATH:/opt/dell/srvadmin/bin:/opt/dell/srvadmin/sbin
 fi
+if [ -d /opt/rh/rh-postgresql96/root/usr/bin ]; then
+   PATH=$PATH:/opt/rh/rh-postgresql96/root/usr/bin
+fi
+if [ -d /exlibris/app/oracle/product/19c ]; then
+   PATH=$PATH:/exlibris/app/oracle/product/19c/bin
+fi
 #
 #  Set special path for metalib user
 #

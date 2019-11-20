@@ -36,11 +36,11 @@ setenv LD_LIBRARY_PATH /usr/lib:/usr/lib64:/usr/local/lib:"$LD_LIBRARY_PATH"
 setenv MANPATH /usr/local/share/man:"$MANPATH"
 endif
 
-if ( -e /exlibris/app/oracle/product/12r1 ) then
-        set path = ( /exlibris/app/oracle/product/12r1/bin   \
+if ( -e /exlibris/app/oracle/product/19c ) then
+        set path = ( /exlibris/app/oracle/product/19c/bin   \
                     $path)
 
-setenv LD_LIBRARY_PATH /exlibris/app/oracle/product/12r1:/usr/lib:/usr/local/lib:"$LD_LIBRARY_PATH"
+setenv LD_LIBRARY_PATH /exlibris/app/oracle/product/19c:/usr/lib:/usr/local/lib:"$LD_LIBRARY_PATH"
 endif
 
 if ( -e /exlibris/app/oracle/product/11r2 ) then
@@ -62,13 +62,14 @@ endif
 if (($user == "aleph23") && ( -e /exlibris/aleph)) then
    set path = (/exlibris/aleph/a23_1/product/bin             \
                /exlibris/aleph/a23_1/product/local/java/bin  \
-               /exlibris/app/oracle/product/12r1/bin         \
+               /exlibris/app/oracle/product/19c/bin          \
                /exlibris/aleph/a23_1/product/local/cobol/bin \
                /exlibris/aleph/a23_1/aleph/exe               \
                /exlibris/aleph/a23_1/alephm/proc             \
                /global/soft/aleph/bin                        \
                $path)
-   setenv LD_LIBRARY_PATH /exlibris/aleph/a23_1/product/local/cobol/lib:/exlibris/aleph/a23_1/product/lib:/exlibris/aleph/a23_1/product/local/perl/lib:/exlibris/aleph/a23_1/product/local/libxml/lib:/exlibris/aleph/a23_1/product/local/libxslt/lib:/exlibris/aleph/a23_1/product/local/openssl/lib:/exlibris/product/instantclient_11_2:/exlibris/app/oracle/product/11r2/lib32:/exlibris/app/oracle/product/11r2/lib:/exlibris/app/oracle/product/11r2/ctx/lib:/exlibris/aleph/a23_1/product/local/java/jre/lib/i386:/exlibris/aleph/a23_1/product/local/java/jre/lib/i386/server
+
+   setenv LD_LIBRARY_PATH /exlibris/aleph/a23_1/product/local/cobol/lib:/exlibris/aleph/a23_1/product/lib:/exlibris/aleph/a23_1/product/local/perl/lib:/exlibris/aleph/a23_1/product/local/libxml/lib:/exlibris/aleph/a23_1/product/local/libxslt/lib:/exlibris/aleph/a23_1/product/local/openssl/lib:/exlibris/aleph/a23_1/product/local/instantclient:/exlibris/app/oracle/product/19c/lib32:/exlibris/app/oracle/product/19c/lib:/exlibris/app/oracle/product/19c/ctx/lib:/exlibris/app/oracle/product/19c/lib:/exlibris/aleph/a23_1/product/local/java/jre/lib/i386:/exlibris/aleph/a23_1/product/local/java/jre/lib/i386/server
 
 endif
 
