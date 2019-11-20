@@ -6,7 +6,7 @@
 #set history=32
 CDPATH=$CDPATH:..:~:/usr/local/bin:/usr/local/src
 export CDPATH
-SQLPATH=.:/global/soft/aleph/sql:/global/sysadmin/oracle/sql
+SQLPATH=.:/global/soft/aleph/sql:/global/esuadmin/oracle/scripts
 export SQLPATH
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 export JAVA_HOME

@@ -13,7 +13,7 @@ set cdpath = (..                                           \
               /exlibris/app/oracle/product/19c             \
               /opt/src)
 
-setenv SQLPATH .:/global/sysadmin/oracle/sql:/global/soft/aleph/sql:/global/soft/primo/sql
+setenv SQLPATH .:/global/esuadmin/oracle/scripts:/global/soft/aleph/sql
 setenv EDITOR vi
 setenv MORE -24
 setenv TERM xterm
