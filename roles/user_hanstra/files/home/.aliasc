@@ -37,6 +37,7 @@ alias cdob    'cd $ORACLE_BASE'                                                 
 alias cdpg    'cd /global/soft/primo'                                                #move to Primo global directory
 alias cdsa    'cd /exlibris/aleph/u23_1/alephe/scripts/server_admin/bin'             #move to alephe/server_admin/bin
 alias cdsb    'cd /exlibris/aleph/u23_1/alephe/scripts/server_admin/bin'             #move to alephe/server_admin/bin
+alias cdsg    'cd ~/repos/security-groups-blueprints'                                #move to security-groups-blueprints
 alias cdss    'cd /exlibris/aleph/u23_1/alephe/scripts/server_admin/sql'             #move to alephe/server_admin/sql
 alias cdue    'cd /exlibris/aleph/upgrade_express_2201_2301/'                        #move to aleph UE location
 alias cduel   'cd /exlibris/aleph/upgrade_express_2201_2301/logs/log'                #move to aleph UE logs location
@@ -64,10 +65,12 @@ alias moer    /bin/more                                                         
 alias moe     /bin/more                                                              #handle misspelling of more
 alias mor     /bin/more                                                              #handle misspelling of more
 alias mr      /bin/more R\*                                                          #handle misspelling of more
+alias pdc     'pushd ./deploy/cloudformation'                                        #push down in security_group repo
 alias po      'popd \!*; sp; ls -aF --color'                                         #pop directory from stack, list
 alias psa     '/bin/ps -ef|more'                                                     #show all processes, pipe more
 alias pse     '/bin/ps -ef|more'                                                     #show all processes, pipe more
 alias pu      'pushd \!*; sp; ls -aF --color'                                        #push directory onto stack, list 
+alias pud     'pushd ./deploy/cloudformation'                                        #push down in security_group repo
 alias ren     /bin/mv                                                                #alias ren to mv
 alias rh      'rehash'                                                               #redo command hash table
 alias r40     '/bin/stty rows 40'                                                    #equivalent of resize for Solaris
