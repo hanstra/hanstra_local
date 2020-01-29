@@ -35,6 +35,8 @@ john
 libnd-admin
 libnd-apache-prod
 libnd-apache-prep
+libnd-datamart-prep
+libnd-datamart-prod
 libnd-events-prep
 libnd-events-prod
 libnd-freshwriting-prod
@@ -47,6 +49,8 @@ london-prod
 london-prep
 london-test
 medieval-micro-prod
+mysql-prep
+mysql-prod
 nagios2
 noids-prod
 rbsc-prep

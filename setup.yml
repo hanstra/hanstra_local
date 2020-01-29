@@ -2,7 +2,7 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - rbsc-prep
+    - mysql-prep
   become: yes
   become_user: root
   roles:
