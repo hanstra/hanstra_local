@@ -1,0 +1,22 @@
+---
+ansible_ssh_host: 10.71.1.168
+host: ezproxy-prod.library.nd.edu
+lchost: ezproxy-prod.lc.nd.edu
+proxyName: proxy-7.library.nd.edu
+proxyIP: 129.74.250.155
+proxy_lookup: proxy-7
+lib_interface: ens192
+tagName: ezproxy-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'EZProxy Server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "ezproxy"
+http_notify_groups: admins,DLT
+EZProxyVersion: 6-6-2
+lc_interface: "ens224"
+lc_ip: "10.71.1.168"
+rh_packages:
+  - open-vm-tools
+  - glibc.i686
+...

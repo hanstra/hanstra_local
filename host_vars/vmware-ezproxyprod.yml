@@ -1,0 +1,7 @@
+ansible_ssh_host: 129.74.223.177
+host: ezproxyprod.library.nd.edu
+tagName: ezproxyprod
+tagEnvironment: production
+tagService: ezproxy
+EZProxyVersion: 6-5-0
+lastEZProxyVersion: 6-4-4

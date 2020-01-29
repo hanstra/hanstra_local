@@ -1,0 +1,15 @@
+---
+ansible_ssh_host: 10.71.1.147
+ansible_host: mysql-prep.library.nd.edu
+host: mysql-prep.library.nd.edu
+lchost: mysql-prep.lc.nd.edu
+tagName: mysql-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 mysql-prep server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "mysql-prep"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.147"
+...

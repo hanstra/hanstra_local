@@ -1,0 +1,30 @@
+ansible_ssh_host: 172.22.10.47
+host: libnd-datamart-prep.library.nd.edu
+ssh_host: libnd-datamart-prep.lc.nd.edu
+lchost: libnd-datamart-prep.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-00068cd7555f543d5
+subnet_id: subnet-84c977f3
+instance_type: t3a.small
+elastic_IP_alloc: eipalloc-05e70fbc9f78b507d
+tagName: libnd-datamart-prep
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "Prep server - Datamart - AWS2"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "libnd-datamart"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+#  sg-0d0deeeb457b8c1d8 - peered-datamart-sg - CF based SG created for Datamart
+security_groups: 'sg-0d20080fb0ba554c7, sg-0e581dd523bb8ab04'
+# Application parameters
+# Set to true during initial build or repartitioning
+volume_device: "/dev/xvdb"
+volume_group: datamart
+SecondaryVolume: 'vol-0e1144a0c1d003a60'
+rebuild_disk: true
+disk:
+ - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Datamart }
+partition:
+ - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /dat2 }
