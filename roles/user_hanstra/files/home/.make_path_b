@@ -21,6 +21,12 @@ if [ -d /etc/sysconfig ]; then
   MANPATH=$MANPATH:/usr/kerberos/man:/usr/local/man:/usr/local/share/man
 fi
 #
+#  Add python path
+#
+if [ -d /usr/local/lib/python3.7/site-packages ]; then
+  PATH=$PATH:/usr/local/lib/python3.7/site-packages
+fi
+#
 #  Add Admin paths
 #
 if [ -d /opt/admin ]; then
@@ -37,6 +43,11 @@ if [ -d /opt/dell/srvadmin/bin ]; then
 fi
 if [ -d /opt/rh/rh-postgresql96/root/usr/bin ]; then
    PATH=$PATH:/opt/rh/rh-postgresql96/root/usr/bin
+fi
+if [ -d /opt/rh/rh-mariadb103/root/usr/bin ]; then
+   PATH=$PATH:/opt/rh/rh-mariadb103/root/usr/bin
+   LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rh/rh-mariadb103/root/usr/lib64
+   MANPATH=$MANPATH:/opt/rh/rh-mariadb103/root/usr/share/man
 fi
 if [ -d /exlibris/app/oracle/product/19c ]; then
    PATH=$PATH:/exlibris/app/oracle/product/19c/bin
