@@ -1,0 +1,32 @@
+---
+ansible_ssh_host: 10.71.1.82
+ansible_host: mysql-prod.library.nd.edu
+host: mysql-prod.library.nd.edu
+lchost: mysql-prod.lc.nd.edu
+tagName: mysql-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 mysql-prod server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "mysql-prod"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.82"
+users:
+ - { username: bendo_pprd_dba, host: 'bendo-pprd-vm.lc.nd.edu', database: bendo_pprd }
+ - { username: curate_pprd_dba, host: 'curatesvrpprd.lc.nd.edu', database: curate_pprd }
+ - { username: curate_pprd_dba, host: 'curatewkrpprd.lc.nd.edu', database: curate_pprd }
+ - { username: curate_pprd_dba, host: 'libvirt6.lc.nd.edu', database: curate_pprd }
+ - { username: curate_pprd_dba, host: 'libvirt8.lc.nd.edu', database: curate_pprd }
+ - { username: curate_pprd_dba, host: 'libvirt9.lc.nd.edu', database: curate_pprd }
+ - { username: ejl_pprd_dba, host: 'ejl_pprd-vm.lc.nd.edu', database: ejl_pprd }
+ - { username: fedora3_prep_dba, host: 'fedora38-prep.lc.nd.edu', database: fedora3_prep }
+ - { username: fedora3_prep_dba, host: 'fedora38-prep-2010.library.nd.edu', database: fedora3_prep }
+ - { username: metrics_pprd_dba, host: 'curatesvrpprd.lc.nd.edu', database: metrics_pprd }
+ - { username: metrics_pprd_dba, host: 'curatewkrpprd.lc.nd.edu', database: metrics_pprd }
+ - { username: metrics_pprd_dba, host: 'libvirt6.lc.nd.edu', database: metrics_pprd }
+ - { username: metrics_pprd_dba, host: 'libvirt8.lc.nd.edu', database: metrics_pprd }
+ - { username: metrics_pprd_dba, host: 'libvirt9.lc.nd.edu', database: metrics_pprd }
+ - { username: ss_back_pprd_dba, host: 'seasideprep.lc.nd.edu', database: seaside_backend_pprd }
+ - { username: seaside_pprd_dba, host: 'seasideprep.lc.nd.edu', database: seaside_pprd }
+...
