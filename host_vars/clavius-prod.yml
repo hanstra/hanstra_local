@@ -1,0 +1,30 @@
+ansible_ssh_host: 172.22.10.33
+host: clavius-prod.library.nd.edu
+ssh_host: clavius-prod.lc.nd.edu
+lchost: clavius-prod.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-062f7200baf2fa504
+subnet_id: subnet-84c977f3
+instance_type: t3a.micro
+#elastic_IP_alloc: eipalloc-0c6dcecd0783022f7
+tagName: clavius-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Production server - Clavius"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "clavius"
+tagSchedule: '*'
+tagBackup: True
+#  sg-00dacc773e95a6b1d	- Clavius access security group
+security_groups: 'sg-00dacc773e95a6b1d'
+# Application parameters
+ServerRoot: "/etc/httpd"
+ServerAdmin: "hanstra@nd.edu"
+apache_user: app
+apache_group: app
+ServerAlias: clavius.library.nd.edu
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+SecondaryVolume: ""
