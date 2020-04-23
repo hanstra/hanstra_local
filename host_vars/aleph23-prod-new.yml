@@ -1,0 +1,26 @@
+---
+ansible_ssh_host: 129.74.223.224
+ansible_host: aleph23-prod-new.library.nd.edu
+host: aleph23-prod-new.library.nd.edu
+lchost: aleph23-prod-new.lc.nd.edu
+tagName: aleph23-prod-new
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 aleph23-prod-new server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "aleph23-prod-new"
+http_notify_groups: admins
+#lc_interface: "ens224"
+#lc_ip: "10.71.1.160"
+shell: /bin/tcsh
+api_gateway: '172.22.10.81:/libnd-nfs-api'
+smb_mountpoint: '/mnt/corpfs'
+smb_server: '//library.corpfs.nd.edu/DCNS/Library'
+creds_user: '!lib-libguest'
+# Disk 2 parameters
+rebuild_disk: true
+disk:
+ - { BlockDevice: /dev/sdb, PartitionNumber: 1, name: exlibris }
+partition:
+ - { FSType: xfs, DeviceName: /dev/sdb1, MountPoint: /exlibris }
+...

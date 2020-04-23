@@ -1,0 +1,25 @@
+ansible_ssh_host: 172.22.10.52
+host: ezproxy-aws-prod.library.nd.edu
+ssh_host: ezproxy-aws-prod.lc.nd.edu
+lchost: ezproxy-aws-prod.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-0fc61db8544a617ed
+subnet_id: subnet-84c977f3
+instance_type: t3a.small
+volumesize: 50
+device_name: '/dev/xvda'
+IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+elastic_IP_alloc: eipalloc-0c2d960051be500f5
+tagName: ezproxy-aws-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Prep server - EZproxy"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "ezproxy"
+tagSchedule: '*'
+tagBackup: True
+#  sg-0d83b46961f4a61d0	- EZproxy access security group
+security_groups: 'sg-0d83b46961f4a61d0'
+EZProxyVersion: 7.0
+...

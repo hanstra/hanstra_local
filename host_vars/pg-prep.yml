@@ -1,0 +1,27 @@
+---
+ansible_ssh_host: 10.71.1.120
+ansible_host: pg-prep.library.nd.edu
+host: pg-prep.library.nd.edu
+lchost: pg-prep.lc.nd.edu
+tagName: pg-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 pg-prep server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "pg-prep"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.120"
+bkup_mountpoint: "/pg_bkup"
+bkup_server: "peter-558"
+bkup_hour: "23"
+bkup_minute: "35"
+vlan558_interface: "ens256"
+vlan558_address: "192.168.26.217"
+nagios_checks:
+ - { nagios_check_command: "pg_processes",
+     nagios_check_name: "check_pg_processes",
+     nagios_plugin_command: "check_procs -a /libexec/pgd -c 1:1" }
+users:
+ - { username: honeycomb_prep_dba, database: honeycomb_prep }
+...

@@ -1,0 +1,48 @@
+ansible_ssh_host: 172.22.9.107
+host: tantur-prep.library.nd.edu
+admin_host: tantur-admin-prep.library.nd.edu
+lchost: tantur-prep.lc.nd.edu
+host_alias : tantur-prep.library.nd.edu
+admin_host_alias: tantur-admin-prep.library.nd.edu
+# Build and tag parameters
+subnet_id: subnet-ac5aa187
+ami_id: ami-02a3e0c2da41029b8
+instance_type: t3a.large
+elastic_IP_alloc: eipalloc-b1da8780
+IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+tagName: libnd-tantur-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Tantur\ Koha\ server\ -\ prep"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "Tantur\ Koha\ V19.11"
+tagSchedule: 'Mon 1-18,Tue 1-18,Wed 1-18,Thu 1-18,Fri 1-18'
+tagBackup: True
+# sg-0465873f4611619ea  - CF Security Group for Koha
+# sg-08d7b6c2c1d102aad  - CF Security Group for GG MySQL access
+security_groups: sg-0465873f4611619ea,sg-08d7b6c2c1d102aad
+# Koha variables
+kohadb: tantur_prep
+kohadbserver: peered-gg-mysql-prod.lc.nd.edu
+kohadbuser: tantur_prep_dba
+kohadb_pass_ps: /all/koha-tantur/prep/database_password
+kohaadminlogin_ps: /all/koha/all/kohaadminlogin
+webserver_domain: 'library.nd.edu'
+zebra_full_hour: 17
+zone_changed: True
+gwTimeZone: "Asia/Jerusalem"
+koha_notices: False
+http_notify_groups: admins
+yaz_version: "5.28.0"
+zebra_version: "2.1.4"
+full_index: weekly
+koha_version: "19.11.04"
+en_lang: False
+EntityID: "https://tantur.library.nd.edu/shibboleth"
+SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
+OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+shibboleth_keys:
+  - { localfile: "tantur/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+  - { localfile: "tantur/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+  - { localfile: "tantur/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+  - { localfile: "tantur/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
