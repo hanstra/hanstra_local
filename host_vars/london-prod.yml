@@ -23,9 +23,10 @@ kohadb_pass_ps: /all/koha-london/prod/database_password
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin
 gwTimeZone: "Europe/London"
 zone_changed: True
-koha_notices: False
+koha_notices: True
 yaz_version: "5.27.1"
 zebra_version: "2.1.4"
+full_index: daily
 koha_version: "18.11.04"
 http_notify_groups: admins
 en_lang: True
@@ -33,11 +34,11 @@ en_lang: True
 # sg-08d7b6c2c1d102aad  - CF Security Group for GG MySQL access
 security_groups: sg-0465873f4611619ea,sg-08d7b6c2c1d102aad
 # shibboleth entries
-EntityID: "https://london.library.nd.edu/shibboleth"
-SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
-OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+EntityID: "https://koha.library.nd.edu/shibboleth"
+SSOEntityID: "http://www.okta.com/exk11bbdt3CuaDOPb357"
+OITOktaURL: "https://okta.nd.edu/app/exk11bbdt3CuaDOPb357/sso/saml/metadata"
 shibboleth_keys:
-  - { localfile: "london/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
-  - { localfile: "london/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
-  - { localfile: "london/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
-  - { localfile: "london/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
+  - { localfile: "sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+  - { localfile: "sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+  - { localfile: "sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+  - { localfile: "sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }

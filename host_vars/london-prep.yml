@@ -1,40 +1,49 @@
-ansible_ssh_host: 172.22.10.34
+ansible_ssh_host: 172.22.9.101
 host: london-prep.library.nd.edu
 admin_host: london-admin-prep.library.nd.edu
-subnet_id: subnet-84c977f3
-ami_id: ami-089ff1b061da37276
-instance_type: t3.medium
+lchost: london-prep.lc.nd.edu
+host_alias : london-prep.library.nd.edu
+admin_host_alias: london-admin-prep.library.nd.edu
+# Build and tag parameters
+subnet_id: subnet-ac5aa187
+ami_id: ami-02a3e0c2da41029b8
+instance_type: t3a.medium
 elastic_IP_alloc: eipalloc-0e1b4c3f
+IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
 tagName: libnd-london-prep
 tagContact: lib-esu-group@nd.edu
 tagDescription: "London\ Koha\ server\ -\ prep"
 tagEnvironment: prep
 tagOwner: hanstra
-tagService: "London\ Koha\ V18.11"
-tagSchedule: '*'
+tagService: "London\ Koha\ V19.11"
+tagSchedule: 'Mon 3-18,Tue 3-18,Wed 3-18,Thu 3-18,Fri 3-18'
 tagBackup: True
-kohadb: london_prep_CAS
+# sg-0465873f4611619ea	- CF Security Group for Koha
+# sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
+security_groups: sg-0465873f4611619ea,sg-0e581dd523bb8ab04
+# Koha variables
+kohadb: london_prep
 kohadbserver: peered-mysql-prep.lc.nd.edu
 kohadbuser: london_prep_dba
 kohadb_pass_ps: /all/koha-london/prep/database_password
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin
+webserver_domain: 'library.nd.edu'
 gwTimeZone: "Europe/London"
 zone_changed: True
 koha_notices: False
-yaz_version: "5.27.1"
+zebra_full_hour: 17
+yaz_version: "5.28.0"
 zebra_version: "2.1.4"
-koha_version: "18.11.04"
+full_index: daily
+koha_version: "19.11.04"
 http_notify_groups: admins
 en_lang: True
-# sg-0465873f4611619ea	- CF Security Group for Koha
-# sg-0e581dd523bb8ab04  - CF Security Group for MySQL access
-security_groups: sg-0465873f4611619ea,sg-0e581dd523bb8ab04
 # shibboleth entries
-EntityID: "https://london.library.nd.edu/shibboleth"
-SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
-OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+EntityID: "https://koha.library.nd.edu/shibboleth"
+SSOEntityID: "http://www.okta.com/exk11bbdt3CuaDOPb357"
+OITOktaURL: "https://okta.nd.edu/app/exk11bbdt3CuaDOPb357/sso/saml/metadata"
 shibboleth_keys:
-  - { localfile: "london/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
-  - { localfile: "london/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
-  - { localfile: "london/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
-  - { localfile: "london/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
+  - { localfile: "sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+  - { localfile: "sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+  - { localfile: "sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+  - { localfile: "sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
