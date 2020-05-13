@@ -61,6 +61,8 @@ monitor-test
 mysql-prep
 mysql-prod
 nagios2
+noids-r7-prep
+noids-r7-prod
 noids-prod
 pg-prep
 pg-prod
