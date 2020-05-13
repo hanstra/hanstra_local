@@ -31,3 +31,4 @@ cd .
 # Address lookup plugin problems with python 2.7 and ansible 2.5.0rc1
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export AWS_DEFAULT_REGION=us-east-1
+export DISPLAY=localhost:0
