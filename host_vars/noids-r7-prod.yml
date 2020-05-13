@@ -1,0 +1,27 @@
+ansible_ssh_host: 172.22.13.98
+host: noids-r7-prod.library.nd.edu
+ssh_host: noids-r7-prod.lc.nd.edu
+lchost: noids-r7-prod.lc.nd.edu
+ansible_ssh_user: ec2-user
+lib_interface: eth0
+# Build and tag parameters
+ami_id: ami-0323c3dd2da7fb37d
+subnet_id: subnet-e95aa1c2
+instance_type: t3a.micro
+volumesize: 10
+device_name: '/dev/xvda'
+IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+#elastic_IP_alloc: eipalloc-0cd254760ae74e793
+tagName: noids-r7-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Production server - Noids"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "noids"
+tagSchedule: '*'
+tagBackup: True
+#  sg-0b0adbcb9e60498e9	- Noids Security group
+#  sg-03a3bdb188f5174a4 - peered-mysql-prod-Connect
+security_groups: 'sg-0b0adbcb9e60498e9,sg-03a3bdb188f5174a4'
+app_full_access: False
+...
