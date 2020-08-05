@@ -11,6 +11,7 @@ alias ape='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra
 alias ape2='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/ec2-user.pem" -u ec2-user'  #ansible-playbook as ec2-user
 alias apsg='ls ./vars; ansible-playbook --vault-password-file=~/.ssh/.vault_pass ap-security-group.yml'  #ansible-playbook for security groups
 # Set of commands if using awsume from ~/bin - older version
+alias avd='ansible-vault decrypt --vault-password-file=~/.ssh/.vault_pass '        #Ansible-vault decrypt with passwd
 alias ave='ansible-vault edit --vault-password-file=~/.ssh/.vault_pass '           #Ansible-vault edit with passwd
 alias avn='ansible-vault encrypt --vault-password-file=~/.ssh/.vault_pass '        #Ansible-vault encrypt with passwd
 alias avp='ansible-vault edit --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store' #Ansible-vault edit file
@@ -110,19 +111,22 @@ alias moer=more                                                                 
 alias moe=more                                                                     #handle misspelling of more
 alias mor=more                                                                     #handle misspelling of more
 alias mr='more R*'                                                                 #handle misspelling of more
+alias cdku='npm update aws-cdk -g'                                                 #Update local cdk software
+alias npc='npx npm-check-updates -u'                                               #Check for npx updates 
+alias npchk='npx npm-check-updates -u'                                             #Check for npx updates 
+alias npi='npm install'                                                            #Run npm install
+alias npr='npm run watch'                                                          #Run the npm run watch command
 alias pant='puppet agent --test --noop'                                            #run the puppet agent with noop
 alias papg='puppet apply --modulepath=/global/puppet_standalone/modules'           #run the puppet apply
 alias papp='puppet apply --modulepath=. '                                          #run the puppet apply here
 alias pat='puppet agent --test'                                                    #run the puppet agent update
 alias pat='puppet agent --test'                                                    #run the puppet agent update
 alias pdc='pushd ./deploy/cloudformation; ls'                                      #push down in security_group repo
-alias pip='/usr/local/bin/pip3'                                                    #pip alias to pip3
 alias po='sp;pol'                                                                  #pop directory from stack, list
 alias psa='/bin/ps -ef|more'                                                       #show all processes, pipe more
 alias pse='/bin/ps -ef|more'                                                       #show all processes, pipe more
 alias pu='sp; pul'                                                                 #push directory onto stack, list
 alias pud='pushd ./deploy/cloudformation; ls'                                      #push down in security_group repo
-alias python='/usr/local/bin/python3'                                              #alias python to be python3
 alias ren=/bin/mv                                                                  #alias ren to mv
 alias r40='/bin/stty rows 40'                                                      #equivalent of resize for Solaris
 alias rh='rehash'                                                                  #redo command hash table

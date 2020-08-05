@@ -34,6 +34,8 @@ fi
 #  Add python path
 #
 if [ -d /usr/local/lib/python3.7/site-packages ]; then
+  alias pip='/usr/local/bin/pip3'                                                    #alias pip to be pip3
+  alias python='/usr/local/bin/python3'                                              #alias python to be python3
   PATH=$PATH:/usr/local/lib/python3.7/site-packages
 fi
 #
