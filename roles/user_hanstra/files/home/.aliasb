@@ -114,7 +114,9 @@ alias mr='more R*'                                                              
 alias cdku='npm update aws-cdk -g'                                                 #Update local cdk software
 alias npc='npx npm-check-updates -u'                                               #Check for npx updates 
 alias npchk='npx npm-check-updates -u'                                             #Check for npx updates 
+#alias npchk='npm --depth 1 update'                                                 #Check for npm updates 
 alias npi='npm install'                                                            #Run npm install
+alias npb='npm run build'                                                          #Run the npm run build command
 alias npr='npm run watch'                                                          #Run the npm run watch command
 alias pant='puppet agent --test --noop'                                            #run the puppet agent with noop
 alias papg='puppet apply --modulepath=/global/puppet_standalone/modules'           #run the puppet apply

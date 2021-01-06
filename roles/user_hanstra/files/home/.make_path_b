@@ -36,7 +36,7 @@ fi
 if [ -d /usr/local/lib/python3.7/site-packages ]; then
   alias pip='/usr/local/bin/pip3'                                                    #alias pip to be pip3
   alias python='/usr/local/bin/python3'                                              #alias python to be python3
-  PATH=$PATH:/usr/local/lib/python3.7/site-packages
+  PATH=/bin:/usr/bin:/usr/sbin:/sbin:/etc:/usr/local/bin:/usr/local/mysql/bin:~thanstra/bin:~hanstra/bin:~hanstra/ec2/bin:~hanstra/.local/lib/aws/bin:/usr/local/lib/python3.7/site-packages
 fi
 #
 #  Add Admin paths
