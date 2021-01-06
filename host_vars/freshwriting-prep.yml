@@ -3,6 +3,7 @@ host: freshwriting-prep.library.nd.edu
 lchost: freshwriting-prep.lc.nd.edu
 ssh_host: freshwriting-prep.lc.nd.edu
 ansible_ssh_user: ec2-user
+host_alias: freshwriting-prep.library.nd.edu
 # Build and tag parameters
 ami_id: ami-0b898040803850657
 subnet_id: subnet-84c977f3
@@ -18,7 +19,8 @@ tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
 tagBackup: True
 #  sg-044b69e3d8b3c9941 - peered-freshwriting-sg 
 #  sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
-security_groups: 'sg-044b69e3d8b3c9941, sg-0e581dd523bb8ab04'
+#  sg-08ee427e6099723eb - peered-mysql-prep-serverless-Connect
+security_groups: 'sg-044b69e3d8b3c9941, sg-08ee427e6099723eb'
 # Add the Secondary disk for shared data - Need VolumeID of disk
 SecondaryVolume: vol-0863a1e7f4548bbe8
 volume_device: /dev/sdb
@@ -30,7 +32,8 @@ partition:
  - { FSType: ext4, DeviceName: /dev/sdb1, MountPoint: /home/app/freshwriting/shared }
 # Application parameters
 freshwriting_branch: "master"
-fwdbserver: peered-mysql-prep.lc.nd.edu
+fwdbserver: peered-mysql-prep-serverless.cluster-cyjao3pjfcvf.us-east-1.rds.amazonaws.com
+#fwdbserver: peered-mysql-prep-serverless.lc.nd.edu
 fwdb: freshwriting_prep
 fwdbuser: freshwriting_prep_dba
 fwdb_pass_ps: /all/freshwriting/prep/database_password

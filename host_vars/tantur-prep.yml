@@ -7,9 +7,11 @@ admin_host_alias: tantur-admin-prep.library.nd.edu
 # Build and tag parameters
 subnet_id: subnet-ac5aa187
 ami_id: ami-02a3e0c2da41029b8
-instance_type: t3a.large
-elastic_IP_alloc: eipalloc-b1da8780
+instance_type: t3a.xlarge
+elastic_IP_alloc: 'eipalloc-b1da8780'
 IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+volumesize: 25
+device_name: /dev/sda1
 tagName: libnd-tantur-prep
 tagContact: lib-esu-group@nd.edu
 tagDescription: "Tantur\ Koha\ server\ -\ prep"
@@ -38,11 +40,21 @@ zebra_version: "2.1.4"
 full_index: weekly
 koha_version: "19.11.04"
 en_lang: False
-EntityID: "https://tantur.library.nd.edu/shibboleth"
-SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
-OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+new_install: False
+# shibboleth entries
+EntityID: "https://koha.library.nd.edu/shibboleth"
+SSOEntityID: "http://www.okta.com/exk11bbdt3CuaDOPb357"
+OITOktaURL: "https://okta.nd.edu/app/exk11bbdt3CuaDOPb357/sso/saml/metadata"
 shibboleth_keys:
-  - { localfile: "tantur/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
-  - { localfile: "tantur/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
-  - { localfile: "tantur/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
-  - { localfile: "tantur/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
+  - { localfile: "sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+  - { localfile: "sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+  - { localfile: "sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+  - { localfile: "sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
+#EntityID: "https://tantur.library.nd.edu/shibboleth"
+#SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
+#OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+#shibboleth_keys:
+#  - { localfile: "tantur/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+#  - { localfile: "tantur/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+#  - { localfile: "tantur/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+#  - { localfile: "tantur/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }

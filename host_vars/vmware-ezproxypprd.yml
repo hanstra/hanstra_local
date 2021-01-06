@@ -1,7 +1,0 @@
-ansible_ssh_host: 129.74.223.188
-host: ezproxypprd.library.nd.edu
-tagName: ezproxypprd
-tagEnvironment: pre_production
-tagService: ezproxy
-EZProxyVersion: 6-5-0
-lastEZProxyVersion: 6-4-4

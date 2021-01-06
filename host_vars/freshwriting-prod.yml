@@ -3,6 +3,7 @@ host: freshwriting-prod.library.nd.edu
 lchost: freshwriting-prod.lc.nd.edu
 ssh_host: freshwriting-prod.lc.nd.edu
 ansible_ssh_user: ec2-user
+host_alias: freshwriting.nd.edu
 # Build and tag parameters
 ami_id: ami-0b898040803850657
 subnet_id: subnet-84c977f3
@@ -33,16 +34,16 @@ freshwriting_branch: "master"
 fwdbserver: peered-mysql-prod.lc.nd.edu
 fwdb: freshwriting_prod
 fwdbuser: freshwriting_prod_dba
-fwdb_pass_ps: /all/freshwriting/prod/database_password
-fw_secret_key_ps: /all/freshwriting/prod/devise_secrets
+fwdb_pass_ps: /all/freshwriting/production/database_password
+fw_secret_key_ps: /all/freshwriting/production/devise_secrets
 passenger_version: 5.3.4
 passenger_root: /usr/local/share/gems/gems/passenger-5.3.4
 passenger_ruby: /usr/bin/ruby
 nginx_root: /home/app/freshwriting/current/public
 nginx_access_log: /opt/nginx/logs/access.log
 nginx_error_log: /opt/nginx/logs/error.log
-ssl_certificate: library_nd_edu.chain.nginx.cer
-ssl_key: library_nd_edu.key
+ssl_certificate: freshwriting_nd_edu_combined.cer
+ssl_key: freshwriting.nd.edu.key
 Rails_ENV: production
 second_volume: False
 solr_install_version: 7.7.2

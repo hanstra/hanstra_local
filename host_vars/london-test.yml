@@ -11,6 +11,8 @@ subnet_id: subnet-ac5aa187
 instance_type: t3a.medium
 elastic_IP_alloc: eipalloc-0fa028cfca75814fe
 IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+volumesize: 10
+device_name: /dev/sda1
 tagName: libnd-london-test
 tagContact: lib-esu-group@nd.edu
 tagDescription: "London Koha 19-11 - test"
@@ -38,6 +40,7 @@ full_index: daily
 koha_version: "19.11.04"
 http_notify_groups: admins
 en_lang: True
+new_install: False
 # shibboleth entries
 EntityID: "https://koha.library.nd.edu/shibboleth"
 SSOEntityID: "http://www.okta.com/exk11bbdt3CuaDOPb357"

@@ -1,44 +1,44 @@
-ansible_ssh_host: 172.22.9.105
-host: rome-prep.library.nd.edu
-admin_host: rome-admin-prep.library.nd.edu
-lchost: rome-prep.lc.nd.edu
-host_alias : rome-prep.library.nd.edu
-admin_host_alias: rome-admin-prep.library.nd.edu
+ansible_ssh_host: 172.22.9.106
+host: tantur-prod-2020.library.nd.edu
+admin_host: tantur-admin-prod-2020.library.nd.edu
+lchost: tantur-prod-2020.lc.nd.edu
+host_alias : tantur.library.nd.edu
+admin_host_alias: tantur-admin.library.nd.edu
 # Build and tag parameters
 subnet_id: subnet-ac5aa187
 ami_id: ami-02a3e0c2da41029b8
-instance_type: t3a.medium
-elastic_IP_alloc: eipalloc-a5ce9394
+instance_type: t3a.xlarge
+#elastic_IP_alloc: 
 IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
-volumesize: 10
+volumesize: 25
 device_name: /dev/sda1
-tagName: libnd-rome-prep
+tagName: tantur-prod-2020
 tagContact: lib-esu-group@nd.edu
-tagDescription: "Rome\ Koha\ server\ -\ prep"
-tagEnvironment: prep
+tagDescription: "Tantur\ Koha\ server\ -\ prod"
+tagEnvironment: production
 tagOwner: hanstra
-tagService: "Rome\ Koha\ V19.11"
-tagSchedule: 'Mon 2-18,Tue 2-18,Wed 2-18,Thu 2-18,Fri 2-18'
+tagService: "Tantur\ Koha\ V19.11"
+tagSchedule: '*'
 tagBackup: True
 # sg-0465873f4611619ea  - CF Security Group for Koha
 # sg-08d7b6c2c1d102aad  - CF Security Group for GG MySQL access
 security_groups: sg-0465873f4611619ea,sg-08d7b6c2c1d102aad
 # Koha variables
-kohadb: rome_prep
-kohadbuser: rome_prep_dba
+kohadb: tantur_prod_2020
 kohadbserver: peered-gg-mysql-prod.lc.nd.edu
-kohadb_pass_ps: /all/koha-rome/prep/database_password
+kohadbuser: tantur_prod_dba
+kohadb_pass_ps: /all/koha-tantur/prod/database_password
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin
 webserver_domain: 'library.nd.edu'
 zebra_full_hour: 17
 zone_changed: True
-gwTimeZone: "Europe/Rome"
-koha_notices: False
+gwTimeZone: "Asia/Jerusalem"
+koha_notices: True
+http_notify_groups: admins
 yaz_version: "5.28.0"
 zebra_version: "2.1.4"
-full_index: daily
+full_index: weekly
 koha_version: "19.11.04"
-http_notify_groups: admins
 en_lang: False
 new_install: False
 # shibboleth entries
@@ -50,3 +50,11 @@ shibboleth_keys:
   - { localfile: "sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
   - { localfile: "sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
   - { localfile: "sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
+#EntityID: "https://tantur.library.nd.edu/shibboleth"
+#SSOEntityID: "http://www.okta.com/exkj1z509v8BGbxFN356"
+#OITOktaURL: "https://dev-364467.okta.com/app/exkj1z509v8BGbxFN356/sso/saml/metadata"
+#shibboleth_keys:
+#  - { localfile: "tantur/sp-signing-key.pem", remote_file: "sp-signing-key.pem",  mode: 600 }
+#  - { localfile: "tantur/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
+#  - { localfile: "tantur/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
+#  - { localfile: "tantur/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }

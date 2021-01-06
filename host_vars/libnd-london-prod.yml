@@ -30,6 +30,7 @@ full_index: daily
 koha_version: "18.11.04"
 http_notify_groups: admins
 en_lang: True
+new_install: False
 # sg-0465873f4611619ea	- CF Security Group for Koha
 # sg-08d7b6c2c1d102aad  - CF Security Group for GG MySQL access
 security_groups: sg-0465873f4611619ea,sg-08d7b6c2c1d102aad

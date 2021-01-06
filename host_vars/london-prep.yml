@@ -10,6 +10,8 @@ ami_id: ami-02a3e0c2da41029b8
 instance_type: t3a.medium
 elastic_IP_alloc: eipalloc-0e1b4c3f
 IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+volumesize: 10
+device_name: /dev/sda1
 tagName: libnd-london-prep
 tagContact: lib-esu-group@nd.edu
 tagDescription: "London\ Koha\ server\ -\ prep"
@@ -19,11 +21,11 @@ tagService: "London\ Koha\ V19.11"
 tagSchedule: 'Mon 3-18,Tue 3-18,Wed 3-18,Thu 3-18,Fri 3-18'
 tagBackup: True
 # sg-0465873f4611619ea	- CF Security Group for Koha
-# sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
-security_groups: sg-0465873f4611619ea,sg-0e581dd523bb8ab04
+# sg-08d7b6c2c1d102aad - peered-gg-mysql-prod-Connect
+security_groups: sg-0465873f4611619ea,sg-08d7b6c2c1d102aad
 # Koha variables
 kohadb: london_prep
-kohadbserver: peered-mysql-prep.lc.nd.edu
+kohadbserver: peered-gg-mysql-prod.lc.nd.edu
 kohadbuser: london_prep_dba
 kohadb_pass_ps: /all/koha-london/prep/database_password
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin
@@ -38,6 +40,7 @@ full_index: daily
 koha_version: "19.11.04"
 http_notify_groups: admins
 en_lang: True
+new_install: False
 # shibboleth entries
 EntityID: "https://koha.library.nd.edu/shibboleth"
 SSOEntityID: "http://www.okta.com/exk11bbdt3CuaDOPb357"

@@ -1,0 +1,37 @@
+---
+ansible_ssh_host: 172.22.9.100
+host: coral-prep.library.nd.edu
+ssh_host: coral-prep.lc.nd.edu
+lchost: coral-prep.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+ami_id: ami-0d75792cec3bb5c2b
+subnet_id: subnet-ac5aa187
+instance_type: t3a.micro
+elastic_IP_alloc: eipalloc-dc2bfaa5
+IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
+tagName: libnd-coral-prep
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "prep server - Coral - AWS"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "coral"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+#  sg-0751cf6750dce9bc4	- peered-coral-sg - CF based SG created for Coral
+#  sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
+#  sg-08ee427e6099723eb - peered-mysql-prep-serverless-Connect
+security_groups: 'sg-0751cf6750dce9bc4, sg-08ee427e6099723eb'
+# Application parameters
+db_server : peered-mysql-prep-serverless.lc.nd.edu
+db_user: coral_prep_dba
+ServerRoot: /etc/httpd
+ServerAlias: coral-prep.library.nd.edu
+ServerAdmin: hanstra@nd.edu
+DocumentRoot: /home/app/coral
+apache_user: app
+apache_group: app
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+...
