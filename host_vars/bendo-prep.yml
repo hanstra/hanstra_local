@@ -1,0 +1,24 @@
+---
+ansible_ssh_host: 10.71.1.100
+ansible_host: bendo-prep.library.nd.edu
+host: bendo-prep.library.nd.edu
+lchost: bendo-prep.lc.nd.edu
+tagName: bendo-r7-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 bendo-prep server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "bendo"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.100"
+app_full_access: False
+# Variables for VLAN1036 connection and mount
+vlan1036_interface: ens256
+vlan1036_ip: 192.168.49.20
+dternity_mountpoint: /mnt/bendo
+dternity_server: dternity-vlan1036
+dternity_oit_mountpoint: /shares/library_CurateND_preprod
+rh_packages:
+ - mariadb
+...

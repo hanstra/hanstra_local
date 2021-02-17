@@ -1,0 +1,23 @@
+---
+ansible_ssh_host: 10.71.1.85
+ansible_host: curatesolr-prep.library.nd.edu
+host: curatesolr-prep.library.nd.edu
+lchost: curatesolr-prep.lc.nd.edu
+tagName: curatesolr-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 curatesolr-prep server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "curatesolr-prep"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.85"
+rh_packages:
+ - mariadb
+app_full_access: True
+# Solr variables
+#solr_install_version: 6.6.6
+solr_install_version: 7.7.3
+solr_port: 8443
+solr_core: curate
+...

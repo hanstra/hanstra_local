@@ -1,0 +1,40 @@
+---
+ansible_ssh_host: 10.71.1.70
+ansible_host: bendo-prod.library.nd.edu
+host: bendo-prod.library.nd.edu
+lchost: bendo-prod.lc.nd.edu
+tagName: bendo-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 bendo-r7-prod server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "bendo"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.70"
+app_full_access: False
+# Variables for VLAN1036 connection and mount
+vlan1036_interface: ens256
+vlan1036_ip: 192.168.49.21
+dternity_mountpoint: /mnt/bendo
+dternity_server: dternity-vlan1036
+dternity_oit_mountpoint: /shares/library_CurateND_prod
+# Collectd parameters
+collectd_process: True
+collectd_process_checks:
+ - { process: "svlogd" }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'bendo-prod'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+process_checks:
+  - { name: "bendo",
+    comparison: "LessThanThreshold",
+    threshold: 1,
+    instance: 'svlogd'}
+...

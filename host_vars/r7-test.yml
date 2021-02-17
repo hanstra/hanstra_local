@@ -1,0 +1,15 @@
+---
+#ansible_ssh_host: 129.74.250.200
+ansible_ssh_host: 10.71.1.203
+lchost: r7-test.lc.nd.edu
+host: r7-test.library.nd.edu
+tagName: r7-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 test server'
+tagEnvironment: test
+tagOwner: hanstra
+tagService: "RHEL7"
+http_notify_groups: admins,DLT
+lc_interface: "ens224"
+lc_ip: "10.71.1.203"
+...

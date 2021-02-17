@@ -1,0 +1,15 @@
+ansible_ssh_host: 172.22.9.29
+host: archivesspace-prep.library.nd.edu
+ssh_host: archivesspace-prep.lc.nd.edu
+lchost: archivesspace-prep.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+tagName: archivesspace-prep
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "prep server - ArchivesSpace"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "archivesspace"
+tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagBackup: True
+# Application parameters

@@ -1,0 +1,41 @@
+---
+ansible_ssh_host: 10.71.1.52
+ansible_host: curatesolr-prod.library.nd.edu
+host: curatesolr-prod.library.nd.edu
+lchost: curatesolr-prod.lc.nd.edu
+tagName: curatesolr-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 curatesolr-prod server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "curatesolr-prod"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.52"
+rh_packages:
+ - mariadb
+app_full_access: True
+# Solr variables
+#solr_install_version: 6.6.6
+solr_install_version: 7.7.3
+solr_port: 8443
+solr_core: curate
+# Collectd parameters
+collectd_process: True
+collectd_process_checks:
+ - { process: "java" }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'curatesolr-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+process_checks:
+  - { name: "Solr",
+    comparison: "LessThanThreshold",
+    threshold: 1,
+    instance: 'java'}
+...

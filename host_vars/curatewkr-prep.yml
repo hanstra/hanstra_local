@@ -1,0 +1,18 @@
+---
+ansible_ssh_host: 10.71.1.12
+ansible_host: curatewkr-prep.library.nd.edu
+host: curatewkr-prep.library.nd.edu
+lchost: curatewkr-prep.lc.nd.edu
+tagName: curatewkr-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 curatewkr-prep server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "curatewkr-prep"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.12"
+app_full_access: True
+smb_mountpoint: /mnt/curatend-batch
+smb_server: //library.corpfs.nd.edu/DCNS/Library/Departmental/curatend-batch
+...

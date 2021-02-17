@@ -1,0 +1,20 @@
+ansible_ssh_host: 172.22.8.41
+host: libnd-dave.library.nd.edu
+ami_id: ami-08111162
+tagName: libnd-dave
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "AWS\ DAVE\ server"
+tagEnvironment: production
+tagOwner: ialford
+tagService: "DAVE"
+tagBackup: True
+http_notify_groups: admins,WSE
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'libnd-dave'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "ext4",
+      device: "xvda1",
+      path:   "/"}
