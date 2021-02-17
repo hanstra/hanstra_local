@@ -1,0 +1,17 @@
+---
+#- name: Perform some command on the remote server
+#  shell: /bin/df | sort > /tmp/{{host}}_mounts.csv
+
+- name: Perform some command on the remote server
+  shell: uname -a > /tmp/{{ host }}.out
+
+- name: Allow list to be copied
+  file:
+    path: /tmp/{{host}}.out
+    mode: '0777'
+
+- name: Copy the files to global storage
+  shell: scp /tmp/{{ host }}.out hanstra@john.lc.nd.edu:/global/sysadmin/compare/cmd_output
+  become: true
+  become_user: hanstra
+
