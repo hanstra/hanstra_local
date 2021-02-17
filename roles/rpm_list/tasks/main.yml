@@ -1,0 +1,21 @@
+---
+- name: Get list of packages installed
+  shell: /bin/rpm -qa | sort > /tmp/{{host}}.csv
+
+- name: Allow list to be copied
+  file:
+    path: /tmp/{{host}}.csv
+    mode: '0777'
+
+- name: Copy the files to global storage
+  shell: scp /tmp/{{ host }}.csv hanstra@john.lc.nd.edu:/global/sysadmin/compare/rpms
+  become: true
+  become_user: hanstra
+
+#- name: Copy file back to john
+# synchronize:
+#   src: /tmp/{{host}}.csv
+#   dest: /global/sysadmin/compare/rpms
+# delegate_to: john.library.nd.edu
+# become: true
+# become_user: hanstra
