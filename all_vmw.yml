@@ -1,0 +1,34 @@
+---
+- name: Ansible to all servers to update files
+  strategy: free
+  hosts:
+    - aleph23-prep
+    - aleph23-prod
+    - aleph23-test
+    - bendo-prep
+    - bendo-prod
+    - curate-test1
+    - curate-test2
+    - curate-test3
+    - curatesolr-prep
+    - curatesolr-prod
+    - curatesvr-prep
+    - curatesvr-prod
+    - curatewkr-prep
+    - curatewkr-prod
+    - ezproxy-prep
+    - ezproxy-prod
+    - ezproxy-test
+    - fedora38-prep
+    - fedora38-prod
+    - janus
+    - mysql-prep
+    - mysql-prod
+    - pg-prep
+    - pg-prod
+    - r7-test
+    - r7-test2
+  become: yes
+  become_user: root
+  roles:
+    - fix_sudo

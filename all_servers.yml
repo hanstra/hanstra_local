@@ -3,26 +3,35 @@
   strategy: free
   hosts:
     - aleph23-prep
+    - aleph23-prod
+    - aleph23-test
     - annex-prep
     - annex-prod
     - api-prep
     - api-prod
     - asset
-    - biographies
+    - clavius-prod
     - concordance-prod
-    - coral
-    - datamart-prod
-    - drawings
+    - coral-prep
+    - coral-prod
     - errbit
+    - ezproxy-prep
+    - ezproxy-prep-7
+    - ezproxy-prod
+    - ezproxy-prod-7
+    - ezproxy-test
+    - factotum-prep
     - factotum-prod
+    - freshwriting-prep
     - freshwriting-prod
     - gitolite
     - inquisition-prep
     - inquisition-prod
     - jenkins-test
     - jenkins
-    - jira-test
-    - jira
+    - james
+    - janus
+    - john
     - libnd-apache-prep
     - libnd-apache-prod
     - libnd-datamart-prep
@@ -30,32 +39,29 @@
     - libnd-events-prep
     - libnd-events-prod
     - libnd-jumpbox
-    - libnd-perlprod
     - libnd-rabbitmq-prep
     - libnd-rabbitmq-prod
     - london-prep
-    - london-prod
+    - london-prod-2020
     - london-test
-    - medieval-micro-prod
     - nagios2
-    - noids-prod
+    - noids-r7-prod
+    - noids-r7-prep
     - rbsc-prep
     - rbsc-prod
     - repository-prep
     - repository-prod
     - reserves-prep
     - reserves-prod
-    - rome-prep-18-11
+    - rome-prep
     - rome-prod
+    - rome-prod-2020
     - siphon
     - sipity-prep
     - sipity-prod
-    - tantur-prep-18-11
+    - tantur-prep
     - tantur-prod
-    - vufind-prod
-    - website-1
-    - website-2
-    - website-3
+    - tantur-prod-2020
   become: yes
   become_user: root
   roles:

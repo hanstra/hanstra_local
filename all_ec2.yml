@@ -1,0 +1,56 @@
+---
+- name: Ansible to all servers to update files
+  strategy: free
+  hosts:
+#    - annex-prep
+#    - annex-prod
+#    - api-prep
+#    - api-prod
+#    - clavius-prod
+#    - concordance-prod
+#    - coral-prep
+#    - coral-prod
+#    - cw-monitor
+#    - factotum-prep
+#    - factotum-prod
+#    - freshwriting-prep
+#    - freshwriting-prod
+#    - gitolite
+#    - inquisition-prep
+#    - inquisition-prod
+#    - libnd-apache-prep
+#    - libnd-apache-prod
+#    - libnd-datamart-prep
+#    - libnd-datamart-prod
+#    - libnd-dave
+#    - libnd-events-prep
+#    - libnd-events-prod
+#    - libnd-jumpbox
+#    - libnd-rabbitmq-prep
+#    - libnd-rabbitmq-prod
+#    - london-prep
+#    - london-prod-2020
+#    - london-test
+#    - noids-r7-prod
+##    - noids-r7-prep
+#    - rbsc-prep
+#    - rbsc-prod
+#    - repository-prep
+#    - repository-prod
+#    - reserves-prep
+#    - reserves-prod
+#    - rome-prep
+#    - rome-prod-2020
+#    - scsearch-prod
+#    - sipity-prep
+#    - sipity-prod
+#    - tantur-prep
+#    - tantur-prod-2020
+    - website-1
+    - website-2
+    - website-3
+    - website-4
+  become: yes
+  become_user: root
+  roles:
+    - fix_sudo
