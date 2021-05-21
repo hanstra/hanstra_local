@@ -1,0 +1,31 @@
+ansible_ssh_host: 172.22.9.41
+host: annex-ims-prep.library.nd.edu
+ssh_host: annex-ims-prep.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+tagName: annex-ims-prep
+tagContact: web-and-software-engineering-group@nd.edu
+tagDescription: "prep server - Annex 2021 build"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "annex-ims"
+tagSchedule: Mon 10-22,Tue 10-22,Wed 10-22,Thu 10-22,Fri 10-22,Sat 10-22,Sun 10-22
+tagBackup: True
+# Application parameters
+passenger_version: 6.0.8
+passenger_root: /usr/local/share/gems/gems/passenger-6.0.8
+passenger_ruby: /usr/bin/ruby
+annex_pg_server: libnd-aurora-pg.lc.nd.edu
+annex_pg_db: annex_ims_prep
+annex_pg_user: annex_prep_dba
+nginx_root: /home/app/annex-ims/current/public
+nginx_access_log: /opt/nginx/logs/access.log
+nginx_error_log: /opt/nginx/logs/error.log
+Rails_ENV: prep
+second_volume: False
+solr_install_version: 8.7.0
+solr_port: 8080
+solr_core: annex-ims
+repo_solr_config: /home/app/annex-ims/current/solr_conf
+rails_log_file: /home/app/annex-ims/shared/log/prep.log
+sneakers_log_file: /home/app/annex-ims/shared/log/sneakers.log
