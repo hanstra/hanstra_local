@@ -10,7 +10,7 @@ alias apd='ansible-playbook --ssh-extra-args="-i ~/.ssh/libnd.pem" -u ec2-user' 
 alias ape='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/libnd.pem"'  #ansible-playbook as ec2-user
 alias ape2='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/ec2-user.pem" -u ec2-user'  #ansible-playbook as ec2-user
 alias apsg='ls ./vars; ansible-playbook --vault-password-file=~/.ssh/.vault_pass ap-security-group.yml'  #ansible-playbook for security groups
-alias apt='"ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/testlibnd.pem"' #Deploy in testlibnd
+alias apt='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/testlibnd.pem"' #Deploy in testlibnd
 # Set of commands if using awsume from ~/bin - older version
 alias avd='ansible-vault decrypt --vault-password-file=~/.ssh/.vault_pass '        #Ansible-vault decrypt with passwd
 alias ave='ansible-vault edit --vault-password-file=~/.ssh/.vault_pass '           #Ansible-vault edit with passwd
