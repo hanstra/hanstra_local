@@ -66,6 +66,13 @@ if [ -d /exlibris/app/oracle/product/19c ]; then
    PATH=$PATH:/exlibris/app/oracle/product/19c/bin
 fi
 #
+#  Add Black Pearl CLI and env vars
+#
+if [ -d /opt/src/ds3_java_cli-5.1.2/bin ]; then
+  PATH=$PATH:/opt/src/ds3_java_cli-5.1.2/bin
+  source ~/.ssh/bp_creds
+fi
+#
 #  Set special path for metalib user
 #
 export PATH
