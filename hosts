@@ -10,11 +10,8 @@ annex-ims-prod
 archives-ims-prep
 archives-ims-prod
 archivesspace-prep
-as-prep
-as-prep-peered
-as-th-prep
-as-th-prep2
 as-test
+aspace-prep
 aspace-serverless-prep
 api-prep
 api-prod
@@ -65,6 +62,7 @@ mysql-prod
 noids-r7-prod
 noids-r7-prep
 peered-jumpbox
+peered-jumpbox-test
 pg-prep
 pg-prod
 r7-test
@@ -86,6 +84,7 @@ tantur-prep
 tantur-prod-2020
 testlibnd-jumpbox
 unpeered-jumpbox
+unpeered-jumpbox-test
 website-1
 website-2
 website-3
