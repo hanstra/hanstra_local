@@ -1,0 +1,25 @@
+# Need to open up server to full access to allow updates
+ansible_ssh_host: 54.87.26.86
+host: unpeered-jumpbox-tl.library.nd.edu
+ssh_host: unpeered-jumpbox-tl.lc.nd.edu
+lchost: unpeered-jumpbox-tl.lc.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+tagName: unpeered-jumpbox
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Unpeered jumpbox - TestLibND"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "jumpbox"
+tagSchedule: '*'
+tagBackup: True
+# Alarm parameters
+ami_id: 'For_alarm_only'
+Region: 'us-east-1'
+alarm_hostname: 'unpeered-jumpbox'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
