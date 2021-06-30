@@ -17,5 +17,3 @@ apt () { /usr/local/bin/ansible-playbook ./playbooks/${1} --check ; }
 
 sslb () { /usr/bin/ssh ${1}.library.nd.edu ; }
 sslc () { /usr/bin/ssh ${1}.lc.nd.edu ; }
-#taws () { /usr/bin/ssh -Y -i ~/.ssh/libnd.pem ec2-user@${1} }
-#echo 'run bash_functions'

@@ -25,10 +25,9 @@ fi
 # Add stuff for RedHat Linux systems
 #
 if [ -d /etc/sysconfig ]; then
-  PATH=$PATH:/sbin:/usr/kerberos/bin:/usr/kerberos/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin
-  PATH=$PATH:/usr/share/doc:/usr/share/xml:/usr/snapvault/bin:/usr/openv/netbackup/bin
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/X11R6/lib:/usr/lib/perl5
-  MANPATH=$MANPATH:/usr/kerberos/man:/usr/local/man:/usr/local/share/man
+  PATH=$PATH:/sbin:/usr/local/bin:/usr/local/sbin:/usr/share/doc:/usr/share/xml
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib/perl5
+  MANPATH=$MANPATH:/usr/local/man:/usr/local/share/man
 fi
 #
 #  Add python path
@@ -45,7 +44,7 @@ if [ -d /opt/admin ]; then
    PATH=$PATH:/opt/admin/bin:/opt/admin/aleph:/opt/admin/bkup:/opt/admin/dell:/opt/admin/security
 fi
 if [ -d /global ]; then
-   PATH=$PATH:/global/esuadmin/bin:/global/sysadmin/bin
+   PATH=$PATH:/global/esuadmin/bin
 fi
 if [ -d /admin ]; then
    PATH=$PATH:/admin/security
@@ -77,7 +76,7 @@ if [ -d /opt/src/ds3_java_cli-5.1.2/bin ]; then
   source ~/.ssh/bp_creds
 fi
 #
-#  Set special path for metalib user
+#  Export all paths 
 #
 export PATH
 export LD_LIBRARY_PATH
