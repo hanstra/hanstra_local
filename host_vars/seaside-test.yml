@@ -1,0 +1,17 @@
+ansible_ssh_host: 129.74.223.185
+host: seaside-test.library.nd.edu
+tagName: seaside-test
+tagEnvironment: production
+config_file: seaside-test.conf
+config_dest: /opt/nginx/conf/nginx.conf
+config_owner: app
+config_group: app
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'seaside-test.library.nd.edu'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "ext4",
+      device: "mapper/vg_dbpprd2-lv_root",
+      path:   "/"}

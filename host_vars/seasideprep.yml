@@ -1,0 +1,8 @@
+ansible_ssh_host: 129.74.223.30
+host: seasideprep.library.nd.edu
+tagName: seasideprep
+tagEnvironment: prep
+config_file: seasideprep.conf
+config_dest: /opt/nginx/conf/nginx.conf
+config_owner: app
+config_group: app

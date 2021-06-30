@@ -1,0 +1,34 @@
+---
+ansible_ssh_host: 10.71.1.18
+lib_ip: 129.74.223.250
+#lchost: honeycombprod-vm.lc.nd.edu
+# For compatibility with old setup, need to make library.nd.edu the lchost
+lchost: honeycombprod-vm.library.nd.edu
+host: honeycombprod-vm.library.nd.edu
+tagName: honeycombprod-vm
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'Honeycomb production server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "honeycomb"
+http_notify_groups: admins,DLT
+lc_interface: "eth1"
+lc_ip: "10.71.1.18"
+nagios_checks:
+ - { nagios_check_command: "home_disk",
+     nagios_check_name: "check_home_disk",
+     nagios_plugin_command: "check_disk -w 20% -c 10% -p /home "}
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'honeycombprod-vm.library.nd.edu'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "ext4",
+      device: "mapper/vg_dbpprd2-lv_root",
+      path:   "/"}
+  - { name: "home",
+      fstype: "ext4",
+      device: "sdc1",
+      path:   "/home"}
+...

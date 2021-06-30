@@ -1,0 +1,8 @@
+ansible_ssh_host: 129.74.250.118
+host: honeypotpprd.library.nd.edu
+tagName: honeypotpprd
+tagEnvironment: prep
+config_file: honeypotpprd.conf
+config_dest: /etc/httpd/conf.d/ssl.conf
+config_owner: app
+config_group: app
