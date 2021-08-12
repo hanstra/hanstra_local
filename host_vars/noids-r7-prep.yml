@@ -21,7 +21,7 @@ tagService: "noids"
 tagSchedule: '*'
 tagBackup: True
 #  sg-0b0adbcb9e60498e9	- Noids Security group
-#  sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
-security_groups: 'sg-0b0adbcb9e60498e9,sg-0e581dd523bb8ab04'
+#  sg-08ee427e6099723eb - peered-mysql-prep-serverless-Connect
+security_groups: 'sg-0b0adbcb9e60498e9,sg-08ee427e6099723eb'
 app_full_access: False
 ...

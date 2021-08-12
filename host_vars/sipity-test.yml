@@ -13,6 +13,8 @@ tagService: "sipity"
 tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18,Sun 17-23
 tagBackup: True
 # Application parameters
+app_full_access: true
+Rails_ENV: prep26
 passenger_version: 6.0.8
 passenger_root: /usr/local/share/gems/gems/passenger-6.0.8
 passenger_ruby: /usr/bin/ruby

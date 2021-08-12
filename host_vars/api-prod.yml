@@ -1,30 +1,29 @@
 ansible_ssh_host: 172.22.10.29
 host: api-prod.library.nd.edu
 ssh_host: api-prod.lc.nd.edu
+lchost: api-prod.lc.nd.edu
 ansible_ssh_user: ec2-user
 # Build and tag parameters
-ami_id: ami-009d6802948d06e52
+ami_id: ami-01e3b8c3a51e88954
 subnet_id: subnet-84c977f3
-instance_type: t2.micro
+instance_type: t3.medium
 #elastic_IP_alloc: eipalloc-0e5a6776b4f08444c
 tagName: libnd-api-prod
 tagContact: web-and-software-engineering-group@nd.edu
-tagDescription: "production server - API server - AWS"
+tagDescription: "Production server - API server - AWS"
 tagEnvironment: production
 tagOwner: hanstra
 tagService: "api"
-tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagSchedule: "*"
 tagBackup: True
-#  sg-bcf985d8 = libnd-ssh-nd       
-#  sg-8dba44f6 = libnd-just-aws
-security_groups: 'sg-bcf985d8,sg-bf10f9db,sg-8dba44f6'
+#  sg-0157f302f7a058ba4 = peered-api-SG
+#  sg-03a3bdb188f5174a4 = peered-mysql-prod access
+security_groups: "sg-0157f302f7a058ba4,sg-03a3bdb188f5174a4"
+api_gateway: '172.22.10.81:/libnd-nfs-api'
 # Application parameters
 passenger_version: 5.3.4
 passenger_root: /usr/local/share/gems/gems/passenger-5.3.4
 passenger_ruby: /usr/bin/ruby
-annex_pg_server: libnd-aurora-pg.lc.nd.edu
-annex_pg_db: api_prod
-annex_pg_user: api_prod_dba
 nginx_root: /home/app/api/current/public
 nginx_access_log: /opt/nginx/logs/access.log
 nginx_error_log: /opt/nginx/logs/error.log
@@ -36,3 +35,12 @@ solr_core: api
 repo_solr_config: /home/app/api/current/solr_conf
 rails_log_file: /home/app/api/shared/log/production.log
 sneakers_log_file: /home/app/api/shared/log/sneakers.log
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'api-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}

@@ -16,9 +16,6 @@ tagBackup: True
 passenger_version: 6.0.8
 passenger_root: /usr/local/share/gems/gems/passenger-6.0.8
 passenger_ruby: /usr/bin/ruby
-annex_pg_server: peered-postgres-prep.lc.nd.edu
-annex_pg_db: annex_archives_prep
-annex_pg_user: annex_archives_prep_dba
 nginx_root: /home/app/archives-ims/current/public
 nginx_access_log: /opt/nginx/logs/access.log
 nginx_error_log: /opt/nginx/logs/error.log

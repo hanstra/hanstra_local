@@ -1,6 +1,8 @@
 ansible_ssh_host: 172.22.9.60
 subnet_id: subnet-ac5aa187
 host: libnd-gitolite.library.nd.edu
+lchost: gitolite.lc.nd.edu
+ami_id: 'ami-5e8c9625'
 tagName: libnd-gitolite
 tagContact: lib-esu-group@nd.edu
 tagDescription: "Gitolite\ V3"
@@ -15,3 +17,16 @@ logical_volume: gitolite
 security_groups: sg-bcf985d8,sg-15f10c71,sg-f1a4e084
 addusers:
  - git
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'libnd-gitolite.library.nd.edu'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "ext4",
+      device: "xvda1",
+      path:   "/"}
+  - { name: "gitolite",
+      fstype: "ext4",
+      device: "mapper/git-gitolite",
+      path:   "/mnt/git/gitolite"}

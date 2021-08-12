@@ -1,18 +1,20 @@
 ---
 ansible_ssh_host: 172.22.10.22
-ami_id: ami-0922553b7b0369273
+ami_id: ami-0cc96feef8c6bbff3
 subnet_id: subnet-84c977f3
 #elastic_IP_id: eni-008ed084f28dd5a3e
 host: libnd-apache-prod.library.nd.edu
-tagName: libnd-apache-prod
+lchost: apache-prod.lc.nd.edu
+tagName: libnd-apache-prod2
 tagContact: lib-esu-group@nd.edu
 tagDescription: 'AWS Apache server - production'
 tagEnvironment: production
 tagOwner: hanstra
 tagService: "apache-server"
 tagBackup: True
-SecondaryVolume: vol-0ad6ea482d844da3b
-security_groups: 'sg-58b1023c,sg-bcf985d8,sg-8dba44f6,sg-e7f74a9f'
+SecondaryVolume: vol-07891be689e55daa8
+# Peered-websites - sg-0d14f476ba399d668
+security_groups: 'sg-0d14f476ba399d668'
 volume_device: "/dev/sdb"
 volume_group: websites 
 #Apache variables - base
@@ -21,14 +23,27 @@ ServerAdmin: "hanstra@nd.edu"
 ETD_alias: etd-prod.library.nd.edu
 apache_user: app
 apache_group: app
-httpd_port:
-  - { port: 80 }
-  - { port: 443 }
+smb_gateway: '//library.corpfs.nd.edu/DCNS/Library/Departmental/Systems'
+smb_mountpoint: '/mnt/corpfs_web'
+creds_user: '!lib-libguest'
 # Disk 2 parameters
 # Set to true during initial build or repartitioning
 rebuild_disk: true
 disk:
  - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Websites }
 partition:
- - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /home/app }
+ - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /vol2 }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname:  'libnd-apache-prod'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "xvda1",
+      path:   "/"}
+  - { name: "vol2",
+      fstype: "ext4",
+      device: "xvdb1",
+      path:   "/vol2"}
 ...

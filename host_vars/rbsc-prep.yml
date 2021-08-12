@@ -20,7 +20,7 @@ SecondaryVolume: vol-0872888046fdb0207
 security_groups: 'sg-bcf985d8,sg-8dba44f6,sg-58b1023c'
 #Apache variables - base
 ServerRoot: "/home/app/rarebooks"
-ServerAlias: "rarebooks.library.nd.edu"
+ServerAlias: "rbsc-prep.library.nd.edu"
 ServerAdmin: "hanstra@nd.edu"
 apache_user: app
 apache_group: app

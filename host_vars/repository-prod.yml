@@ -30,4 +30,13 @@ repopurl_db_name: repo_purl_prod
 repopurl_db_server: libnd-mysql-prod.lc.nd.edu 
 repopurl_extra_pkgs: golang1.9
 repopurl_rpms: golang
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'repository-prod'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "xvda1",
+      path:   "/"}
 ...

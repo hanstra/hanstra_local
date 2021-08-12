@@ -1,0 +1,23 @@
+---
+#ansible_python_interpreter: /usr/bin/python3
+ansible_ssh_host: 34.239.116.130
+ami_id: ami-0b69ea66ff7391e80
+host: unpeered-jumpbox.library.nd.edu
+lchost: unpeered-jumpbox.lc.nd.edu
+tagName: unpeered-jumpbox
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS jumpbox server'
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: "Jumpbox"
+tagBackup: True
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'libnd-jumpbox'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
+...

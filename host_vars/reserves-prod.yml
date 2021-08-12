@@ -1,12 +1,15 @@
 ansible_ssh_host: 172.22.10.43
 host: reserves-prod.library.nd.edu
+FQDN: reserves-prod.library.nd.edu
 ssh_host: reserves-prod.lc.nd.edu
+lchost: reserves-prod.lc.nd.edu
 ansible_ssh_user: ec2-user
 # Build and tag parameters
 ami_id: ami-0b898040803850657
 subnet_id: subnet-84c977f3
-instance_type: t3.small
+instance_type: t3a.medium
 elastic_IP_alloc: eipalloc-0c6dcecd0783022f7
+IAMProfile: 'iam-BasicInstanceProfile-1WT0D3FLL2TQV'
 tagName: libnd-reserves-prod
 tagContact: web-and-software-engineering-group@nd.edu
 tagDescription: "Production server - Reserves - AWS"
@@ -33,8 +36,21 @@ sneakers_log_file: /home/app/reserves/shared/log/sneakers.log
 volume_device: "/dev/xvdb"
 volume_group: reserves
 SecondaryVolume: 'vol-01b921bde6405c261'
-rebuild_disk: true
+rebuild_disk: false
 disk:
  - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Reserves }
 partition:
  - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /mnt/Ereserves }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'reserves-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
+  - { name: "Ereserves",
+      fstype: "ext4",
+      device: "nvme1n1p1",
+      path:   "/mnt/Ereserves"}

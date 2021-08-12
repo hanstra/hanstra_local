@@ -26,7 +26,7 @@ httpd_port:
   - { port: 80 }
   - { port: 443 }
 # Alarm parameters
-ami_id: 'For_alarm_only'
+ami_id: 'ami-08f3d892de259504d'
 Region: 'us-east-1'
 alarm_hostname: 'scsearch-prod'
 cpu_threshold: 30

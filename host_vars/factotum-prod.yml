@@ -1,3 +1,4 @@
+---
 ansible_ssh_host: 172.22.10.46
 host: factotum-prod.library.nd.edu
 ssh_host: factotum-prod.lc.nd.edu
@@ -30,3 +31,13 @@ nginx_root: /home/app/factotum/current/public
 nginx_access_log: /opt/nginx/logs/access.log
 nginx_error_log: /opt/nginx/logs/error.log
 Rails_ENV: production
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'factotum-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
+...

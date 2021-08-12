@@ -18,7 +18,6 @@ tagService: "freshwriting"
 tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
 tagBackup: True
 #  sg-044b69e3d8b3c9941 - peered-freshwriting-sg 
-#  sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
 #  sg-08ee427e6099723eb - peered-mysql-prep-serverless-Connect
 security_groups: 'sg-044b69e3d8b3c9941, sg-08ee427e6099723eb'
 # Add the Secondary disk for shared data - Need VolumeID of disk

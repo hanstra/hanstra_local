@@ -16,9 +16,9 @@ tagOwner: hanstra
 tagService: "factotum"
 tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
 tagBackup: True
-#  sg-0e581dd523bb8ab04 - peered-mysql-prep-Connect
+#  sg-08ee427e6099723eb - peered-mysql-prep-serverless-Connect
 #  sg-0760b80f2151c16ca	- peered-factotum-sg
-security_groups: 'sg-0e581dd523bb8ab04,sg-0760b80f2151c16ca	'
+security_groups: 'sg-08ee427e6099723eb,sg-0760b80f2151c16ca	'
 # Application parameters
 #bundler_version: 1.17.3
 passenger_version: 5.3.7

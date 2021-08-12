@@ -30,4 +30,17 @@ disk:
  - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Events }
 partition:
  - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /vol2 }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'libnd-events-prod'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "xvda1",
+      path:   "/"}
+  - { name: "vol2",
+      fstype: "ext4",
+      device: "xvdb1",
+      path:   "/vol2"}
 ...

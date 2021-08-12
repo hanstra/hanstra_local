@@ -15,7 +15,7 @@ tagSchedule: 'Mon 3-18,Tue 3-18,Wed 3-18,Thu 3-18,Fri 3-18'
 tagBackup: True
 # Koha variables
 kohadb: london_prep
-kohadbserver: peered-gg-mysql-prod.lc.nd.edu
+kohadbserver: peered-gg-mysql-serverless.lc.nd.edu
 kohadbuser: london_prep_dba
 kohadb_pass_ps: /all/koha-london/prep/database_password
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin

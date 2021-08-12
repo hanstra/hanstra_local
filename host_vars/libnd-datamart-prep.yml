@@ -14,16 +14,25 @@ tagDescription: "Prep server - Datamart - AWS2"
 tagEnvironment: prep
 tagOwner: hanstra
 tagService: "libnd-datamart"
-tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagSchedule: '*'
 tagBackup: True
 #  sg-0d0deeeb457b8c1d8 - peered-datamart-sg - CF based SG created for Datamart
-security_groups: 'sg-0d20080fb0ba554c7, sg-0e581dd523bb8ab04'
+security_groups: 'sg-0d0deeeb457b8c1d8, sg-0e581dd523bb8ab04'
 # Application parameters
-# Set to true during initial build or repartitioning
-volume_device: "/dev/xvdb"
-volume_group: datamart
-SecondaryVolume: 'vol-0e1144a0c1d003a60'
-rebuild_disk: true
+ServerRoot: "/etc/httpd"
+ServerAdmin: "hanstra@nd.edu"
+ServerAlias: "datamart-prep.library.nd.edu"
+DocumentRoot: /shared/datamart/data/datamart
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+apache_user: app
+apache_group: app
+git_branch: master
+# Set to true when building an empty database
+build_db: false
+SecondaryVolume: ''
+rebuild_disk: false
 disk:
  - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Datamart }
 partition:

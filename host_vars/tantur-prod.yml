@@ -1,34 +1,34 @@
-ansible_ssh_host: 172.22.9.116
-host: tantur-prep.library.nd.edu
-admin_host: tantur-admin-prep.library.nd.edu
-lchost: tantur-prep.lc.nd.edu
-host_alias : tantur-prep.library.nd.edu
-admin_host_alias: tantur-admin-prep.library.nd.edu
+ansible_ssh_host: 172.22.9.117
+host: tantur-prod.library.nd.edu
+admin_host: tantur-admin-prod.library.nd.edu
+lchost: tantur-prod.lc.nd.edu
+host_alias : tantur.library.nd.edu
+admin_host_alias: tantur-admin.library.nd.edu
 # Build and tag parameters
-tagName: tantur-prep
+tagName: tantur-prod
 tagContact: lib-esu-group@nd.edu
-tagDescription: "Tantur\ Koha\ server\ -\ prep"
-tagEnvironment: prep
+tagDescription: "Tantur Koha server - production"
+tagEnvironment: production
 tagOwner: hanstra
-tagService: "Tantur\ Koha\ V20.11"
-tagSchedule: 'Mon 1-22,Tue 1-22,Wed 1-18,Thu 1-18,Fri 1-18'
+tagService: "Tantur Koha V20.11"
+tagSchedule: '*'
 tagBackup: True
 # Koha variables
-kohadb: tantur_prep
-kohadbserver: peered-gg-mysql-serverless.lc.nd.edu
-kohadbuser: tantur_prep_dba
-kohadb_pass_ps: /all/koha-tantur/prep/database_password
+kohadb: tantur_prod
+kohadbserver: peered-koha-mysql-prod.lc.nd.edu
+kohadbuser: tantur_prod_dba
+kohadb_pass_ps: /all/koha-tantur/prod/database_password
 kohaadminlogin_ps: /all/koha/all/kohaadminlogin
 webserver_domain: 'library.nd.edu'
 zebra_full_hour: 17
 zone_changed: True
 gwTimeZone: "Asia/Jerusalem"
-koha_notices: False
+koha_notices: True
 http_notify_groups: admins
 yaz_version: "5.30.0"
 zebra_version: "2.2.2"
 full_index: weekly
-koha_version: "20.11.04"
+koha_version: "20.11"
 en_lang: False
 new_install: False
 # shibboleth entries
@@ -48,3 +48,12 @@ shibboleth_keys:
 #  - { localfile: "tantur/sp-signing-cert.pem", remote_file: "sp-signing-cert.pem",  mode: 644 }
 #  - { localfile: "tantur/sp-encrypt-key.pem", remote_file: "sp-encrypt-key.pem",  mode: 600 }
 #  - { localfile: "tantur/sp-encrypt-cert.pem", remote_file: "sp-encrypt-cert.pem", mode: 644 }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'tantur-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}

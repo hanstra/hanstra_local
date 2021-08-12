@@ -15,16 +15,14 @@ tagOwner: hanstra
 tagService: "api"
 tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
 tagBackup: True
-#  sg-bcf985d8 = libnd-ssh-nd       
-#  sg-8dba44f6 = libnd-just-aws
-security_groups: 'sg-bcf985d8,sg-bf10f9db,sg-8dba44f6'
+#  sg-0157f302f7a058ba4 - peered-api-sg - CF based SG created for API
+#  sg-08ee427e6099723eb - peered-mysql-prep-serverless-Connect
+security_groups: 'sg-0157f302f7a058ba4, sg-08ee427e6099723eb'
+api_gateway: '172.22.10.81:/libnd-nfs-api'
 # Application parameters
 passenger_version: 5.3.4
 passenger_root: /usr/local/share/gems/gems/passenger-5.3.4
 passenger_ruby: /usr/bin/ruby
-annex_pg_server: libnd-aurora-pg.lc.nd.edu
-annex_pg_db: annex_prep
-annex_pg_user: annex_prep_dba
 nginx_root: /home/app/api/current/public
 nginx_access_log: /opt/nginx/logs/access.log
 nginx_error_log: /opt/nginx/logs/error.log

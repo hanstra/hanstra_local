@@ -42,3 +42,12 @@ honeycomb_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/honeycom
 annexims_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/annexims_password', decrypt=True ) }}"
 qa_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/qa_password', decrypt=True ) }}"
 rabbitadmin_rmq_password: "{{ lookup('aws_ssm', '/all/rabbitmq/production/rabbitadmin_password', decrypt=True ) }}"
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'libnd-rabbitmq-prod'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}

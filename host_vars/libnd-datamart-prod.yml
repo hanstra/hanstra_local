@@ -6,7 +6,7 @@ ansible_ssh_user: ec2-user
 # Build and tag parameters
 ami_id: ami-00068cd7555f543d5
 subnet_id: subnet-84c977f3
-instance_type: t3a.small
+instance_type: t3a.medium
 elastic_IP_alloc: eipalloc-0cb6e0170cffe1c46
 tagName: libnd-datamart-prod
 tagContact: web-and-software-engineering-group@nd.edu
@@ -17,23 +17,59 @@ tagService: "libnd-datamart"
 tagSchedule: '*'
 tagBackup: True
 #  sg-0d0deeeb457b8c1d8 - peered-datamart-sg - CF based SG created for Datamart
-security_groups: 'sg-0d0deeeb457b8c1d8, sg-0e581dd523bb8ab04'
+security_groups: 'sg-0d0deeeb457b8c1d8'
+#
 # Application parameters
+#
 ServerRoot: "/etc/httpd"
 ServerAdmin: "hanstra@nd.edu"
-ServerAlias: "datamart-prod.library.nd.edu"
+ServerAlias: "datamart.library.nd.edu"
 DocumentRoot: /shared/datamart/data/datamart
 httpd_port:
   - { port: 80 }
   - { port: 443 }
 apache_user: app
 apache_group: app
-# Set to true during initial build or repartitioning
+git_branch: master
+# Set to true when building an empty database
+rebuild_disk: true
 volume_device: "/dev/xvdb"
-volume_group: datamart
-SecondaryVolume: 'vol-0174d1d203dc8b7fb'
-rebuild_disk: false
+volume_group: datamart_data
+SecondaryVolume: 'vol-012fb5286616ae6ed'
 disk:
- - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Datamart }
+ - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Events }
 partition:
  - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /dat2 }
+# Collectd
+collectd_file: True
+collectd_file_checks:
+ - { directory: "/shared/datamart/data/datamart/mysql",
+     instance: "datamart_error_check",
+     filename: "datamart-error.out",
+     mtime: "-5m" }
+#
+# Nagios special check
+#
+nagios_checks:
+ - { nagios_check_command: "check_datamart_error",
+     check_period: "Early Morning Check",
+     nagios_check_name: "check_datamart_error",
+     nagios_plugin_command: "check_file.pl -n /shared/datamart/data/datamart/mysql/datamart-error.out" }
+#Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'libnd-datamart-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
+  - { name: "dat2",
+      fstype: "ext4",
+      device: "nvme1n1p1",
+      path:   "/dat2"}
+file_checks:
+  - { name: "error",
+      comparison: "GreaterThanThreshold",
+      threshold: 0,
+      instance: 'datamart_error_check'}
