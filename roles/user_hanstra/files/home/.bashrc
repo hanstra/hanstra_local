@@ -12,6 +12,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 #  Create function to perform ls on cd
 #
 cdl () { cd ${1} ; ls -aFC --color ; }
@@ -32,3 +37,4 @@ cd .
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export AWS_DEFAULT_REGION=us-east-1
 export DISPLAY=localhost:0
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
