@@ -18,8 +18,12 @@ alias avn='ansible-vault encrypt --vault-password-file=~/.ssh/.vault_pass '     
 alias avp='ansible-vault edit --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store' #Ansible-vault edit file
 alias avps='ansible-vault edit --vault-password-file=~/.ssh/.vault_pass ./vars/parameter_store' #Ansible-vault edit file
 alias asl='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-libnd;aws-mfa --assume-role arn:aws:iam::230391840102:role/superAdmin --duration 43200; cd .'
+alias aslesu='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-libnd-esu ;aws-mfa --assume-role arn:aws:iam::230391840102:role/iam-ESUAdmin-PHO79WUYWVQ2 --duration 43200; cd .'
 alias aslf='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-libnd;aws-mfa --force --assume-role arn:aws:iam::230391840102:role/superAdmin --duration 43200; cd .'
+alias aspl='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-libnd;aws-mfa --assume-role arn:aws:iam::230391840102:role/PowerUserAccess --duration 43200; cd .'
+alias ass='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-staging;aws-mfa --assume-role arn:aws:iam::991462464411:role/superAdmin --duration 43200; cd .'
 alias ast='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-test;aws-mfa --assume-role arn:aws:iam::333680067100:role/superAdmin --duration 43200; cd .'
+alias astesu='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-test-esu;aws-mfa --assume-role arn:aws:iam::333680067100:role/iam-ESUAdmin-MMHI8SPSEUN8 --duration 43200; cd .'
 alias astf='export AWS_REGION=us-east-1;export AWS_PROFILE=superadmin-test;aws-mfa --force --assume-role arn:aws:iam::333680067100:role/superAdmin --duration 43200; cd .'
 alias asto='export AWS_REGION=us-west-2;exportAWS_PROFILE=superadmin-test;aws-mfa --assume-role arn:aws:iam::333680067100:role/superAdmin --duration 43200; cd .'
 alias astof='export AWS_REGION=us-west-2;exportAWS_PROFILE=superadmin-test;aws-mfa --force --assume-role arn:aws:iam::333680067100:role/superAdmin --duration 43200; cd .'
@@ -101,13 +105,15 @@ alias moer=more                                                                 
 alias moe=more                                                                     #handle misspelling of more
 alias mor=more                                                                     #handle misspelling of more
 alias mr='more R*'                                                                 #handle misspelling of more
-alias cdku='npm update aws-cdk -g'                                                 #Update local cdk software
+#alias cdku='npm update aws-cdk -g'                                                 #Update local cdk software
+alias cdk="npx aws-cdk@1.x"
+alias cdk2="npx aws-cdk@2.x"
 alias npc='npx npm-check-updates -u'                                               #Check for npx updates 
 alias npchk='npx npm-check-updates -u'                                             #Check for npx updates 
-#alias npchk='npm --depth 1 update'                                                 #Check for npm updates 
 alias npi='npm install'                                                            #Run npm install
 alias npb='npm run build'                                                          #Run the npm run build command
 alias npr='npm run watch'                                                          #Run the npm run watch command
+alias npupd='npm --depth 1 update'                                                 #Check for npm updates 
 alias pdc='pushd ./deploy/cloudformation; ls'                                      #push down in security_group repo
 alias po='sp;pol'                                                                  #pop directory from stack, list
 alias psa='/bin/ps -ef|more'                                                       #show all processes, pipe more
