@@ -7,13 +7,13 @@
     - aleph23-test
     - bendo-prep
     - bendo-prod
-    - curate-test1
-    - curate-test2
-    - curate-test3
     - curatesolr-prep
     - curatesolr-prod
     - curatesvr-prep
     - curatesvr-prod
+    - curate-test1
+    - curate-test2
+    - curate-test3
     - curatewkr-prep
     - curatewkr-prod
     - ezproxy-prep
@@ -24,11 +24,15 @@
     - janus
     - mysql-prep
     - mysql-prod
-    - pg-prep
-    - pg-prod
     - r7-test
     - r7-test2
+#    - seasideprep
+#    - seasideprod-vm
+#    - dmprod
+    - james
+    - john
+    - peter
   become: yes
   become_user: root
   roles:
-    - fix_sudo
+    - rpm_list
