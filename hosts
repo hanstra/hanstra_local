@@ -1,5 +1,6 @@
 
 # List of servers by their configuration files in host_vars
+stage-public
 aleph23-prep
 aleph23-prod
 aleph23-test
@@ -11,6 +12,7 @@ archives-ims-prep
 archives-ims-prod
 archivesspace-prep
 archivesspace-prod
+archivesspace-prod2
 bendo-prep
 bendo-prod
 clavius-prod
@@ -34,6 +36,7 @@ factotum-prep
 factotum-prod
 fedora38-prep
 fedora38-prod
+fedora38-seaside
 freshwriting-prep
 freshwriting-prod
 gitolite
@@ -76,6 +79,7 @@ rome-prep
 rome-prod
 rome-test
 scsearch-prod
+sc-search-prod
 seasideprep
 seasideprod-vm
 seaside-test
