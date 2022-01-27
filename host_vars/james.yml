@@ -1,7 +1,7 @@
 ---
 ansible_ssh_host: 129.74.250.241
 ansible_host: james.library.nd.edu
-lchost: james.lc.nd.edu
+lchost: james.library.nd.edu
 host: james.library.nd.edu
 tagName: james
 tagContact: lib-esu-group@nd.edu
@@ -11,16 +11,21 @@ tagOwner: hanstra
 tagService: 'Storage'
 volume_device: '/dev/sdb1'
 volume_group: 'james_big_vg'
-#lvol: 
-#  - { volumename : aleph_ora_arch, volumesize: '1000g', mountpoint: /aleph_ora_arch}
-#  - { volumename : aleph2_tmp, volumesize: '500g', mountpoint: /aleph2_tmp}
-#  - { volumename : aleph3_ora00, volumesize: '1000g', mountpoint: /ora00}
-#  - { volumename : aleph3_tmp, volumesize: '500g', mountpoint: /aleph3_tmp}
-#  - { volumename : gdrive, volumesize: '1000g', mountpoint: /gdrive }
-#  - { volumename : global_bkup, volumesize: '1000g', mountpoint: /global_bkup }
-#  - { volumename : history, volumesize: '3000g', mountpoint: /history }
-#  - { volumename : logs, volumesize: '1000g', mountpoint: /logs }
-#  - { volumename : r6_oit, volumesize: '500g', mountpoint: /R6_soft_bkup }
+lvol: 
+  - { volumename : black_pearl, volumesize: '2000g', mountpoint: /bp_tmp }
+  - { volumename : gdrive, volumesize: '2000g', mountpoint: /gdrive }
+  - { volumename : global_bkup, volumesize: '1000g', mountpoint: /global_bkup }
+  - { volumename : history, volumesize: '3000g', mountpoint: /history }
+  - { volumename : a23-prep-tmp, volumesize: '500g', mountpoint: /aleph23-prep-tmp}
+  - { volumename : a23-prod-tmp, volumesize: '500g', mountpoint: /aleph23-prod-tmp}
+  - { volumename : oracle_00, volumesize: '800g', mountpoint: /ora_ora00}
+  - { volumename : oracle_logs, volumesize: '4000g', mountpoint: /oracle_logs}
+  - { volumename : old_global, volumesize: '800g', mountpoint: /old_global }
+  - { volumename : syslog, volumesize: '1000g', mountpoint: /logs }
+#  - { volumename : backup, volumesize: '100g', mountpoint: /backup }
+#  - { volumename : oracle_01, volumesize: '800g', mountpoint: /ora_ora01}
+#  - { volumename : oracle_02, volumesize: '800g', mountpoint: /ora_ora02}
+#  - { volumename : oracle_03, volumesize: '800g', mountpoint: /ora_ora03}
 #nagios_checks:
 # - { nagios_check_command: "backup_error",
 #     nagios_check_name: "check_backup_error",
@@ -33,7 +38,12 @@ rh_packages:
      - diffutils
      - finger
      - gcc
+     - gd
+     - gd-devel
      - git
+     - httpd
+     - libcmpiCppImpl0
+     - libpng-devel
      - lsof
      - ltrace
      - man
@@ -41,12 +51,17 @@ rh_packages:
      - mysql
      - mysql-devel
      - net-tools
+     - net-snmp-utils
      - ntp
      - openssh-clients
+     - openwsman-client
+     - openwsman-server
      - parted
      - perl
      - perl-devel
      - postgresql-devel
+     - sblim-sfcb
+     - sblim-sfcc
      - strace
      - tcpdump
      - tmux
@@ -56,14 +71,17 @@ rh_packages:
      - zip
 sudousers:
  - thanstra
-#
-#     - perl-CPAN
-#     - perl-DateTime
-#     - perl-DBI
-#     - perl-Env
-#     - perl-Getopt-Long
-#     - perl-JSON
-#     - perl-MIME-Lite
-#     - perl-Text-CSV
-#     - perl-YAML-LibYAML
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'james'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+  - { name: "a23-prep",
+      fstype: "ext4",
+      device: "mapper/james_big_vg-a23--prep--tmp",
+      path:   "/aleph23-prep-tmp"}
 ...
