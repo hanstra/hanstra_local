@@ -2,20 +2,7 @@
 - name: Ansible to server for rpm_list
   strategy: free
   hosts:
-    - bendo-prod
-    - annex-prod
-    - curatesolr-prod
-    - curatesvr-prod
-    - curatewkr-prod
-    - noids-r7-prod
-    - rbsc-prod
-    - repository-prod
-    - sipity-prod
-    - fedora38-prod
-    - ezproxy-prod
-    - pg-prod
-    - mysql-prod
-    - curate-test1
+    - sipity-prep
   become: yes
   become_user: root
   roles:
