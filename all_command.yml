@@ -5,15 +5,15 @@
 #    - aleph23-prep
 #    - aleph23-prod
 #    - aleph23-test
-#    - api-prep
-#    - api-prod
+    - api-prep
+    - api-prod
     - archives-ims-prep
     - archivesspace-prep
     - archivesspace-prod
 #    - bendo-prep
 #    - bendo-prod
-#    - clavius-prod
-#    - concordance-prod
+    - clavius-prod
+    - concordance-prod
 #    - curatesolr-prep
 #    - curatesolr-prod
 #    - curatesvr-prep
@@ -23,54 +23,50 @@
 #    - curate-test3
 #    - curatewkr-prep
 #    - curatewkr-prod
-#    - cw-monitor
+    - cw-monitor
 #    - cw-monitor-vmw
-    - dmprod
-#    - ezproxy-prep
-#    - ezproxy-prod
-#    - ezproxy-test
-#    - factotum-prep
-#    - factotum-prod
+#    - dmprod
+    - ezproxy-prep
+    - ezproxy-prod
+    - ezproxy-test
+    - factotum-prep
+    - factotum-prod
 #    - fedora38-prep
 #    - fedora38-prod
-#    - freshwriting-prep
-#    - freshwriting-prod
+    - freshwriting-prep
+    - freshwriting-prod
 #    - gitolite
-#    - inquisition-prep
 #    - inquisition-prod
 #    - janus
 #    - john
 #    - james
-#    - libnd-apache-prep
-#    - libnd-apache-prod
-#    - libnd-datamart-prep
-#    - libnd-datamart-prod
+    - libnd-apache-prep
+    - libnd-apache-prod
+    - libnd-datamart-prep
+    - libnd-datamart-prod
 #    - libnd-dave
-#    - libnd-events-prep
-#    - libnd-events-prod
-#    - libnd-rabbitmq-prep
-#    - libnd-rabbitmq-prod
-#    - london-prep
-#    - london-prod
-#    - london-test
+    - libnd-events-prep
+    - libnd-events-prod
+    - libnd-rabbitmq-prep
+    - libnd-rabbitmq-prod
+    - london-prep
+    - london-prod
+    - london-test
 #    - mysql-prep
 #    - mysql-prod
-#    - noids-r7-prod
-#    - noids-r7-prep
+    - noids-r7-prod
+    - noids-r7-prep
     - peered-jumpbox
-#    - pg-prep
-#    - pg-prod
 #    - r7-test
 #    - r7-test2
-#    - rbsc-prep
-#    - rbsc-prod
-#    - repository-prep
-#    - repository-prod
+    - rbsc-prep
+    - rbsc-prod
+    - repository-prep
+    - repository-prod
     - reserves-prep
-#    - reserves-prod
-#    - rome-prep
-#    - rome-prod
-#    - scsearch-prod
+    - reserves-prod
+    - rome-prep
+    - rome-prod
     - sipity-prep
     - sipity-prod
     - tantur-prep
