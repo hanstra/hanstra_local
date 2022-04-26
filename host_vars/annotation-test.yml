@@ -1,0 +1,14 @@
+---
+ansible_ssh_host: 129.74.250.7
+lchost: annotation-test.lc.nd.edu
+host: annotation-test.library.nd.edu
+tagName: annotation-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 annotation-test server'
+tagEnvironment: test
+tagOwner: dbrower
+tagService: "annotation-test"
+http_notify_groups: admins
+lc_interface: "ens224"
+lc_ip: "10.71.1.174"
+...

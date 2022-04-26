@@ -1,0 +1,13 @@
+---
+ansible_ssh_host: 129.74.250.195
+host: vmbuild8.library.nd.edu
+lchost: vmbuild8.lc.nd.edu
+tagName: vmbuild8
+tagContact: lib-esu-group@nd.edu
+tagDescription: "VMware build template - RHEL8"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: RHEL8
+lc_interface: ens224
+lc_ip: 10.71.0.165
+...

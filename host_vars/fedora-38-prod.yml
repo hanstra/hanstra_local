@@ -1,0 +1,67 @@
+---
+ansible_ssh_host: 10.71.1.16
+ansible_host: fedora-38-prod.library.nd.edu
+host: fedora-38-prod.library.nd.edu
+lchost: fedora-38-prod.lc.nd.edu
+tagName: fedora-38-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL7 fedora-38-prod server'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "fedora-38-prod"
+http_notify_groups: admins
+lib_interface: "ens192"
+lib_ip: "129.74.223.171"
+lib_gateway: "129.74.223.1"
+lc_interface: "ens224"
+lc_ip: "10.71.1.16"
+app_full_access: True
+# Disk 2 parameters
+SecondaryVolume: /dev/sdb
+rebuild_disk: true
+disk:
+ - { BlockDevice: /dev/sdb, PartitionNumber: 1, name: fedora }
+partition:
+  - { FSType: xfs, DeviceName: /dev/sdb1, MountPoint: /repo_data/fedora, owner: app, group: app, mode: 755  }
+#lwagent_log:
+#  - /esu/cwagent-config/
+# Collectd parameters
+#collectd_file: True
+#collectd_file_checks:
+#  - { directory: "/var/opt/rh/rh-nginx118/log/nginx",
+#      instance:  "curate_logging",
+#      filename:  "curate.log",
+#      mtime:     "-1h" }
+#collectd_process: True
+#collectd_process_checks:
+# - { process: "nginx" }
+# - { process: "runsv" }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'fedora-38-prod'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+#file_checks:
+#  - { name: "Curate_log_too_old",
+#      comparison: "LessThanThreshold",
+#      threshold: 1,
+#      instance: 'curate_logging'}
+#filesize_checks:
+#  - { name: "Curate_log_missing",
+#      comparison: "LessThanThreshold",
+#      threshold: 10,
+#      instance: 'curate_logging'}
+#process_checks:
+#  - { name: "nginx",
+#    comparison: "LessThanThreshold",
+#    threshold: 1,
+#    instance: 'nginx'}
+#  - { name: "unicorn_disadis",
+#    comparison: "LessThanThreshold",
+#    threshold: 2,
+#    instance: 'runsv'}
+...
