@@ -2,7 +2,7 @@
 - name: Ansible to server for rpm_list
   strategy: free
   hosts:
-    - sipity-prep
+    - aleph23-prep
   become: yes
   become_user: root
   roles:
