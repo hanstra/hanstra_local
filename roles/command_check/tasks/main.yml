@@ -5,26 +5,17 @@
 #- name: Perform some command on the remote server
 #  shell: ps -ef | grep cloudwatch > /tmp/{{ host }}.out
 
-- name: Perform copy of ens192
-  shell: cp /etc/sysconfig/network-scripts/ifcfg-ens192 /tmp/{{ host }}.ens192
-  ignore_errors: true
-
-- name: Perform copy of ens224
-  shell: cp /etc/sysconfig/network-scripts/ifcfg-ens224 /tmp/{{ host }}.ens224
-  ignore_errors: true
-
-- name: Perform copy of ens256
-  shell: cp /etc/sysconfig/network-scripts/ifcfg-ens256 /tmp/{{ host }}.ens256
-  ignore_errors: true
+- name: Perform some command on the remote server
+  shell: uname -a > /tmp/{{ host }}.out
 
 - name: Allow list to be copied
   file:
-    path: /tmp/{{ host }}.ens**
+    path: /tmp/{{ host }}.out
     mode: '0777'
   ignore_errors: true
 
 - name: Copy the files to global storage
-  shell: scp /tmp/{{ host }}.ens* hanstra@john.lc.nd.edu:/global/sysadmin/compare/cmd_output
+  shell: scp /tmp/{{ host }}.out hanstra@john.lc.nd.edu:/global/sysadmin/compare/cmd_output
   become: true
   become_user: hanstra
   ignore_errors: true
