@@ -1,4 +1,3 @@
-
 # List of servers by their configuration files in host_vars
 stage-public
 aleph23-prep
@@ -6,13 +5,16 @@ aleph23-prod
 aleph23-test
 annex-ims-prep
 annex-ims-prod
+annotation-test
 api-prep
 api-prod
 archives-ims-prep
 archives-ims-prod
+archivesspace3-prep
+archivesspace32-prep
+archivesspace32-prod
 archivesspace-prep
 archivesspace-prod
-archivesspace-prod2
 bendo-prep
 bendo-prod
 clavius-prod
@@ -34,6 +36,8 @@ ezproxy-prod
 ezproxy-test
 factotum-prep
 factotum-prod
+fedora-38-prep
+fedora-38-prod
 fedora38-prep
 fedora38-prod
 fedora38-seaside
@@ -91,7 +95,4 @@ tantur-prod
 testlibnd-jumpbox
 unpeered-jumpbox
 unpeered-jumpbox-test
-website-1
-website-2
-website-3
-website-4
+vmbuild8
