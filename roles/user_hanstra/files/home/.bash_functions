@@ -16,5 +16,7 @@ apsv () { /usr/local/bin/ansible-playbook ./playbooks/${1} -k -K -vvvv ; }
 
 sslb () { /usr/bin/ssh ${1}.library.nd.edu ; }
 sslc () { /usr/bin/ssh ${1}.lc.nd.edu ; }
+ssld () { /usr/bin/ssh ${1}.libnd.nd.edu ; }
+ssln () { /usr/bin/ssh ${1}.libnd.nd.edu ; }
 nslb () { /usr/bin/nslookup ${1}.library.nd.edu ; }
 nslc () { /usr/bin/nslookup ${1}.lc.nd.edu ; }

@@ -37,4 +37,3 @@ cd .
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export AWS_DEFAULT_REGION=us-east-1
 export DISPLAY=localhost:0
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
