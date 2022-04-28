@@ -1,0 +1,38 @@
+---
+ansible_ssh_host: 129.74.250.97
+host: datamart-build.library.nd.edu
+lchost: datamart-build.lc.nd.edu
+tagName: datamart-build
+tagContact: lib-esu-group@nd.edu
+tagDescription: "datamart build server - RHEL8"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: datamart
+lib_interface: ens192
+lib_ip: 129.74.250.97
+lib_gateway: 129.74.250.1
+lc_interface: ens224
+lc_ip: 10.71.0.140
+build_db: false
+suffix: build
+# Disk 2 parameters
+SecondaryVolume: /dev/sdb
+rebuild_disk: false
+disk:
+ - { BlockDevice: /dev/sdb, PartitionNumber: 1, name: datamart }
+partition:
+ - { FSType: xfs, DeviceName: /dev/sdb1, MountPoint: /dat2 }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'datamart-build'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+  - { name: "dat2",
+      fstype: "xfs",
+      device: "sdb1",
+      path:   "/dat2"}
+...
