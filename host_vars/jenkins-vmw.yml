@@ -1,8 +1,0 @@
-ansible_ssh_host: 10.71.0.53
-host: jenkins.library.nd.edu
-tagName: jenkins
-tagEnvironment: production
-config_file: jenkins.conf
-config_dest: /etc/tomcat6/server.xml
-config_owner: app
-config_group: app
