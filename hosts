@@ -5,7 +5,6 @@ aleph23-prod
 aleph23-test
 annex-ims-prep
 annex-ims-prod
-annotation-test
 api-prep
 api-prod
 archives-ims-prep
@@ -30,7 +29,7 @@ curatewkr-prep
 curatewkr-prod
 cw-monitor
 cw-monitor-vmw
-dmprod
+datamart-build
 ezproxy-prep
 ezproxy-prod
 ezproxy-test
@@ -40,15 +39,10 @@ fedora-38-prep
 fedora-38-prod
 fedora38-prep
 fedora38-prod
-fedora38-seaside
 freshwriting-prep
 freshwriting-prod
-gitolite
-inquisition-prep
-inquisition-prod
 james
 janus
-jenkins-vmw
 john
 libnd-apache-prep
 libnd-apache-prod
@@ -69,8 +63,6 @@ noids-r7-prep
 peered-jumpbox
 peered-jumpbox-test
 peter
-pg-prep
-pg-prod
 r7-test
 r7-test2
 rbsc-prep
@@ -82,11 +74,6 @@ reserves-prod
 rome-prep
 rome-prod
 rome-test
-scsearch-prod
-sc-search-prod
-seasideprep
-seasideprod-vm
-seaside-test
 sipity-prep
 sipity-prod
 sipity-test
