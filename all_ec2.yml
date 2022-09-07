@@ -10,21 +10,12 @@
     - archivesspace-prod
     - archives-ims-prep
     - clavius-prod
-    - concordance-prod
     - cw-monitor
-    - factotum-prep
-    - factotum-prod
     - freshwriting-prep
     - freshwriting-prod
-    - gitolite
-    - inquisition-prod
-    - libnd-apache-prep
-    - libnd-apache-prod
     - libnd-datamart-prep
     - libnd-datamart-prod
     - libnd-dave
-    - libnd-events-prep
-    - libnd-events-prod
     - libnd-rabbitmq-prep
     - libnd-rabbitmq-prod
     - london-prep
@@ -32,14 +23,12 @@
     - london-test
     - noids-r7-prod
     - noids-r7-prep
-    - peered-jumpbox
+#    - peered-jumpbox
 #    - peered-jumpbox-test
     - rbsc-prep
     - rbsc-prod
     - repository-prep
     - repository-prod
-    - reserves-prep
-    - reserves-prod
     - rome-prep
     - rome-prod
     - sipity-prep
@@ -50,4 +39,4 @@
   become: yes
   become_user: root
   roles:
-    - rpm_list
+    - hostname 

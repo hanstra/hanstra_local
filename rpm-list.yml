@@ -1,8 +1,69 @@
 ---
-- name: Ansible to server for rpm_list
+- name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - aleph23-prep
+#    - annex-ims-prep
+#    - annex-ims-prod
+#    - api-prep
+#    - api-prod
+#    - archivesspace-prep
+#    - archivesspace-prod
+#    - archives-ims-prep
+#    - clavius-prod
+#    - cw-monitor
+#    - freshwriting-prep
+#    - freshwriting-prod
+#    - libnd-datamart-prep
+#    - libnd-datamart-prod
+#    - libnd-dave
+#    - libnd-rabbitmq-prep
+#    - libnd-rabbitmq-prod
+#    - london-prep
+#    - london-prod
+#    - london-test
+#    - noids-r7-prod
+#    - noids-r7-prep
+##    - peered-jumpbox
+##    - peered-jumpbox-test
+#    - rbsc-prep
+#    - rbsc-prod
+#    - repository-prep
+#    - repository-prod
+#    - rome-prep
+#    - rome-prod
+#    - sipity-prep
+#    - sipity-prod
+#    - sipity-test
+#    - tantur-prep
+#    - tantur-prod
+#    - aleph23-prep
+#    - aleph23-prod
+#    - aleph23-test
+#    - bendo-prep
+#    - bendo-prod
+#    - curatesolr-prep
+#    - curatesolr-prod
+#    - curatesvr-prep
+#    - curatesvr-prod
+#    - curate-test1
+#    - curate-test2
+#    - curate-test3
+#    - curatewkr-prep
+#    - curatewkr-prod
+#    - cw-vmw-monitor
+#    - datamart-build
+#    - ezproxy-prep
+#    - ezproxy-prod
+#    - ezproxy-test
+#    - fedora-38-prep
+    - fedora-38-prod
+#    - janus
+#    - mysql-prep
+#    - mysql-prod
+#    - r7-test
+#    - r7-test2
+#    - james
+#    - john
   become: yes
   become_user: root
   roles:

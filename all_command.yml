@@ -2,74 +2,64 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-#    - aleph23-prep
-#    - aleph23-prod
-#    - aleph23-test
+    - aleph23-prep
+    - aleph23-prod
+    - aleph23-test
     - api-prep
     - api-prod
-    - archives-ims-prep
     - archivesspace-prep
     - archivesspace-prod
-#    - bendo-prep
-#    - bendo-prod
+    - bendo-prep
+    - bendo-prod
     - clavius-prod
-    - concordance-prod
-#    - curatesolr-prep
-#    - curatesolr-prod
-#    - curatesvr-prep
-#    - curatesvr-prod
-#    - curate-test1
-#    - curate-test2
-#    - curate-test3
-#    - curatewkr-prep
-#    - curatewkr-prod
+    - curatesolr-prep
+    - curatesolr-prod
+    - curatesvr-prep
+    - curatesvr-prod
+    - curate-test1
+    - curate-test2
+    - curate-test3
+    - curatewkr-prep
+    - curatewkr-prod
     - cw-monitor
-#    - cw-monitor-vmw
-#    - dmprod
+    - cw-monitor-vmw
+    - datamart-build
     - ezproxy-prep
     - ezproxy-prod
     - ezproxy-test
-    - factotum-prep
-    - factotum-prod
-#    - fedora38-prep
-#    - fedora38-prod
+    - fedora-38-prep
+    - fedora-38-prod
     - freshwriting-prep
     - freshwriting-prod
-#    - gitolite
-#    - inquisition-prod
-#    - janus
-#    - john
-#    - james
-    - libnd-apache-prep
-    - libnd-apache-prod
+    - janus
+    - john
+    - james
     - libnd-datamart-prep
     - libnd-datamart-prod
-#    - libnd-dave
-    - libnd-events-prep
-    - libnd-events-prod
+    - libnd-dave
     - libnd-rabbitmq-prep
     - libnd-rabbitmq-prod
-    - london-prep
+#    - london-prep
     - london-prod
-    - london-test
-#    - mysql-prep
-#    - mysql-prod
+#    - london-test
+    - mysql-prep
+    - mysql-prod
     - noids-r7-prod
     - noids-r7-prep
     - peered-jumpbox
-#    - r7-test
-#    - r7-test2
+    - r7-test
+    - r7-test2
     - rbsc-prep
     - rbsc-prod
     - repository-prep
     - repository-prod
-    - reserves-prep
-    - reserves-prod
-    - rome-prep
+#    - reserves-prep
+#    - reserves-prod
+#    - rome-prep
     - rome-prod
     - sipity-prep
     - sipity-prod
-    - tantur-prep
+#    - tantur-prep
     - tantur-prod
   become: yes
   become_user: root

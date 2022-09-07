@@ -16,25 +16,22 @@
     - curate-test3
     - curatewkr-prep
     - curatewkr-prod
+    - cw-vmw-monitor
+    - datamart-build
     - ezproxy-prep
     - ezproxy-prod
     - ezproxy-test
     - fedora-38-prep
     - fedora-38-prep
-    - fedora38-prod
-    - fedora38-prod
     - janus
     - mysql-prep
     - mysql-prod
     - r7-test
     - r7-test2
-##    - seasideprep
-##    - seasideprod-vm
-##    - dmprod
     - james
     - john
 #    - peter
   become: yes
   become_user: root
   roles:
-    - update_package
+    - rpm_list
