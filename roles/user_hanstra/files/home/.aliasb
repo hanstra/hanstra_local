@@ -6,6 +6,7 @@
 #if ( ! $?prompt ) exit
 
 alias ap=ansible-playbook                                                          #ansible-playbook
+alias apt='ansible-playbook --ssh-extra-args="-i ~/.ssh/testlibnd.pem"'
 alias apd='ansible-playbook --ssh-extra-args="-i ~/.ssh/libnd.pem" -u ec2-user'    #ansible-playbook as ec2-user
 alias ape='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/libnd.pem"'  #ansible-playbook as ec2-user
 alias ape2='ansible-playbook --vault-password-file=~/.ssh/.vault_pass --ssh-extra-args="-i ~/.ssh/ec2-user.pem" -u ec2-user'  #ansible-playbook as ec2-user
@@ -31,6 +32,7 @@ alias awhoami='aws sts get-caller-identity'                                     
 alias awho='aws sts get-caller-identity'                                           #What keys do I currently have?
 alias c=clear                                                                      #clear the screen
 alias cd='sp; cdl'                                                                 #Set prompt and run cdl function
+#alias cd='cdl'                                                                 #Set prompt and run cdl function
 alias cd11r='cd /global/sysadmin/oracle/conf'                                      #Oracle 11.2 files
 alias cd112='cd /global/sysadmin/oracle/conf/aleph'                                #Oracle 11.2 files - aleph22
 alias cd19='cd /global/esuadmin/oracle'                                            #Oracle 12.1 files - aleph22
@@ -71,6 +73,9 @@ alias copy=/bin/cp                                                              
 alias curami='aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 --region us-east-1'
 alias curami2='aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 --region us-east-1'
 alias d=dirs                                                                       #display directories on stack
+alias dar='docker run --platform linux/x86_64 -dit -p 1234:80 '                    #Run apache based docker image
+alias db='docker build . --platform linux/x86_64 -t '                              #Build the docker image
+alias dls='docker container ls'                                                    #List docker containers
 alias dir=/bin/ls                                                                  #allow DOS type directory list
 alias df='/bin/df -k'                                                              #Berkley like df
 alias ds3='ds3_java_cli'                                                           # 
@@ -145,12 +150,11 @@ alias sat23='ssh -Y aleph23-test.lc.nd.edu'                                     
 alias sat23a='ssh -Y aleph23@aleph23-test.lc.nd.edu'                               #ssh to aleph23-test as aleph23
 alias sdm='ssh -Y dmprod.library.nd.edu'                                           #ssh to dmprod.library 
 alias sj='ssh -Y jenkins-vm.library.nd.edu -l ansible'                             #ssh to jenkins-vm.library 
-alias sjim='ssh -Y james.library.nd.edu'                                           #ssh to james.library 
-alias sjan='ssh -Y janus.library.nd.edu'                                           #ssh to janus.library 
-alias sjanus='ssh -Y janus.library.nd.edu'                                         #ssh to janus.library 
-alias sjohn='ssh -Y john.library.nd.edu'                                           #ssh to john.library 
+alias sjim='ssh -Y james.lc.nd.edu'                                                #ssh to james
+alias sjan='ssh -Y janus.lc.nd.edu'                                                #ssh to janus
+alias sjohn='ssh -Y john.lc.nd.edu'                                                #ssh to john
 alias sjump='ssh -Y jumpbox.lc.nd.edu'                                             #ssh to jumpbox.lc
-alias spete='ssh -Y peter.library.nd.edu'                                          #ssh to peter.library 
+alias spete='ssh -Y peter.lc.nd.edu'                                               #ssh to peter
 alias sua='/usr/bin/sudo /bin/su - aleph23'                                        #sudo  as aleph23 user
 alias sua3='/usr/bin/sudo /bin/su - aleph23'                                       #sudo  as aleph23 user
 alias sua23='/usr/bin/sudo /bin/su - aleph23'                                      #sudo  as aleph23 user
