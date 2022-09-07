@@ -1,0 +1,37 @@
+---
+- name: Ansible to all servers to update files
+  strategy: free
+  hosts:
+#    - annex-ims-prep
+    - annex-ims-prod
+#    - api-prep
+    - api-prod
+#    - archivesspace-prep
+    - archivesspace-prod
+#    - archives-ims-prep
+#    - curatesvr-prep
+    - curatesvr-prod
+#    - curate-test1
+#    - curate-test2
+#    - curate-test3
+#    - freshwriting-prep
+    - freshwriting-prod
+    - libnd-dave
+#    - london-prep
+#    - london-prod
+#    - london-test
+#    - repository-prep
+    - repository-prod
+#    - reserves-prep
+    - reserves-prod
+#    - rome-prep
+#    - rome-prod
+#    - sipity-prep
+    - sipity-prod
+#    - sipity-test
+#    - tantur-prep
+#    - tantur-prod
+  become: yes
+  become_user: root
+  roles:
+    - restart_nginx

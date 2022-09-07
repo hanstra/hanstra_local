@@ -1,0 +1,42 @@
+---
+- name: Ansible to all servers to update files
+  strategy: free
+  hosts:
+    - annex-ims-prep
+    - annex-ims-prod
+    - api-prep
+    - api-prod
+    - archivesspace-prep
+    - archivesspace-prod
+    - archives-ims-prep
+    - clavius-prod
+    - cw-monitor
+    - freshwriting-prep
+    - freshwriting-prod
+    - libnd-datamart-prep
+    - libnd-datamart-prod
+    - libnd-dave
+    - libnd-rabbitmq-prep
+    - libnd-rabbitmq-prod
+    - london-prep
+    - london-prod
+    - london-test
+    - noids-r7-prod
+    - noids-r7-prep
+#    - peered-jumpbox
+#    - peered-jumpbox-test
+    - rbsc-prep
+    - rbsc-prod
+    - repository-prep
+    - repository-prod
+    - rome-prep
+    - rome-prod
+    - sipity-prep
+    - sipity-prod
+    - sipity-test
+    - tantur-prep
+    - tantur-prod
+  become: yes
+  become_user: root
+  roles:
+    - all_patches 

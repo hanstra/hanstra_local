@@ -1,0 +1,25 @@
+---
+- name: Ansible to all servers to update files
+  strategy: free
+  hosts:
+    - clavius-prod
+    - concordance-prod
+#    - libnd-apache-prep
+    - libnd-apache-prod
+#    - libnd-datamart-prep
+    - libnd-datamart-prod
+#    - libnd-events-prep
+    - libnd-events-prod
+#    - london-prep
+#    - london-prod
+#    - london-test
+#    - rbsc-prep
+    - rbsc-prod
+#    - rome-prep
+#    - rome-prod
+#    - tantur-prep
+#    - tantur-prod
+  become: yes
+  become_user: root
+  roles:
+    - restart_httpd
