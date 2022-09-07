@@ -20,3 +20,5 @@ ssld () { /usr/bin/ssh ${1}.libnd.nd.edu ; }
 ssln () { /usr/bin/ssh ${1}.libnd.nd.edu ; }
 nslb () { /usr/bin/nslookup ${1}.library.nd.edu ; }
 nslc () { /usr/bin/nslookup ${1}.lc.nd.edu ; }
+
+sdock () { /usr/local/bin/docker exec -t -i ${1} /bin/bash ; }
