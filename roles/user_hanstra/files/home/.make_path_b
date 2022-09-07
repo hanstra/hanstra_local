@@ -6,22 +6,6 @@ PATH=/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin:/etc:/usr/local/bin:/usr/local
 LD_LIBRARY_PATH=/usr/lib:/lib:/usr/lib64
 MANPATH=/usr/man:/usr/share/man
 #
-# Add pyenv setup on Mac
-#
-#if [ -d ~/.pyenv ]; then
-#  export PYENV_ROOT="$HOME/.pyenv"
-#  export PATH="$PYENV_ROOT/bin:$PATH"
-#  if command -v pyenv 1>/dev/null 2>&1; then
-#    eval "$(pyenv init -)"
-#  fi
-#fi
-#
-# Add tripwire 
-if [ -d /usr/local/tripwire/tfs/bin ]; then
-  PATH=$PATH:/usr/local/tripwire/tfs/bin
-  MANPATH=$MANPATH:/usr/local/tripwire/tfs/man
-fi
-#
 # Add stuff for RedHat Linux systems
 #
 if [ -d /etc/sysconfig ]; then
