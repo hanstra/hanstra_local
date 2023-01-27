@@ -12,6 +12,7 @@ archives-ims-prod
 archivesspace32-prod
 archivesspace33-prep
 archivesspace33-prod
+archivesspace331-prod
 archivesspace-prep
 archivesspace-prod
 bendo-prep
@@ -28,11 +29,13 @@ curatesvr-prod
 curatewkr-prep
 curatewkr-prod
 cw-monitor
-cw-monitor-vmw
 datamart-build
 ezproxy-prep
 ezproxy-prod
 ezproxy-test
+ezproxy8-prep
+ezproxy8-prod
+ezproxy8-test
 factotum-prep
 factotum-prod
 fedora-38-prep
@@ -60,11 +63,12 @@ mysql-prep
 mysql-prod
 noids-r7-prod
 noids-r7-prep
-peered-jumpbox
-peered-jumpbox-test
+jumpbox
+jumpbox-test
 peter
 r7-test
 r7-test2
+r8-test
 rbsc-prep
 rbsc-prod
 repository-prep
@@ -83,3 +87,4 @@ testlibnd-jumpbox
 unpeered-jumpbox
 unpeered-jumpbox-test
 vmbuild8
+vmw-cw-monitor
