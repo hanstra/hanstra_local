@@ -13,13 +13,9 @@ if [ -d /etc/sysconfig ]; then
   LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib/perl5
   MANPATH=$MANPATH:/usr/local/man:/usr/local/share/man
 fi
-#
-#  Add python path
-#
-if [ -d /usr/local/lib/python3.7/site-packages ]; then
-  alias pip='/usr/local/bin/pip3'                                                    #alias pip to be pip3
-  alias python='/usr/local/bin/python3'                                              #alias python to be python3
-  PATH=/bin:/usr/bin:/usr/sbin:/sbin:/etc:/usr/local/bin:/usr/local/mysql/bin:~thanstra/bin:~hanstra/bin:~hanstra/ec2/bin:~hanstra/.local/lib/aws/bin:/usr/local/lib/python3.7/site-packages
+if [ -d ~/Library/Python/3.10/bin ]; then
+  PATH=~/Library/Python/3.10/bin:$PATH
+  LD_LIBRARY_PATH=~/Library/Python/3.10/lib:$LD_LIBRARY_PATH
 fi
 #
 #  Add Admin paths
@@ -58,6 +54,12 @@ fi
 if [ -d /opt/src/ds3_java_cli-5.1.2/bin ]; then
   PATH=$PATH:/opt/src/ds3_java_cli-5.1.2/bin
   source ~/.ssh/bp_creds
+fi
+#
+# Add X11 on local mac
+#
+if [ -d /opt/X11 ]; then
+  PATH=$PATH:/opt/X11/bin
 fi
 #
 #  Export all paths 
