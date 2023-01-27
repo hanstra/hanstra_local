@@ -1,7 +1,7 @@
 ansible_ssh_host: 172.22.9.36
 host: archivesspace-prep.library.nd.edu
-ssh_host: archivesspace-prep.lc.nd.edu
-lchost: archivesspace-prep.lc.nd.edu
+ssh_host: archivesspace-prep.libnd.nd.edu
+lchost: archivesspace-prep.libnd.nd.edu
 ansible_ssh_user: ec2-user
 # Build and tag parameters
 tagName: archivesspace-prep
@@ -10,22 +10,23 @@ tagDescription: "prep server - ArchivesSpace - Our data"
 tagEnvironment: prep
 tagOwner: hanstra
 tagService: "archivesspace"
-#tagSchedule: "Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18"
-tagSchedule: "Mon 8-*, Fri *-19"
-#tagSchedule: "*"
+tagSchedule: "Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18"
 tagBackup: True
 gwTimeZone: "Eastern"
 app_full_access: True
 # Application parameters
 as_version: 'v2.8.1'
 as_upgrade: false
-as_saml_metadata_url: "https://okta.nd.edu/app/exk7uriv9xArfrW8f357/sso/saml/metadata"
-as_saml_idp_sso_target_url: "https://okta.nd.edu/app/nd_archivespacenew_1/exk7uriv9xArfrW8f357/sso/saml"
-public_host: archivesspace-prep.lc.nd.edu
+as_saml_metadata_url: "https://okta.nd.edu/app/exke61f0q0zo6NUMQ357/sso/saml/metadata"
+as_saml_idp_sso_target_url: "https://okta.nd.edu/app/nd_archivespacenew_1/exke61f0q0zo6NUMQ357/sso/saml"
+public_host: archivesspace-prep.libnd.nd.edu
 public_host_alias: archivesspace-prep.library.nd.edu
-staff_host: archivesspace-prep.lc.nd.edu
+staff_host: archivesspace-prep.libnd.nd.edu
 staff_host_alias: archivesspace-staff-prep.library.nd.edu
-oai_host: archivesspace-prep.lc.nd.edu
+oai_host: archivesspace-prep.libnd.nd.edu
 oai_host_alias: archivesspace-oai-prep.library.nd.edu
-api_host: archivesspace-prep.lc.nd.edu
+api_host: archivesspace-prep.libnd.nd.edu
 api_host_alias: archivesspace-api-prep.library.nd.edu
+# Requests info
+requests_email_address: "pmilhoan@nd.edu"
+requests_fallback_email_address: "fboze@nd.edu"

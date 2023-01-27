@@ -10,7 +10,7 @@ tagDescription: "prep server - Archives"
 tagEnvironment: prep
 tagOwner: hanstra
 tagService: "archives-ims"
-tagSchedule: Mon 8-18,Tue 8-18,Wed 8-18,Thu 8-18,Fri 8-18
+tagSchedule: "Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18"
 tagBackup: True
 # Application parameters
 passenger_version: 6.0.8

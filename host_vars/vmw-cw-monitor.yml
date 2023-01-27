@@ -1,0 +1,137 @@
+---
+#ansible_ssh_host: 10.71.0.85
+ansible_ssh_host: 129.74.223.85
+ansible_host: vmw-cw-monitor.library.nd.edu
+host: vmw-cw-monitor.library.nd.edu
+lchost: vmw-cw-monitor.lc.nd.edu
+tagName: vmw-cw-monitor
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'RHEL8 CloudWatch monitor'
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "vmw-cw-monitor"
+http_notify_groups: admins
+lib_interface: "ens192"
+lib_ip: "129.74.223.85"
+lib_gateway: "129.74.223.1"
+lc_interface: "ens224"
+lc_ip: "10.71.0.85"
+app_full_access: False
+# Collectd parameters
+collectd_web: True
+collectd_web_checks:
+ - { website: "main_website",
+     url: "https://library.nd.edu/" }
+ - { website: "annex-prod",
+     url: "https://annex-ims.library.nd.edu/" }
+ - { website: "api-prod",
+     url: "https://api.library.nd.edu/" }
+ - { website: "archivesspace-prod",
+     url: "https://archivesspace-staff.library.nd.edu/" }
+ - { website: "buzz",
+     url: "https://buzz.library.nd.edu/?id=40849f5d-a919-46c9-8270-e9595dd458a7" }
+ - { website: "cds",
+     url: "https://cds.library.nd.edu/" }
+ - { website: "clavius-prod",
+     url: "https://clavius.library.nd.edu/" }
+ - { website: "concordances",
+     url: "https://concordances.library.nd.edu/" }
+ - { website: "coral",
+     url: "https://notredame.coral.bywatersolutions.com/" }
+ - { website: "datamart-prod",
+     url: "https://datamart.library.nd.edu/" }
+ - { website: "dave-prod",
+     url: "https://dave.library.nd.edu/" }
+ - { website: "digital-exhibits",
+     url: "https://digital-exhibits.library.nd.edu/" }
+ - { website: "hackathon",
+     url: "https://hackathon.library.nd.edu/" }
+ - { website: "factotum-prod",
+     url: "https://factotum.library.nd.edu/" }
+ - { website: "freshwriting-prod",
+     url: "https://freshwriting.nd.edu/" }
+ - { website: "hesburgh-portal",
+     url: "https://hesburghportal.nd.edu/" }
+ - { website: "honeycomb",
+     url: "https://honeycomb.library.nd.edu/" }
+ - { website: "honeypot",
+     url: "https://honeypot.library.nd.edu/images/honeycomb/000/002/000/002/medium/fighting_words-title_graphic-v3b.jpg" }
+ - { website: "inquisition-marble",
+     url: "https://inquisition.library.nd.edu/" }
+ - { website: "london-prod",
+     url: "https://london.library.nd.edu/" }
+ - { website: "marble",
+     url: "https://marble.nd.edu/" }
+ - { website: "marble-search",
+     url: "https://marble.nd.edu/search?q=bible"}
+ - { website: "noids-r7-prod",
+     url: "http://noids.lc.nd.edu:13001/pools" }
+ - { website: "rabbitmq-prod",
+     url: "http://libnd-rabbitmq-prod.lc.nd.edu:15672" }
+ - { website: "rarebooks-prod",
+     url: "https://rarebooks.library.nd.edu/" }
+ - { website: "repository-prod",
+     url: "https://repository.library.nd.edu/view/29" }
+ - { website: "reserves-prod",
+     url: "https://reserves.library.nd.edu/" }
+ - { website: "rome-prod",
+     url: "https://rome.library.nd.edu/" }
+ - { website: "sipity-prod",
+     url: "https://deposit.library.nd.edu/areas/etd" }
+ - { website: "tantur-prod",
+     url: "https://tantur.library.nd.edu/" }
+ - { website: "noids-r7-prod",
+     url: "http://noids.lc.nd.edu:13001/pools" }
+ - { website: "rabbitmq-prod",
+     url: "http://libnd-rabbitmq-prod.lc.nd.edu:15672" }
+ - { website: "rarebooks-prod",
+     url: "https://rarebooks.library.nd.edu/" }
+ - { website: "repository-prod",
+     url: "https://repository.library.nd.edu/view/29" }
+ - { website: "reserves-prod",
+     url: "https://reserves.library.nd.edu/" }
+ - { website: "rome-prod",
+     url: "https://rome.library.nd.edu/" }
+ - { website: "sipity-prod",
+     url: "https://deposit.library.nd.edu/areas/etd" }
+ - { website: "tantur-prod",
+     url: "https://tantur.library.nd.edu/" }
+ - { website: "aleph23-prod",
+     url: "https://alephprod.library.nd.edu/" }
+ - { website: "ezproxy-prod",
+     url: "https://login.proxy.library.nd.edu/" }
+ - { website: "fedora-prod",
+     url: "https://fedoraprod.lc.nd.edu:8443/fedora/describe" }
+ - { website: "bendo-prod",
+     url: "http://bendo-prod-vm.library.nd.edu:14000/item/9g54xg97d8g" }
+ - { website: "curate-prod",
+     url: "https://curate.nd.edu/" }
+ - { website: "curate-download",
+     url: "https://curate.nd.edu/downloads/vh53ws88w1m" }
+ - { website: "curate-oai",
+     url: "https://curate.nd.edu/oai?verb=Identify" }
+ - { website: "seaside-prod",
+     url: "https://seaside.library.nd.edu/" }
+ - { website: "curatesolr-prod",
+     url: "https://curatesolr-prod.lc.nd.edu:8443/solr/#/" }
+#collectd_ping: True
+#collectd_host_checks:
+#  - "lib-hpv01.vm.nd.edu"
+#  - "lib-hpv02.vm.nd.edu"
+#  - "lib-hpv03.vm.nd.edu"
+#  - "lib-hpv04.vm.nd.edu"
+#  - "lib-hpv06.vm.nd.edu"
+#  - "lib-hpv07.vm.nd.edu"
+#  - "lib-hpv09.vm.nd.edu"
+#  - "lib-hpv10.vm.nd.edu"
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'vmw-cw-monitor'
+cpu_threshold: 70
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+namespace: "VMWare-Linux"
+...

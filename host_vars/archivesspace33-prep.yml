@@ -1,4 +1,4 @@
-ansible_ssh_host: 172.22.9.29
+ansible_ssh_host: 172.22.9.32
 host: archivesspace33-prep.library.nd.edu
 ssh_host: archivesspace33-prep.libnd.nd.edu
 lchost: archivesspace33-prep.libnd.nd.edu
@@ -6,7 +6,7 @@ ansible_ssh_user: ec2-user
 # Build and tag parameters
 tagName: archivesspace33-prep
 tagContact: lib-esu-group@nd.edu
-tagDescription: "prep server - ArchivesSpace - V3.3.0"
+tagDescription: "prep server - ArchivesSpace - V3.3.1"
 tagEnvironment: prep33
 tagOwner: hanstra
 tagService: "archivesspace"
@@ -17,11 +17,10 @@ tagProject: "ArchivesSpace"
 gwTimeZone: "Eastern"
 app_full_access: True
 # Application parameters
-as_version: "v3.3.0-RC2"
+as_version: "v3.3.1"
 as_upgrade: false
-stop_logrotate: true
-connector_version: "8.0.28"
-solr_install_version: "8.11.1"
+connector_version: "8.0.30"
+solr_install_version: "8.11.2"
 solr_port: "8090"
 solr_core: "archivesspace"
 repo_solr_config: "/home/app/archivesspace/solr"
@@ -36,11 +35,8 @@ oai_host: archivesspace33-prep.libnd.nd.edu
 oai_host_alias: archivesspace33-oai-prep.library.nd.edu
 api_host: archivesspace33-prep.libnd.nd.edu
 api_host_alias: archivesspace33-api-prep.library.nd.edu
-# Plugin parameters
-digitization_work_order_version: "1.13"
-digitization_work_order_upgrade: "true"
-bulk_updater_version: "1.3.3"
-bulk_updater_upgrade: "true"
+external_solr: true
+stop_logrotate: false
 # Requests info
 requests_email_address: "pmilhoan@nd.edu"
 requests_fallback_email_address: "fboze@nd.edu"

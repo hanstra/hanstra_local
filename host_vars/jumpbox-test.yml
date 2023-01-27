@@ -1,7 +1,7 @@
-ansible_ssh_host: 172.22.8.100
-host: jumpbox.library.nd.edu
-ssh_host: jumpbox.lc.nd.edu
-lchost: jumpbox.lc.nd.edu
+ansible_ssh_host: 172.22.242.140
+host: jumpbox-test.library.nd.edu
+ssh_host: jumpbox-test.libnd.nd.edu
+lchost: jumpbox-test.libnd.nd.edu
 ansible_ssh_user: ec2-user
 # Build and tag parameters
 tagName: peered-jumpbox
@@ -15,7 +15,7 @@ tagBackup: True
 # Alarm parameters
 ami_id: 'For_alarm_only'
 Region: 'us-east-1'
-alarm_hostname: 'peered-jumpbox'
+alarm_hostname: 'peered-jumpbox-test'
 cpu_threshold: 30
 disk_config:
   - { name: "root",

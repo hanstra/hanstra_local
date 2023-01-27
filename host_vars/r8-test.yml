@@ -1,0 +1,35 @@
+---
+ansible_ssh_host: 129.74.223.145
+host: r8-test.library.nd.edu
+lchost: r8-test.lc.nd.edu
+tagName: r8-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: "test server - RHEL8"
+tagEnvironment: test
+tagOwner: hanstra
+tagService: test
+lib_interface: ens192
+lib_ip: 129.74.223.145
+lib_gateway: 129.74.223.1
+lc_interface: ens224
+lc_ip: 10.71.0.75
+collectd_file: True
+collectd_file_checks:
+ - { directory: "/tmp",
+     instance: "testfile",
+     filename: "junkfile",
+     mtime: "-25h" }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'r8-test'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+  - { name: "dat2",
+      fstype: "xfs",
+      device: "sdb1",
+      path:   "/dat2"}
+...

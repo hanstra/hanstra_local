@@ -1,0 +1,28 @@
+---
+#ansible_ssh_host: 10.71.0.170
+ansible_ssh_host: 129.74.223.152
+host: ezproxy8-test.library.nd.edu
+lchost: ezproxy8-test.lc.nd.edu
+proxyName: proxy-test.library.nd.edu
+proxyIP: 129.74.250.183
+proxy_lookup: proxy
+tagName: ezproxy8-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'EZProxy Server'
+tagEnvironment: test
+tagOwner: hanstra
+tagService: ezproxy
+http_notify_groups: admins
+lib_interface: "ens192"
+lib_ip: "129.74.223.152"
+lib_gateway: "129.74.223.1"
+upgrade: True
+EZProxyVersion: '7.2.8'
+EZProxyURL: 'https://help.oclc.org/@api/deki/files/9850/ezproxy-linux.bin?revision=7'
+active_cert: 2
+lc_interface: "ens224"
+lc_ip: "10.71.0.170"
+rh_packages:
+  - open-vm-tools
+  - glibc.i686
+...

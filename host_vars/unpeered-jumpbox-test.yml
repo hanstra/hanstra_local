@@ -1,9 +1,10 @@
 # Need to open up server to full access to allow updates
-ansible_ssh_host: 54.87.26.86
+ansible_ssh_host: 18.205.212.216
 host: unpeered-jumpbox-test.library.nd.edu
 ssh_host: unpeered-jumpbox-test.lc.nd.edu
 lchost: unpeered-jumpbox-test.lc.nd.edu
 ansible_ssh_user: ec2-user
+ansible_python_interpreter: python3
 # Build and tag parameters
 tagName: unpeered-jumpbox
 tagContact: lib-esu-group@nd.edu

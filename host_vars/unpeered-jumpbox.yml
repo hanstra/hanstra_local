@@ -1,7 +1,7 @@
-ansible_ssh_host: 34.239.79.150
+ansible_ssh_host: 34.225.32.56
 host: unpeered-jumpbox.library.nd.edu
-ssh_host: unpeered-jumpbox.lc.nd.edu
-lchost: unpeered-jumpbox.lc.nd.edu
+ssh_host: unpeered-jumpbox.libnd.nd.edu
+lchost: unpeered-jumpbox.libnd.nd.edu
 ansible_ssh_user: ec2-user
 # Build and tag parameters
 tagName: unpeered-jumpbox
