@@ -10,6 +10,7 @@ mkdir ~/bin
 ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/find-task.sh ~/bin/find-task.sh
 ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/psgrep ~/bin/psgrep
 ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/set_prompt ~/bin/set_prompt
+ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/ssh-select.sh ~/bin/ssh-select.sh
 ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/tarcp ~/bin/tarcp
 ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/taws ~/bin/taws
 ln -s ~/hanstra_local/roles/user_hanstra/files/home/bin/taws_oregon ~/bin/taws_oregon
