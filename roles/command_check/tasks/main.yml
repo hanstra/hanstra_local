@@ -1,6 +1,6 @@
 ---
-- name: Perform some command on the remote server
-  shell: /bin/df | sort > /tmp/{{ host }}.out
+#- name: Perform some command on the remote server
+#  shell: /bin/df | sort > /tmp/{{ host }}.out
 
 #- name: Perform some command on the remote server
 #  shell: ps -ef | grep awslogs > /tmp/{{ host }}.out
@@ -8,8 +8,8 @@
 #- name: Perform some command on the remote server
 #  shell: uname -a > /tmp/{{ host }}.out
 
-#- name: Copy the local crontab entries
-#  shell: cat /var/spool/cron/* > /tmp/{{ host }}.out
+- name: Copy the local crontab entries
+  shell: cat /var/spool/cron/* > /tmp/{{ host }}.out
 
 - name: Allow list to be copied
   file:

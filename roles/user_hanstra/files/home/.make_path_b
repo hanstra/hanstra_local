@@ -2,7 +2,7 @@
 #
 #  SET UP DEFAULT UNIX PATH
 #
-PATH=/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin:/etc:/usr/local/bin:/usr/local/mysql/bin:~thanstra/bin:~hanstra/bin:~hanstra/ec2/bin:~hanstra/.local/lib/aws/bin
+PATH=/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin:/etc:/usr/local/bin:/usr/local/mysql/bin:~hanstra/bin
 LD_LIBRARY_PATH=/usr/lib:/lib:/usr/lib64
 MANPATH=/usr/man:/usr/share/man
 #
