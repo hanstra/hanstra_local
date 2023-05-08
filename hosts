@@ -9,10 +9,11 @@ api-prep
 api-prod
 archives-ims-prep
 archives-ims-prod
-archivesspace32-prod
 archivesspace33-prep
-archivesspace33-prod
 archivesspace331-prod
+archivesspace34-prep
+archivesspace34i-prep
+archivesspace34-prod
 archivesspace-prep
 archivesspace-prod
 bendo-prep
@@ -69,8 +70,8 @@ peter
 r7-test
 r7-test2
 r8-test
-rbsc-prep
-rbsc-prod
+rarebooks-prep
+rarebooks-prod
 repository-prep
 repository-prod
 reserves-prep
