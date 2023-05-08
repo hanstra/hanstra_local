@@ -1,0 +1,39 @@
+---
+ansible_ssh_host: 172.22.10.16
+host: rarebooks-prod.library.nd.edu
+lchost: rarebooks-prod.libnd.nd.edu
+tagName: rarebooks-prod
+tagContact: lib-esu-group@nd.edu
+tagDescription: 'AWS RBSC Web server - Amazon Linux 2023 '
+tagEnvironment: production
+tagOwner: hanstra
+tagService: "rarebooks"
+tagBackup: True
+tagSchedule: 'Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18'
+ansible_python_interpreter: python3
+#Apache variables - base
+ServerRoot: "/home/app/rarebooks"
+ServerAlias: "rarebooks.library.nd.edu"
+ServerAdmin: "hanstra@nd.edu"
+apache_user: app
+apache_group: app
+httpd_port:
+  - { port: 80 }
+  - { port: 443 }
+lwagent_log:
+  - /esu/cwagent-config/rarebooks_access
+gateway_mountpoint: "/home/app/rarebooks"
+# Alarm and tag parameters
+Region: 'us-east-1'
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'rarebooks-prod'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
+lwagent_log:
+  - /esu/cwagent-config/rarebooks_access
+...
