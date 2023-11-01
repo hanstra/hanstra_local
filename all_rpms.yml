@@ -2,17 +2,13 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-#    - aleph23-prep
-#    - aleph23-prod
-#    - aleph23-test
-#    - annex-ims-prep
-#    - annex-ims-prod
-#    - api-prep
-#    - api-prod
+    - aleph23-prep
+    - aleph23-prod
+    - aleph23-test
+    - archivesspace34-prep
+    - archivesspace34-prod
     - bendo-prep
     - bendo-prod
-#    - clavius-prod
-#    - concordance-prod
     - curate-test1
     - curate-test2
     - curate-test3
@@ -22,48 +18,35 @@
     - curatesvr-prod
     - curatewkr-prep
     - curatewkr-prod
-#    - cw-monitor
-#    - ezproxy-prep
-#    - ezproxy-prod
-#    - ezproxy-test
-#    - factotum-prep
-#    - factotum-prod
+    - cw-monitor
+    - datamart-prep
+    - datamart-prod
+    - ezproxy8-prep
+    - ezproxy8-prod
+    - ezproxy8-test
     - fedora-38-prep
     - fedora-38-prod
-#    - freshwriting-prep
-#    - freshwriting-prod
-#    - janus
-#    - libnd-apache-prep
-#    - libnd-apache-prod
-#    - libnd-datamart-prep
-#    - libnd-datamart-prod
-#    - libnd-dave
-#    - libnd-events-prep
-#    - libnd-events-prod
-#    - libnd-rabbitmq-prep
-#    - libnd-rabbitmq-prod
-#    - london-prep
-#    - london-prod
-#    - london-test
-#    - mysql-prep
-#    - mysql-prod
+    - irish1-reader
+    - james
+    - john
+    - mysql-prep
+    - mysql-prod
     - noids-r7-prod
     - noids-r7-prep
-#    - peered-jumpbox
-#    - r7-test
-#    - r7-test2
-#    - rbsc-prep
-#    - rbsc-prod
+    - peered-jumpbox
+#    - peered-jumpbox-test
+    - r7-test
+    - r7-test2
+    - rarebooks-prep
+    - rarebooks-prod
     - repository-prep
     - repository-prod
-#    - reserves-prep
-#    - reserves-prod
-#    - rome-prep
-#    - rome-prod
     - sipity-prep
     - sipity-prod
-#    - tantur-prep
-#    - tantur-prod
+    - sipity-test
+#    - unpeered-jumpbox-test
+#    - unpeered-jumpbox
+    - vmw-cw-monitor
   become: yes
   become_user: root
   roles:
