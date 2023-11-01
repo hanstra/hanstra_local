@@ -1,0 +1,38 @@
+---
+ansible_ssh_host: 10.71.0.175
+host: irish1-reader.library.nd.edu
+lchost: irish1-reader.lc.nd.edu
+tagName: irish1-reader
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Irish1 Card Reader - RHEL8"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: production
+lib_interface: ens192
+lib_ip: 129.74.250.120
+lib_gateway: 129.74.223.1
+lc_interface: ens224
+lc_ip: 10.71.0.175
+collectd_file: True
+collectd_file_checks:
+ - { directory: "/home/app",
+     instance: "process_queue",
+     filename: "process_queue.log",
+     mtime: "-15m" }
+rh_packages:
+ - { perl-Net-STOMP-Client }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'irish1-reader'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+file_checks:
+  - { name: "process_queue",
+      comparison: "LessThanThreshold",
+      threshold: 1,
+      instance: 'process_queue'}
+...

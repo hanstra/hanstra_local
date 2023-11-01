@@ -10,7 +10,7 @@ tagDescription: "Peered jumpbox server"
 tagEnvironment: prod
 tagOwner: hanstra
 tagService: "jumpbox"
-tagSchedule: '*'
+tagSchedule: 'Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18'
 tagBackup: True
 ansible_python_interpreter: python3
 # Alarm parameters

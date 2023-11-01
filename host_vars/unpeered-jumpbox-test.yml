@@ -1,5 +1,5 @@
 # Need to open up server to full access to allow updates
-ansible_ssh_host: 18.205.212.216
+ansible_ssh_host: 52.204.194.90
 host: unpeered-jumpbox-test.library.nd.edu
 ssh_host: unpeered-jumpbox-test.lc.nd.edu
 lchost: unpeered-jumpbox-test.lc.nd.edu
@@ -11,7 +11,7 @@ tagDescription: "Unpeered jumpbox - TestLibND"
 tagEnvironment: prep
 tagOwner: hanstra
 tagService: "jumpbox"
-tagSchedule: '*'
+tagSchedule: 'Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18'
 tagBackup: True
 ansible_python_interpreter: python3
 # Alarm parameters
