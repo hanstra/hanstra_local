@@ -52,6 +52,8 @@
     - { file: home/.ssh/authorized_keys, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0700' }
     - { file: home/.ssh/id_rsa.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
     - { file: home/.ssh/id_rsa, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
+    - { file: home/.ssh/id_ed25519.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
+    - { file: home/.ssh/id_ed25519, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
     - { file: sudo_hanstra, dest: /etc/sudoers.d, owner: 'root', group: 'root', mode: '0400' }
  
 - name: Copy csh files if shell is set
