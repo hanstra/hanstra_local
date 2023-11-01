@@ -9,13 +9,9 @@ api-prep
 api-prod
 archives-ims-prep
 archives-ims-prod
-archivesspace33-prep
-archivesspace331-prod
 archivesspace34-prep
-archivesspace34i-prep
 archivesspace34-prod
-archivesspace-prep
-archivesspace-prod
+archivesspace34-test
 bendo-prep
 bendo-prod
 clavius-prod
@@ -31,6 +27,9 @@ curatewkr-prep
 curatewkr-prod
 cw-monitor
 datamart-build
+datamart-prep
+datamart-prod
+dmbuild-test
 ezproxy-prep
 ezproxy-prod
 ezproxy-test
@@ -45,6 +44,7 @@ fedora38-prep
 fedora38-prod
 freshwriting-prep
 freshwriting-prod
+irish1-reader
 james
 janus
 john
@@ -64,8 +64,8 @@ mysql-prep
 mysql-prod
 noids-r7-prod
 noids-r7-prep
-jumpbox
-jumpbox-test
+peered-jumpbox
+peered-jumpbox-test
 peter
 r7-test
 r7-test2
