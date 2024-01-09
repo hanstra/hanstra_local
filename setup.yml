@@ -2,7 +2,7 @@
 - name: Ansible to all servers to update files
   strategy: free
   hosts:
-    - archivesspace33-prep
+    - unpeered-jumpbox
   become: yes
   become_user: root
   roles:
