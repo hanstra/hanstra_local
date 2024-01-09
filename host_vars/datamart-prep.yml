@@ -1,23 +1,19 @@
-ansible_ssh_host: 172.22.10.29
+---
+ansible_ssh_host: 129.74.223.76
 host: datamart-prep.library.nd.edu
-ssh_host: datamart-prep.libnd.nd.edu
-lchost: datamart-prep.libnd.nd.edu
-ansible_ssh_user: ec2-user
-# Build and tag parameters
-ami_id: ami-00068cd7555f543d5
-subnet_id: subnet-84c977f3
-instance_type: t3a.small
-elastic_IP_alloc: eipalloc-05e70fbc9f78b507d
+lchost: datamart-prep.lc.nd.edu
 tagName: datamart-prep
-tagContact: web-and-software-engineering-group@nd.edu
-tagDescription: "Prep server - Datamart - AWS 2023"
+tagContact: lib-esu-group@nd.edu
+tagDescription: "datamart prep server - RHEL8 - Rebuild 08/23"
 tagEnvironment: prep
 tagOwner: hanstra
-tagService: "libnd-datamart"
-tagSchedule: "Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18"
-tagBackup: True
-#  sg-0d0deeeb457b8c1d8 - 
-security_groups: 'sg-088a1b9d4918effb3'
+tagService: datamart
+lib_interface: ens192
+lib_ip: 129.74.223.76
+lib_gateway: 129.74.223.1
+lc_interface: ens224
+lc_ip: 10.71.0.180
+build_db: false
 # Application parameters
 ServerRoot: "/etc/httpd"
 ServerAdmin: "hanstra@nd.edu"
@@ -29,14 +25,25 @@ httpd_port:
 apache_user: app
 apache_group: app
 git_branch: master
-suffix: front
-# Set to true when building an empty database
-#build_db: false
-#SecondaryVolume: ''
-#rebuild_disk: false
-#disk:
-# - { BlockDevice: /dev/xvdb, PartitionNumber: 1, name: Datamart }
-#partition:
-# - { FSType: ext4, DeviceName: /dev/xvdb1, MountPoint: /dat2 }
-lwagent_log:
-  - /esu/cwagent-config/datamart_access
+suffix: build
+# Disk 2 parameters
+SecondaryVolume: /dev/sdb
+rebuild_disk: true
+disk:
+ - { BlockDevice: /dev/sdb, PartitionNumber: 1, name: datamart }
+partition:
+ - { FSType: xfs, DeviceName: /dev/sdb1, MountPoint: /dat2 }
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'datamart-prep'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+  - { name: "dat2",
+      fstype: "xfs",
+      device: "sdb1",
+      path:   "/dat2"}
+...
