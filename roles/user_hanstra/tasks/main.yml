@@ -50,6 +50,7 @@
     - { file: home/bin/tarcp, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/bin/set_prompt, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/.ssh/authorized_keys, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0700' }
+    - { file: home/.ssh/config, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
     - { file: home/.ssh/id_rsa.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
     - { file: home/.ssh/id_rsa, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0600' }
     - { file: home/.ssh/id_ed25519.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
