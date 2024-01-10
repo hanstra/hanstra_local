@@ -20,6 +20,9 @@ fi
 #
 #  Add Admin paths
 #
+if [ -d /home/hanstra/.local/bin ]; then
+   PATH=$PATH:/home/hanstra/.local/bin
+fi
 if [ -d /opt/admin ]; then
    PATH=$PATH:/opt/admin/bin:/opt/admin/aleph:/opt/admin/bkup:/opt/admin/dell:/opt/admin/security
 fi
