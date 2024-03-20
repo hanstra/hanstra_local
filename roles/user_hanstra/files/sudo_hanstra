@@ -1,1 +1,1 @@
-hanstra ALL=(ALL)  NOPASSWD:ALL
+hanstra ALL=(ALL)  PASSWD:ALL
