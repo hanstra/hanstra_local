@@ -4,12 +4,13 @@
 
 - name: Make sure hanstra is a user on the box
   user:
-    name=hanstra
-    uid=34606
-    groups=users
-    comment="Tom Hanstra"
-    createhome=yes
-    shell=/bin/bash
+    name: hanstra
+    uid: 34606
+    groups: users
+    comment: "Tom Hanstra"
+    createhome: yes
+    shell: /bin/bash
+    password: '$6$vKc8QWycwQFO/IP8$Yri3turaxAl7LADUvytP3DpDOs05xp7enzp5.iGJ.AiHyxarAckQnbAEcLspIuWb/AdWEfkIearbNiNPleas/1'
 
 - name: Make directories
   file:
@@ -19,6 +20,7 @@
   with_items:
     - { path: ~hanstra/.ssh, mode: '0700' }
     - { path: ~hanstra/bin, mode: '0755' }
+    - { path: ~hanstra/.aws, mode: '0755' }
 
 - name: Set ownership 
   file:
@@ -49,6 +51,8 @@
     - { file: home/bin/psgrep, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/bin/tarcp, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
     - { file: home/bin/set_prompt, dest: ~hanstra/bin, owner: 'hanstra', group: 'users', mode: '0755' }
+    - { file: home/.aws/config, dest: ~hanstra/.aws, owner: 'hanstra', group: 'users', mode: '0700' }
+    - { file: home/.aws/credentials, dest: ~hanstra/.aws, owner: 'hanstra', group: 'users', mode: '0700' }
     - { file: home/.ssh/authorized_keys, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0700' }
     - { file: home/.ssh/config, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
     - { file: home/.ssh/id_rsa.pub, dest: ~hanstra/.ssh, owner: 'hanstra', group: 'users', mode: '0644' }
