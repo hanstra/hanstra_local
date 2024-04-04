@@ -17,6 +17,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+
 #  Create function to perform ls on cd
 #
 cdl () { cd ${1} ; ls -aFC --color ; }
