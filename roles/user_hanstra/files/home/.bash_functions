@@ -7,6 +7,7 @@
 cdl () { cd "${1}" ; ls -aFCG; }
 pol () { popd ${1} ; ls -aFCG; }
 pul () { pushd ${1} ; ls -aFCG; }
+pbc () { cat "$@" | awk '{q=p;p=$0}NR>1{print q}END{ORS = ""; print p}'| pbcopy; }
 
 apb () { /usr/local/bin/ansible-playbook ./playbooks/${1} ; }
 app () { /usr/local/bin/ansible-playbook ./playbooks/${1} -k -K ; }
