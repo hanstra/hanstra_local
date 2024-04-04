@@ -1,0 +1,31 @@
+---
+ansible_ssh_host: 10.71.0.78
+host: oracle-test.library.nd.edu
+lchost: oracle-test.lc.nd.edu
+tagName: oracle-test
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Oracle database - Test server"
+tagEnvironment: prep
+tagOwner: hanstra
+tagService: prep
+lib_interface: ens192
+lib_ip: 129.74.250.15
+lib_gateway: 129.74.250.1
+lc_interface: ens224
+lc_ip: 10.71.0.78
+collectd_file: False
+# Alarm parameters
+Region: 'us-east-1'
+alarm_hostname: 'oracle-test'
+cpu_threshold: 30
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "mapper/rhel-root",
+      path:   "/"}
+file_checks:
+  - { name: "process_queue",
+      comparison: "LessThanThreshold",
+      threshold: 1,
+      instance: 'process_queue'}
+...
