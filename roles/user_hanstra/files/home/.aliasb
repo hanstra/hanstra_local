@@ -106,6 +106,7 @@ alias h='history'                                                               
 alias j='jobs -l'                                                                  #show jobs running
 alias jiralist='cat ~/daily/Jiralist'                                              #show current Jira issues
 alias jl='cat ~/daily/Jiralist'                                                    #show current Jira issues
+alias json='python3 -m json.tool $1'                                               #pretty print json file
 alias kc='khc'                                                                     #use function to remove from 
 alias kh='khc'                                                                     # known_hosts file
 alias lo=exit                                                                      #logout of session
