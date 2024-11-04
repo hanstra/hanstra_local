@@ -1,4 +1,4 @@
-ansible_ssh_host: 172.22.9.20
+ansible_ssh_host: 172.22.9.22
 host: archivesspace35-prep.library.nd.edu
 ssh_host: archivesspace35-prep.libnd.nd.edu
 lchost: archivesspace35-prep.libnd.nd.edu
