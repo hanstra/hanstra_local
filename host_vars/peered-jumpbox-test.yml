@@ -1,8 +1,8 @@
-ansible_ssh_host: 172.22.242.140
-host: jumpbox-test.library.nd.edu
-ssh_host: jumpbox-test.libnd.nd.edu
+ansible_ssh_host: 52.45.9.18
+host: peered-jumpbox-test.library.nd.edu
+ssh_host: peered-jumpbox-test.library.nd.edu
 lchost: jumpbox-test.libnd.nd.edu
-ansible_ssh_user: ec2-user
+ansible_ssh_user: hanstra
 # Build and tag parameters
 tagName: peered-jumpbox
 tagContact: lib-esu-group@nd.edu
