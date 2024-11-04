@@ -1,0 +1,16 @@
+---
+ansible_ssh_host: 129.74.250.75
+host: conductor.library.nd.edu
+lchost: conductor.lc.nd.edu
+tagName: conductor
+tagContact: lib-esu-group@nd.edu
+tagDescription: "Conductor - RHEL8"
+tagEnvironment: production
+tagOwner: hanstra
+tagService: production
+lib_interface: ens192
+lib_ip: 129.74.250.75
+lib_gateway: 129.74.250.1
+lc_interface: ens224
+lc_ip: 10.71.0.135
+...
