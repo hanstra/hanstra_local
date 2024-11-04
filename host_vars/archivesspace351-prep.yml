@@ -1,0 +1,74 @@
+ansible_ssh_host: 172.22.9.24
+host: archivesspace351-prep.library.nd.edu
+ssh_host: archivesspace351-prep.libnd.nd.edu
+lchost: archivesspace351-prep.libnd.nd.edu
+ansible_ssh_user: ec2-user
+# Build and tag parameters
+tagName: archivesspace351-prep
+tagContact: lib-esu-group@nd.edu
+tagDescription: "prep server - ArchivesSpace - V3.5.1"
+tagEnvironment: prep35
+tagOwner: hanstra
+tagService: "archivesspace"
+tagSchedule: "Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18"
+#tagSchedule: "*"
+tagBackup: True
+tagProject: "ArchivesSpace"
+ansible_python_interpreter: python3
+gwTimeZone: "Eastern"
+app_full_access: True
+Region: 'us-east-1'
+lwagent_log:
+  - /esu/cwagent-config/archivesspace-pui
+# Application parameters
+as_version: "v3.5.1"
+as_upgrade: false
+connector_version: "8.3.0"
+solr_install_version: "8.11.4"
+solr_port: "8090"
+solr_core: "archivesspace"
+repo_solr_config: "/home/app/archivesspace/solr"
+# Archivesspace35 SAML
+#as_saml_metadata_url: "https://okta.nd.edu/app/exkp9fty480gaeuxt357/sso/saml/metadata"
+#as_saml_idp_sso_target_url: "https://okta.nd.edu/app/nd_archivespacenew_1/exkp9fty480gaeuxt357/sso/saml"
+# Prep SAML
+as_saml_metadata_url: "https://okta.nd.edu/app/exke61f0q0zo6NUMQ357/sso/saml/metadata"
+as_saml_idp_sso_target_url: "https://okta.nd.edu/app/nd_archivespacenew_1/exke61f0q0zo6NUMQ357/sso/saml"
+# Prod SAML
+#as_saml_metadata_url: "https://okta.nd.edu/app/exk7uriv9xArfrW8f357/sso/saml/metadata"
+#as_saml_idp_sso_target_url: "https://okta.nd.edu/app/nd_archivespacenew_1/exk7uriv9xArfrW8f357/sso/saml"
+#
+# ArchivesSpace access URLs
+public_host: archivesspace351.libnd.nd.edu
+public_host_alias: archivesspace-prep.library.nd.edu
+staff_host: archivesspace351.libnd.nd.edu
+staff_host_alias: archivesspace-staff-prep.library.nd.edu
+oai_host: archivesspace351.libnd.nd.edu
+oai_host_alias: archivesspace-oai-prep.library.nd.edu
+api_host: archivesspace351.libnd.nd.edu
+api_host_alias: archivesspace-api-prep.library.nd.edu
+stop_logrotate: false
+# Plugin parameters
+aspace_search_modifications_install: true
+Oauth_install: true 
+bulk_updater_install: true 
+bulk_updater_version: "1.5.5"
+bulk_updater_upgrade: true  
+digitization_work_order_install: true  
+digitization_work_order_version: "1.13"
+digitization_work_order_upgrade: true  
+export_service_install: false 
+lcnaf_install: true
+# Requests info
+requests_email_address: "pmilhoan@nd.edu"
+requests_fallback_email_address: "fboze@nd.edu"
+# Alarm parameters
+ami_id: true
+alarm_hostname: 'archivesspace-prep'
+cpu_threshold: 98
+disk_config:
+  - { name: "root",
+      fstype: "xfs",
+      device: "nvme0n1p1",
+      path:   "/"}
+namespace: "EC2-Linux"
