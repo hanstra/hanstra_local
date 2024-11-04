@@ -3,8 +3,17 @@ then
   export PS1="Console login: "
 elif [ "$USER" = "root" ]
 then
-  export PS1="[\[${BOLD}${RED}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$GREEN\]\w\[$WHITE\]]# \[$RESET\]"
-  export CLICOLOR=1
+  if [ "$AWS_PROFILE" = "superadmin-libnd" ]
+  then
+    export PS1="[\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$RED\]$AWS_PROFILE \[$GREEN\]\w\[$WHITE\]]% \[$RESET\]"
+  elif [ "$AWS_PROFILE" = "superadmin-test" ]
+  then
+    export PS1="[\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$BLUE\]$AWS_PROFILE \[$GREEN\]\w\[$WHITE\]]% \[$RESET\]"
+    export CLICOLOR=1
+  else
+    export PS1="[\[${BOLD}${RED}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$GREEN\]\w\[$WHITE\]]# \[$RESET\]"
+    export CLICOLOR=1
+  fi
 elif [ "$AWS_PROFILE" = "superadmin-libnd" ]
 then
   export PS1="[\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$WHITE\]\H\[$WHITE\] \[$RED\]$AWS_PROFILE \[$GREEN\]\w\[$WHITE\]]% \[$RESET\]"
