@@ -5,48 +5,17 @@
     - aleph23-prep
     - aleph23-prod
     - aleph23-test
-    - archivesspace33-prep
-    - archivesspace331-prod
-    - archivesspace-prep
-    - archivesspace-prod
-    - bendo-prep
-    - bendo-prod
-    - curatesolr-prep
-    - curatesolr-prod
-    - curatesvr-prep
-    - curatesvr-prod
-    - curate-test1
-    - curate-test2
-    - curate-test3
-    - curatewkr-prep
-    - curatewkr-prod
-    - cw-monitor
     - vmw-cw-monitor
-    - datamart-build
-    - ezproxy-prep
-    - ezproxy-prod
-    - ezproxy-test
-    - fedora-38-prep
-    - fedora-38-prod
+    - datamart-prep
+    - datamart-prod
+    - ezproxy8-prep
+    - ezproxy8-prod
+    - ezproxy8-test
+    - irish1-reader
     - john
     - james
-    - libnd-datamart-prep
-    - libnd-datamart-prod
-    - libnd-dave
-    - mysql-prep
-    - mysql-prod
-    - noids-r7-prod
-    - noids-r7-prep
     - peered-jumpbox
-    - r7-test
     - r7-test2
-    - rbsc-prep
-    - rbsc-prod
-    - repository-prep
-    - repository-prod
-    - sipity-test
-    - sipity-prep
-    - sipity-prod
   become: yes
   become_user: root
   roles:
