@@ -4,6 +4,7 @@ aleph23-prod
 aleph23-test
 archivesspace351-prod
 archivesspace351-prep
+archivesspace351-test
 conductor
 cw-monitor
 datamart-prep
@@ -12,16 +13,10 @@ ezproxy8-prep
 ezproxy8-prod
 ezproxy8-test
 irish1-reader
-james
-john
 peered-jumpbox
 peered-jumpbox-test
-peter
-r7-test
 r7-test2
 r8-test
 unpeered-jumpbox
 unpeered-jumpbox-test
-vmbuild7
-vmbuild8
 vmw-cw-monitor
