@@ -1,14 +1,15 @@
-ansible_ssh_host: 52.45.9.18
-host: peered-jumpbox-test.library.nd.edu
-ssh_host: peered-jumpbox-test.library.nd.edu
+ansible_ssh_host: 3.220.240.150
+host: jumpbox-test.library.nd.edu
+ssh_host: jumpbox-test.libnd.nd.edu
 lchost: jumpbox-test.libnd.nd.edu
-ansible_ssh_user: hanstra
+ansible_ssh_user: ec2-user
 # Build and tag parameters
 tagName: peered-jumpbox
 tagContact: lib-esu-group@nd.edu
 tagDescription: "Peered jumpbox server"
 tagEnvironment: prod
 tagOwner: hanstra
+tagProject: "jumpbox"
 tagService: "jumpbox"
 tagSchedule: 'Mon *-18,Tue *-18,Wed *-18,Thu *-18,Fri *-18'
 tagBackup: True

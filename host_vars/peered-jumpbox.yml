@@ -1,4 +1,4 @@
-ansible_ssh_host: 172.22.8.100
+ansible_ssh_host: 172.22.10.89
 host: jumpbox.library.nd.edu
 ssh_host: jumpbox.libnd.nd.edu
 lchost: jumpbox.libnd.nd.edu
@@ -12,6 +12,7 @@ tagOwner: hanstra
 tagService: "jumpbox"
 tagSchedule: '*'
 tagBackup: True
+tagProject: "jumpbox"
 ansible_python_interpreter: python3
 # Alarm parameters
 ami_id: 'For_alarm_only'
